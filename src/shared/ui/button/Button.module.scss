@@ -1,0 +1,25 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  background-color: #fa1153;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  height: 54px;
+  gap: 10px;
+  // padding: 15px 0px 15px 0px;
+  font-weight: bold;
+	transition: background-color 0.5s;
+}
+
+.button:hover {
+	background-color: #E01C54;
+}
+
+.button:active {
+	background-color: #FA1153;
+}

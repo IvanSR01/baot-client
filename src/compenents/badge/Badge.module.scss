@@ -1,0 +1,40 @@
+.container {
+  position: relative;
+  display: flex;
+  padding: 8px 12px 6px 16px;
+  border-radius: 8px 8px 8px 0;
+  color: #fff;
+  font-size: 12px;
+  line-height: 18px;
+
+  &.sale {
+    background: #FA1153;
+  }
+
+  &.popular {
+    background: #FFC600;
+  }
+
+  & > img {
+    margin-right: 2px;
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border: 4px solid transparent;
+  }
+
+  &.sale:before {
+    border-top-color: #FA1153;
+    border-right-color: #FA1153;
+  }
+
+  &.popular:before {
+    border-top-color: #FFC600;
+    border-right-color: #FFC600;
+  }
+}

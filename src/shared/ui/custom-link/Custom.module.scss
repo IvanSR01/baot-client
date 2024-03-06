@@ -1,0 +1,16 @@
+.link {
+  font-size: 18px;
+  color: #00748c;
+  border-bottom: 1px solid #00748c;
+  padding-bottom: 0px;
+  transition: color 0.5s;
+}
+
+.link:hover {
+  color: #054a58;
+  border-bottom: 1px solid #054a58;
+}
+.link:active {
+  color: #18292d;
+  border-bottom: 1px solid #18292d;
+}
