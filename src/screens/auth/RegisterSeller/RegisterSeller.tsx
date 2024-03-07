@@ -44,7 +44,6 @@ const RegisterSeller: FC = () => {
 			})
 		},
 		onSuccess: async data => {
-			console.log(data)
 			dispatch(
 				setUserRegisterion({
 					...getValues(),

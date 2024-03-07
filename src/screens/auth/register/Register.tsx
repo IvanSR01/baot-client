@@ -44,13 +44,11 @@ const Register: FC = () => {
       });
     },
     onSuccess: async (data) => {
-      console.log(data.phone, setPhone(data.phone));
-      const res = await authService.getCode(setPhone(data.phone));
       dispatch(
         setUserRegisterion({
           ...getValues(),
           phone: setPhone(data.phone),
-          code: res.code,
+          code: data.code,
         })
       );
       push("/auth/verify-phone/user");
