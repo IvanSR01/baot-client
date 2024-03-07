@@ -19,7 +19,7 @@ const MyCalendar: FC<TypePropsCalendar> = ({ setDate, date, setShow, ref }) => {
         value={dateRange}
         selectRange={true}
         className={"calendar"}
-        // calendarType="ISO 8601"
+        navigationLabel={({ date, label, locale, view }) => label.replace('г.', '')}
       />
     </div>
   );

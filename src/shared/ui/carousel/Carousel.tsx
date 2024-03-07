@@ -3,7 +3,9 @@
 import { Carousel, IconButton } from "@material-tailwind/react";
 import { FC, Fragment } from "react";
 import { TypePropsCarousel } from "./Carousel.type";
-import { MdChevronLeft, MdChevronRight } from "react-icons/md";
+import iconPrev from "@/assets/svg/arrow-prev.svg";
+import iconNext from "@/assets/svg/arrow-next.svg";
+import Image from "next/image";
 
 const CarouselDefault: FC<TypePropsCarousel> = ({ imgs }) => {
   return (
@@ -26,38 +28,31 @@ const CarouselDefault: FC<TypePropsCarousel> = ({ imgs }) => {
           ))}
         </div>
       )}
-      // prevArrow={({ loop, handlePrev, firstIndex }) => (
-      //   <IconButton
-      //     placeholder=">"
-      //     onClick={handlePrev}
-      //     disabled={!loop && firstIndex}
-      //     style={{
-      //       position: 'absolute',
-      //       top: '50%',
-      //       left: '20px',
-      //       transform: 'translateY(-50%)',
-      //       background: 'none',
-      //     }}
-      //   >
-      //     <MdChevronLeft size="24" color="#fff" />
-      //   </IconButton>
-      // )}
-      // nextArrow={({ loop, handleNext, lastIndex }) => (
-      //   <IconButton
-      //     placeholder=">"
-      //     onClick={handleNext}
-      //     disabled={!loop && lastIndex}
-      //     style={{
-      //       position: 'absolute',
-      //       top: '50%',
-      //       right: '20px',
-      //       transform: 'translateY(-50%)',
-      //       background: 'none',
-      //     }}
-      //   >
-      //     <MdChevronRight size="24" color="#fff" />
-      //   </IconButton>
-      // )}
+      prevArrow={({ handlePrev }) => (
+        <IconButton
+          placeholder="<"
+          size="lg"
+          color="white"
+          variant="text"
+          onClick={handlePrev}
+          className="!absolute top-2/4 left-4 -translate-y-2/4"
+        >
+          <Image src={iconPrev} alt="prev" />
+        </IconButton>
+      )}
+      nextArrow={({ handleNext }) => (
+        <IconButton
+          placeholder=">"
+          size="lg"
+          color="white"
+          variant="text"
+          onClick={handleNext}
+          className="!absolute top-2/4 right-4 -translate-y-2/4"
+
+        >
+          <Image src={iconNext} alt="next" />
+        </IconButton>
+      )}
       >
       {imgs.map((item, i) => (
         <Fragment key={i}>

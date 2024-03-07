@@ -1,11 +1,6 @@
 .card {
   position: relative;
-  // width: 20vw;
-  @media (max-width: 1200px) {
-    // width: 90vw;
-  }
-  min-width: 320px;
-  max-width: 610px;
+  width: calc(100% / 3);
   background-color: #fff;
   border-radius: 15px;
   .img {

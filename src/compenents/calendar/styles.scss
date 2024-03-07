@@ -4,7 +4,7 @@
   z-index: 101;
   .calendar {
     width: 100%;
-    border: 2px solid #00748c;
+    border: 1px solid #00748c;
     font-size: 18px;
 		border-radius: 8px;
 		box-shadow: 4px 4px 13.7px 0px rgba(10, 80.5, 85, 0.1);
@@ -57,12 +57,12 @@
 }
 
 .react-calendar__tile--now {
-  background-color: #00748C; /* Цвет для текущего дня */
+  background-color: #00748C !important; /* Цвет для текущего дня */
   color: #FFFFFF;
 }
 
 .react-calendar__tile--active {
-  background-color: #00748C; /* Цвет для других выделенных дней */
+  background-color: #00748C !important; /* Цвет для других выделенных дней */
   color: #FFFFFF;
 }
 
@@ -71,6 +71,9 @@
 }
 .react-calendar__month-view__weekdays__weekday {
   color: #728487; /* Черный цвет для дней недели */
+  abbr {
+    text-decoration: none;
+  }
 }
 
 .react-calendar__tile--hasActive.react-calendar__tile--active {
@@ -78,4 +81,7 @@
 }
 .react-calendar__tile--tile.react-calendar__tile--active {
   color: #728487; /* Цвет для прошедших дней */
+}
+.react-calendar__navigation__label {
+  text-transform: capitalize;
 }

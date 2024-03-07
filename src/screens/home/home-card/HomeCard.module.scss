@@ -1,15 +1,23 @@
 .card {
   position: relative;
-  @media (max-width: 480px) {
-    min-width: 342.5px;
+  width: calc(100% / 3);
+
+  @media (max-width: 1440px) {
+    width: 50%;
+    
+    &:nth-of-type(3) {
+      display: none;
+    }
   }
-  @media (min-width: 480px) and (max-width: 1200px) {
-    min-width: 354px;
+
+  @media (max-width: 600px) {
+    width: 100%;
+    
+    &:nth-of-type(2) {
+      display: none;
+    }
   }
-	@media (min-width: 1201px) and (max-width: 1800px) {
-		min-width: 360px;
-	}
-  min-width: 407.5px;
+  
   background-color: #fff;
   border-radius: 20px;
 	.border {

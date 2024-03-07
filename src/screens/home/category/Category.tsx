@@ -1,11 +1,15 @@
 "use client";
 import { filtersCategorys } from "@/shared/var/categorys";
 import clsx from "clsx";
-import React, { useState } from "react";
+import React, { FC } from "react";
 import styles from "./Category.module.scss";
-const Category = () => {
-  const [selectedCategory, setSelectedCategory] = useState(0);
 
+interface CategoryProps {
+  selectedCategory: number;
+  setSelectedCategory: (selectedCategory: number) => void;
+}
+
+const Category: FC<CategoryProps> = ({ selectedCategory, setSelectedCategory }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.categorys}>

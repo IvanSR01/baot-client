@@ -5,7 +5,6 @@ import { useMemo } from "react";
 export const useAuth = (): boolean => {
   const { user } = useAppSelector((state) => state.user);
   const { refreshToken } = getTokens();
-
   return useMemo(() => {
     return !!refreshToken;
   }, [user]);

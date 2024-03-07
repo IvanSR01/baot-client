@@ -1,10 +1,15 @@
 import { FC } from 'react'
-import { TypePropsIntro } from './Intro.type'
+import Wrapper from '../wrapper/Wrapper'
+import SearchFilter from '../search-filter/SearchFilter'
 import styles from './Intro.module.scss'
-const Intro: FC<TypePropsIntro> = ({ children }) => {
+
+const Intro: FC = () => {
 	return (
-		<section className={styles.wrapper}>
-			{children}
+		<section className={styles.container}>
+			<Wrapper>
+				<h2>Откройте новые горизонты праздника с нашими яхтами и лодками</h2>
+				<SearchFilter />
+			</Wrapper>
 		</section>
 	)
 }

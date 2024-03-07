@@ -23,6 +23,7 @@ const ResetModal: FC<TypePropsResetModel> = ({
   const { mutate: mutateGetCode } = useMutation({
     mutationFn: () => authService.getCode(phone),
     onError: (err: any) => {
+			console.log(err)
       setError(errorCatch(err));
     },
     onSuccess: (data) => {

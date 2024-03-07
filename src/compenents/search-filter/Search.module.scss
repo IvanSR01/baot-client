@@ -1,16 +1,11 @@
 .wrapper {
-  width: 90vw;
-  @media (min-width: 1800px) {
-    width: 80vw;
-  }
   border-radius: 20px;
 	max-width: 1240px;
-	max-height: 102px;
 	@media (max-width: 1200px) {
 		max-height: none;
 	}
   .categorys {
-    width: 647px;
+    width: 642px;
 		height: 56px;
     background-color: #fff;
     display: flex;
@@ -29,6 +24,7 @@
       border-bottom: 4px solid #eeeeee;
       cursor: pointer;
       font-weight: 400;
+      white-space: nowrap;
     }
     .active {
       font-weight: 600;
@@ -129,7 +125,7 @@
       margin: 0 10px;
       align-items: center;
       justify-content: space-between;
-      border: 2px solid transparent;
+      border: 1px solid transparent;
       p {
         font-weight: bold;
       }
@@ -140,16 +136,6 @@
     .calendar {
       display: flex;
       justify-content: center;
-      width: 21.5vw;
-			@media (min-width: 1800px) {
-        width: 17vw;
-      }
-      @media (max-width: 1200px) {
-        width: 85vw;
-      }
-      @media (max-width: 600px) {
-        width: 85vw;
-      }
     }
     span {
       color: #313131;
@@ -157,7 +143,7 @@
     }
 
     .focusDate {
-      border: 2px solid #00748c;
+      border: 1px solid #00748c;
       border-radius: 10px;
 			color: #000;
       img {

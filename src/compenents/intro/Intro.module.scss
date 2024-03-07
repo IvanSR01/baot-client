@@ -1,8 +1,35 @@
-.wrapper {
+.container {
   background: url("../../assets/img/bg.png") 54% center no-repeat;
 	
 	background-size: cover;
-  padding: 22px 10vw 100px 10vw;
+  padding: 72px 0 100px;
   color: #fff;
   font-size: 10px;
+
+  h2 {
+    margin-bottom: 40px;
+    text-align: center;
+    width: 100%;
+    text-wrap: balance;
+    max-width: 1240px;
+    font-size: 70px;
+    font-weight: normal;
+    line-height: 61px;
+    
+    @media (max-width: 600px) {
+    }
+    @media (max-width: 960px) {
+      line-height: 40px;
+      font-size: 32px;
+    }
+    @media (max-width: 1440px) {
+      width: 100%;
+    }
+    @media (min-width: 960px) and (max-width: 2000px) {
+      font-size: 60px;
+    }
+    @media (min-width: 1700px) {
+      font-size: 58px;
+    }
+  }
 }
