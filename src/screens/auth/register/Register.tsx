@@ -38,11 +38,13 @@ const Register: FC = () => {
     mutationFn: ({ phone, email }: TypeHasUser) =>
       authService.hasUser(phone, email),
     onError: (err: any) => {
-      setError(err?.data?.message?.type as string, {
+      console.log(err?.response.data);
+      setError(err?.response.data?.type as string, {
         message: errorCatch(err),
       });
     },
     onSuccess: async (data) => {
+      console.log(data.phone, setPhone(data.phone));
       const res = await authService.getCode(setPhone(data.phone));
       dispatch(
         setUserRegisterion({
@@ -55,6 +57,7 @@ const Register: FC = () => {
     },
   });
   const onSubmit = async (data: any) => {
+    console.log(data);
     if (data.password !== data.confirm)
       return setError("confirm", {
         message: "Пароль не совпадают",
@@ -96,9 +99,7 @@ const Register: FC = () => {
               </div>
             ))}
           </div>
-          <div
-            className={styles.agree}
-          >
+          <div className={styles.agree}>
             <div
               className="inline-flex items-center"
               style={{
@@ -112,9 +113,9 @@ const Register: FC = () => {
               >
                 <input
                   checked={agree.isPersonal}
-									onChange={() =>
-										setAgree({ ...agree, isPersonal: !agree.isPersonal })
-									}
+                  onChange={() =>
+                    setAgree({ ...agree, isPersonal: !agree.isPersonal })
+                  }
                   id="ripple-on"
                   type="checkbox"
                   className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-blue-500 checked:bg-blue-500 checked:before:bg-blue-500 hover:before:opacity-10"
@@ -144,9 +145,7 @@ const Register: FC = () => {
               </label>
             </div>
           </div>
-          <div
-            className={styles.agree}
-          >
+          <div className={styles.agree}>
             <div
               className="inline-flex items-center"
               style={{
@@ -160,7 +159,7 @@ const Register: FC = () => {
               >
                 <input
                   checked={agree.isConf}
-									onChange={() => setAgree({ ...agree, isConf: !agree.isConf })}
+                  onChange={() => setAgree({ ...agree, isConf: !agree.isConf })}
                   id="rippl2e-on"
                   type="checkbox"
                   className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-blue-500 checked:bg-blue-500 checked:before:bg-blue-500 hover:before:opacity-10"

@@ -23,6 +23,7 @@ const PasswordModal: FC<TypePropsPasswordModal> = ({ onClick, type }) => {
       setError(errorCatch(err));
     },
     onSuccess: (data) => {
+			console.log(data)
       dispatch(setUser(data));
       onClick();
     },
