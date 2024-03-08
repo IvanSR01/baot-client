@@ -49,6 +49,7 @@ const HomeModal = () => {
 							setIsOpenPassword(false)
 							dispatch(setIsOpen(true))
 						}}
+						onSubmit={() => setIsOpenPassword(false)}
 						type={role as 'registerSeller' | 'registerUser'}
 					/>
 				}

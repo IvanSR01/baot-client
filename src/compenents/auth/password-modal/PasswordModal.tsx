@@ -12,7 +12,7 @@ import { FaEye } from 'react-icons/fa'
 import { IoIosArrowDown } from 'react-icons/io'
 import { TypePropsPasswordModal } from './PasswordModa.type'
 import styles from './PasswordModal.module.scss'
-const PasswordModal: FC<TypePropsPasswordModal> = ({ onClick, type }) => {
+const PasswordModal: FC<TypePropsPasswordModal> = ({ onClick, onSubmit }) => {
 	const { login } = useAppSelector(state => state.registerUser.data)
 	const [password, setPassword] = useState('')
 	const [isViewPass, setIsViewPass] = useState(false)
@@ -24,9 +24,8 @@ const PasswordModal: FC<TypePropsPasswordModal> = ({ onClick, type }) => {
 			setError(errorCatch(err))
 		},
 		onSuccess: data => {
-			console.log(data)
 			dispatch(setUser(data))
-			onClick()
+			onSubmit()
 		},
 	})
 	return (
