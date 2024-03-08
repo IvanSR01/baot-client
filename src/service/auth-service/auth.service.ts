@@ -69,7 +69,6 @@ class AuthService {
       phone,
       email,
     });
-		console.log(data)
     return data;
   }
 }

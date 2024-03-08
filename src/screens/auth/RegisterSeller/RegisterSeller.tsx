@@ -7,7 +7,7 @@ import { TypeHasUser } from '@/shared/types/auth.type'
 import Button from '@/shared/ui/button/Button'
 import { MaterialIcon } from '@/shared/ui/icon'
 import setPhone from '@/shared/utils/setPhone'
-import { loginSeller } from '@/shared/var/login'
+import { inputs } from '@/shared/var/inputs'
 import { setUserRegisterion } from '@/store/slice/registretion-user.slice'
 import { useMutation } from '@tanstack/react-query'
 import clsx from 'clsx'
@@ -18,7 +18,7 @@ import { FaCreditCard } from 'react-icons/fa6'
 import { IoIosArrowDown, IoIosDocument } from 'react-icons/io'
 import styles from '../Auth.module.scss'
 import AuthSelect from '../select/Select'
-
+import { PiLinkSimpleHorizontalFill } from 'react-icons/pi'
 const RegisterSeller: FC = () => {
 	const options = ['Физлица и самозанятые', 'ООО и ИП']
 	const [selected, setSelected] = useState('')
@@ -69,6 +69,10 @@ const RegisterSeller: FC = () => {
 			})
 		mutateHas({ phone: data.phone, email: data.email })
 	}
+	const [viewPassword, setViewPassword] = useState({
+		password: false,
+		confirm: false,
+	})
 	return (
 		<>
 			<Header />
@@ -79,11 +83,11 @@ const RegisterSeller: FC = () => {
 						<p>Регистрация владельца</p>
 					</div>
 					<div className={styles.items}>
-						{loginSeller.map((item, i) => (
+						{inputs.map((item, i) => (
 							<div
 								className={clsx(
 									styles.item,
-									errors[item.name] ? styles.error : ''
+									errors[item.name] ? styles.error : styles.colorsInput
 								)}
 								key={i}
 							>
@@ -104,6 +108,92 @@ const RegisterSeller: FC = () => {
 							</div>
 						))}
 					</div>
+					<div className={styles.items}>
+						<div
+							className={clsx(
+								styles.item,
+								errors['password'] ? styles.error : styles.colorsInput
+							)}
+						>
+							<input
+								{...register('password', { required: 'Заполните поле' })}
+								className={clsx(
+									styles.input,
+									errors['password'] ? styles.error : styles.border
+								)}
+								id={'password'}
+								type={viewPassword.password ? 'password' : 'text'}
+								placeholder={'Пароль'}
+							/>
+							<label htmlFor={'password'}>{'Пароль'}</label>
+							{errors['password'] && (
+								<p>{errors['password']?.message?.toString()}</p>
+							)}
+							<span
+								onClick={() =>
+									setViewPassword({
+										...viewPassword,
+										password: !viewPassword.password,
+									})
+								}
+							>
+								<MaterialIcon name={'FaEye'} />
+							</span>
+						</div>
+						<div
+							className={clsx(
+								styles.item,
+								errors['password'] ? styles.error : styles.colorsInput
+							)}
+						>
+							<input
+								{...register('confirm', { required: 'Заполните поле' })}
+								className={clsx(
+									styles.input,
+									errors['confirm'] ? styles.error : styles.border
+								)}
+								id={'confirm'}
+								type={viewPassword.confirm ? 'password' : 'text'}
+								placeholder={'Повтор пароля'}
+							/>
+							<label htmlFor={'confirm'}>{'Повтор пароля'}</label>
+							{errors['confirm'] && (
+								<p>{errors['confirm']?.message?.toString()}</p>
+							)}
+							<span
+								onClick={() =>
+									setViewPassword({
+										...viewPassword,
+										confirm: !viewPassword.confirm,
+									})
+								}
+							>
+								<MaterialIcon name={'FaEye'} />
+							</span>
+						</div>
+						<div
+							className={clsx(
+								styles.item,
+								errors['personalUrl'] ? styles.error : styles.colorsInput
+							)}
+						>
+							<input
+								{...register('personalUrl', { required: 'Заполните поле' })}
+								className={clsx(
+									styles.input,
+									errors['personalUrl'] ? styles.error : styles.border
+								)}
+								id={'personalUrl'}
+								placeholder={'URL личной страницы'}
+							/>
+							<label htmlFor={'personalUrl'}>{'URL личной страницы'}</label>
+							{errors['personalUrl'] && (
+								<p>{errors['personalUrl']?.message?.toString()}</p>
+							)}
+							<PiLinkSimpleHorizontalFill />
+						</div>
+					</div>
+
 					<div>
 						<AuthSelect
 							selected={selected}
@@ -123,11 +213,12 @@ const RegisterSeller: FC = () => {
 									<div
 										className={clsx(
 											styles.item,
-											errors['itn'] ? styles.error : ''
+											errors['itn'] ? styles.error : '',
+											styles.colorsInput
 										)}
 									>
 										<input
-											{...register('itn', { required: true })}
+											{...register('itn')}
 											className={clsx(
 												styles.input,
 												errors['itn'] ? styles.error : styles.border
@@ -142,11 +233,12 @@ const RegisterSeller: FC = () => {
 									<div
 										className={clsx(
 											styles.item,
-											errors['cardNumber'] ? styles.error : ''
+											errors['cardNumber'] ? styles.error : '',
+											styles.colorsInput
 										)}
 									>
 										<input
-											{...register('cardNumber', { required: true })}
+											{...register('cardNumber')}
 											className={clsx(
 												styles.input,
 												errors['cardNumber'] ? styles.error : styles.border
@@ -164,7 +256,8 @@ const RegisterSeller: FC = () => {
 									<div
 										className={clsx(
 											styles.item,
-											errors['itn'] ? styles.error : ''
+											errors['itn'] ? styles.error : '',
+											styles.colorsInput
 										)}
 									>
 										<input
@@ -188,11 +281,12 @@ const RegisterSeller: FC = () => {
 									<div
 										className={clsx(
 											styles.item,
-											errors['itn'] ? styles.error : ''
+											errors['itn'] ? styles.error : '',
+											styles.colorsInput
 										)}
 									>
 										<input
-											{...register('itn', { required: true })}
+											{...register('itn', { required: false })}
 											className={clsx(
 												styles.input,
 												errors['itn'] ? styles.error : styles.border
@@ -207,11 +301,12 @@ const RegisterSeller: FC = () => {
 									<div
 										className={clsx(
 											styles.item,
-											errors['paymentAccount'] ? styles.error : ''
+											errors['paymentAccount'] ? styles.error : '',
+											styles.colorsInput
 										)}
 									>
 										<input
-											{...register('paymentAccount', { required: true })}
+											{...register('paymentAccount', { required: false })}
 											className={clsx(
 												styles.input,
 												errors['paymentAccount'] ? styles.error : styles.border
@@ -226,11 +321,12 @@ const RegisterSeller: FC = () => {
 									<div
 										className={clsx(
 											styles.item,
-											errors['bic'] ? styles.error : ''
+											errors['bic'] ? styles.error : '',
+											styles.colorsInput
 										)}
 									>
 										<input
-											{...register('bic', { required: true })}
+											{...register('bic', { required: false })}
 											className={clsx(
 												styles.input,
 												errors['bic'] ? styles.error : styles.border
