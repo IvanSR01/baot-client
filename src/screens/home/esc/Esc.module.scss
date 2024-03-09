@@ -1,6 +1,9 @@
 .excursion {
 	background-color: #00748c0d;
 	padding: 0 0 0 17.5vw;
+	@media (min-width: 1441px) and (max-width: 1650px) {
+		padding: 0 0 0 150px;
+	}
 	@media (max-width: 1440px) {
 		padding: 0 60px;
 	}
@@ -32,9 +35,9 @@
 		.left {
 			width: 420px;
 			height: 649px;
+			padding: 50px 0;
 		}
 		h2 {
-			margin-top: 40px;
 			font-size: 48px;
 			@media (max-width: 600px) {
 				font-size: 30px;
@@ -62,6 +65,7 @@
 			display: flex;
 			justify-content: space-between;
 			width: 25vw;
+			height: 32px;
 			@media (max-width: 700px) {
 				width: 82vw;
 			}
