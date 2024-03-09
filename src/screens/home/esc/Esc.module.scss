@@ -51,8 +51,8 @@
 			width: 90%;
 			display: flex;
 			flex-wrap: wrap;
-			@media (max-width: 700px) {
-				width: 82vw;
+			@media (max-width: 600px) {
+				width: 90vw;
 			}
 			margin-bottom: 10px;
 		}
@@ -68,7 +68,7 @@
 			width: 25vw;
 			height: 32px;
 			@media (max-width: 700px) {
-				width: 82vw;
+				width: 90vw;
 			}
 			align-items: center;
 			font-size: 18px;
