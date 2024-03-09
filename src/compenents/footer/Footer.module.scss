@@ -15,8 +15,9 @@
 		gap: 20px;
 		padding: 52px 20vw 38px;
 		@media (max-width: 1000px) {
+			justify-content: flex-start;
 			padding: 30px 5vw;
-			gap: 0px;
+			gap: 50px;
 		}
 		color: #fff;
 		font-size: 20px;

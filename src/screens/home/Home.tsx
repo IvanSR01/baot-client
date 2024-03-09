@@ -30,14 +30,16 @@ const Home: FC<TypePropsHome> = () => {
 	const scrollUp = () => {
 		console.log(containerRef?.current?.scrollLeft)
 		if (containerRef.current) {
-			containerRef.current.scrollLeft -= width * 0.25 // Измените значение, чтобы увеличить скорость прокрутки
+			containerRef.current.scrollLeft -=
+				width <= 1200 ? width * 0.45 : width * 0.25 // Измените значение, чтобы увеличить скорость прокрутки
 		}
 	}
 
 	const scrollDown = () => {
 		console.log(containerRef?.current?.scrollLeft)
 		if (containerRef.current) {
-			containerRef.current.scrollLeft += width * 0.25 // Измените значение, чтобы увеличить скорость прокрутки
+			containerRef.current.scrollLeft +=
+				width <= 1200 ? width * 0.45 : width * 0.25 // Измените значение, чтобы увеличить скорость прокрутки
 		}
 	}
 	return (
@@ -96,7 +98,7 @@ const Home: FC<TypePropsHome> = () => {
 			</Wrapper>
 			<Esc />
 			<Wrapper>
-				<div className={clsx(styles.container, styles.p)}>
+				<div className={clsx(styles.container, styles.mb)}>
 					<Heading heading='Прокат лодок' link='лодки' />
 					<div className={clsx(styles.itemsYatch, styles.mb)}>
 						{[...Array(3)].map((_, i) => (
@@ -113,7 +115,7 @@ const Home: FC<TypePropsHome> = () => {
 			</Wrapper>
 			<Workshops />
 			<Wrapper>
-				<div className={clsx(styles.container, styles.p)}>
+				<div className={clsx(styles.container, styles.mb)}>
 					<Heading heading='Яхтклубы' link='яхтклубы' />
 					<div className={clsx(styles.itemsYatch, styles.mb)}>
 						{[...Array(2)].map((_, i) => (

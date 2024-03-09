@@ -25,9 +25,13 @@ const Phone: FC<TypePropsPhone> = ({ isLogin, onClick, onSubmit }) => {
 				</div>
 				<div></div>
 			</div>
-			<span>Введите код, отправленный на номер {data.phone}</span>
+			<span>
+				Введите последние 4 цифры входящего номера.
+				{/* <br /> Например +7 XXX XХХ
+				34 56. <br /> Отвечать на звонок не нужно */}
+			</span>
 			<div className={styles.pin}>
-				<div className={clsx(styles.item, error ? styles.error : "")}>
+				<div className={clsx(styles.item, error ? styles.error : '')}>
 					<input
 						className={clsx(styles.input, error ? styles.error : styles.border)}
 						id={'bic'}
