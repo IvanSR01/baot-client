@@ -9,11 +9,11 @@ const FullEsc = () => {
   const width = useSize();
 
   return (
-    <div className={styles.right}>
+    <>
       {width <= 700 ? (
         <></>
       ) : (
-        <>
+        <div className={styles.right} >
           <div className={styles.upper}>
             <img src={icon.src} alt="" />
           </div>
@@ -31,9 +31,9 @@ const FullEsc = () => {
               <b>1400</b> ₽/час
             </p>
           </div>
-        </>
+        </div>
       )}
-    </div>
+    </>
   );
 };
 

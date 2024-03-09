@@ -1,111 +1,148 @@
 .wrapper {
-  .container {
-    .section {
-      position: relative;
-      margin-bottom: 100px;
+	.intro {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		width: 90vw;
+		h2 {
+			margin-bottom: 40px;
+			text-align: center;
+			width: 100%;
+			text-wrap: balance;
+			max-width: 1240px;
+			font-size: 70px;
+			font-weight: normal;
+			line-height: 61px;
 
-      .arrowPrev,
-      .arrowNext {
-        position: absolute !important;
-        top: 50%;
-        transform: translateY(-50%);
-      }
-      .arrowPrev {
-        left: -50px;
-      }
-      .arrowNext {
-        right: -50px;
-      }
+			@media (max-width: 600px) {
+			}
+			@media (max-width: 960px) {
+				line-height: 40px;
+				font-size: 32px;
+			}
+			@media (max-width: 1440px) {
+				width: 100%;
+			}
+			@media (min-width: 960px) and (max-width: 2000px) {
+				font-size: 60px;
+			}
+			@media (min-width: 1700px) {
+				font-size: 58px;
+			}
+		}
+	}
+	.container {
+		.section {
+			position: relative;
+			margin-bottom: 100px;
+
+			.arrowPrev,
+			.arrowNext {
+				position: absolute !important;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			.arrowPrev {
+				left: -50px;
+			}
+			.arrowNext {
+				right: -50px;
+			}
 			margin-top: 100px;
-      h1 {
+			h1 {
 				line-height: 57.6px;
-        font-size: 48px;
-        font-weight: 500;
-        @media (max-width: 600px) {
-          font-size: 26px;
-        }
+				font-size: 48px;
+				font-weight: 500;
+				@media (max-width: 600px) {
+					font-size: 26px;
+				}
 				margin-bottom: 30px;
-      }
-      @media (max-width: 600px) {
-        margin-top: 90px;
-      }
-      span {
-        color: #00748c;
-      }
-      .heading {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        h1 {
-          font-weight: 500;
-        }
-      }
-      .itemsLayout {
-        border-radius: 20px;
-        margin: 0 -7px;
-        overflow-x: scroll;
-        padding: 0 7px;
-        box-sizing: content-box;
-      }
+			}
+			@media (max-width: 600px) {
+				margin-top: 90px;
+			}
+			span {
+				color: #00748c;
+			}
+
+			.itemsLayout {
+				border-radius: 20px;
+				margin: 0 -10px;
+				overflow-x: scroll;
+				padding: 0 7px;
+				box-sizing: content-box;
+				scroll-behavior: smooth;
+			}
 			.itemsLayout::-webkit-scrollbar {
 				width: 0;
 			}
-      .items {
-        min-width: 100%;
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
-        gap: 9.74px;
-        padding: 0px;
-      }
-    }
-  }
-  .mt {
-    margin-top: 0;
-  }
-  .mb {
-    margin-bottom: 100px;
-  }
-  .procat {
-    
-    height: 390px;
-    .img {
-      img {
-        min-width: 300px;
-      }
-    }
-  }
-  .yatch {
-    width: 60vw;
-    @media (min-width: 600px) and (max-width: 1200px) {
-      width: 90vw;
-      height: 530px;
-    }
-    @media (min-width: 550px) and (max-width: 600px) {
-      width: 90vw;
-      height: 500px;
-    }
-    @media (min-width: 400px) and (max-width: 550px) {
-      width: 90vw;
-      height: 400px;
-    }
-    @media (max-width: 400px) {
-      width: 90vw;
-      height: 340px;
-    }
-  }
-  .itemsYatch {
-    margin-top: 30px;
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 20px;
-    @media (max-width: 600px) {
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    padding: 0px;
-  }
+			.items {
+				min-width: 100%;
+				display: flex;
+				justify-content: flex-start;
+				align-items: flex-start;
+				gap: 9.74px;
+				padding: 0px 0px 10px 0px;
+			}
+		}
+	}
+	.mt {
+		margin-top: 0;
+	}
+	.mb {
+		margin-bottom: 100px;
+	}
+	.p {
+		padding-bottom: 25px;
+	}
+	.procat {
+		width: 90vw;
+		/* max-width: 400px; */
+		@media (max-width: 600px) {
+			max-width: none;
+		}
+		@media (min-width: 601px) {
+			width: 100vw;
+		}
+		.img {
+			img {
+				min-width: 300px;
+			}
+		}
+	}
+	.yatch {
+		width: 60vw;
+		@media (max-width: 1200px) {
+			width: 90vw;
+		}
+	}
+	.itemsYatch {
+		width: 100%;
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-start;
+		gap: 20px;
+		@media (max-width: 600px) {
+			gap: 75px;
+			flex-wrap: wrap;
+		}
+		padding: 0px;
+	}
+	.heading {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		margin: 50px 0px 30px 0px;
+		h1 {
+			font-size: 48px;
+			@media (min-width: 601px) and (max-width: 1200px) {
+				font-size: 36px;
+			}
+			@media (max-width: 600px) {
+				font-size: 26px;
+			}
+			font-weight: 500;
+		}
+	}
 }

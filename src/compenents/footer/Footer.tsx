@@ -48,7 +48,7 @@ const Footer: FC = () => {
               ))}
             </div>
           </div>
-          <div>
+          <div className={styles.mes}>
             <div className={styles.links}>
               <h4>Соц сети</h4>
               <div className={`${styles.items} ${styles.social}`}>
