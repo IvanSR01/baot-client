@@ -15,20 +15,22 @@ const Esc: FC = () => {
 			<section className={styles.excursion}>
 				<div className={styles.wrapper}>
 					<div className={styles.left}>
-						<h2>Экскурсии</h2>
-						<div className={styles.items}>
-							{ESC.map((item, i) => (
-								<div className={styles.item} key={i}>
-									<div className={styles.subItem}>
-										{/* <Image src={item.svg} alt={item.title} /> */}
-										<item.svg />
-										<p>{item.title}</p>
+						<div className={styles.layout}>
+							<h2>Экскурсии</h2>
+							<div className={styles.items}>
+								{ESC.map((item, i) => (
+									<div className={styles.item} key={i}>
+										<div className={styles.subItem}>
+											{/* <Image src={item.svg} alt={item.title} /> */}
+											<item.svg />
+											<p>{item.title}</p>
+										</div>
+										<IoIosArrowDown />
 									</div>
-									<IoIosArrowDown />
-								</div>
-							))}
+								))}
+							</div>
+							<CustomLink path='/'>Все яхтклубы в москве</CustomLink>
 						</div>
-						<CustomLink path='/'>Все яхтклубы в москве</CustomLink>
 					</div>
 
 					<FullEsc />
