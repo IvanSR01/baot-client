@@ -7,9 +7,14 @@
     align-items: center;
     width: 100%;
     h1 {
+			width: 40vw;
       font-weight: 500;
 			font-size: 48px;
+			@media (min-width: 601px) and (max-width: 1200px) {
+				font-size: 36px;
+			}
 			@media (max-width: 600px) {
+				width: 100vw;
 				font-size: 26px;
 			}
     }
@@ -20,7 +25,7 @@
   }
   .items {
     display: flex;
-    gap: 70px;
+    gap: 65px;
     overflow-y: scroll;
     margin-bottom: 20px;
     .item {

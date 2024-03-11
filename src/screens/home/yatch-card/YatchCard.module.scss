@@ -10,7 +10,10 @@
 	.row {
 		width: 100%;
 		position: absolute;
-		bottom: -15%;
+		bottom: -28%;
+		@media (max-width: 600px) {
+			bottom: -18%;
+		}
 		// border: 2px solid #e6e6e6;
 		background-color: #fff;
 		border-radius: 20px;
@@ -58,6 +61,9 @@
 
 .card:hover {
 	.row {
-		bottom: -10%;
+		bottom: -18%;
+		@media (max-width: 600px) {
+			bottom: -10%;
+		}
 	}
 }

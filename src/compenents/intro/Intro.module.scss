@@ -1,11 +1,12 @@
 .container {
-	background: url('../../assets/img/bg.png') 54% center no-repeat;
+  background: url("../../assets/img/bg.png") 54% center no-repeat;
 
-	background-size: cover;
-	padding: 72px 0 100px;
-	color: #fff;
-	font-size: 10px;
-	width: 100vw;
-	display: flex;
-	justify-content: center;
+  background-size: cover;
+  color: #fff;
+  font-size: 10px;
+  @media (min-width: 1200px) {
+    width: 100vw;
+  }
+  display: flex;
+  justify-content: center;
 }

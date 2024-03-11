@@ -3,11 +3,12 @@
 	background-size: cover;
 	width: 100vw;
 	display: flex;
-	justify-content: center;
+	justify-content: center;	
 	.container {
 		// max-width: 1240px;
 	}
 	.row {
+		// max-width: 1240px;
 		width: 100vw;
 		display: flex;
 		flex-wrap: wrap;
@@ -15,13 +16,14 @@
 		gap: 20px;
 		padding: 52px 20vw 38px;
 		@media (max-width: 1000px) {
-			justify-content: flex-start;
-			padding: 30px 5vw;
-			gap: 50px;
+			padding: 30px 4vw 0px 4vw;
+			justify-content: space-between;
+			gap: 10px;
 		}
 		color: #fff;
 		font-size: 20px;
 		@media (max-width: 600px) {
+			padding: 30px 10vw 0px 5vw;
 			font-size: 14px;
 		}
 		a {
@@ -86,6 +88,7 @@
 				max-width: 335px;
 			}
 		}
+		margin-bottom: 10px;
 	}
 	.row__two {
 		border-top: 1px solid #fff;
