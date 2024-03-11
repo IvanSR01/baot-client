@@ -16,7 +16,7 @@ import {CiSearch} from "react-icons/ci";
 import MyCalendar from "../calendar/Calendar";
 import styles from "./Search.module.scss";
 import formatDate from "@/shared/utils/format-date";
-import {searchFilter} from "@/assets/icons";
+import {calendarSmall, locationSmall, searchFilter} from "@/assets/icons";
 
 interface ISearchFilterProps {
     compact?: boolean;
@@ -67,7 +67,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                 </div>
             )}
             <div className={styles.content}>
-                {width < 1200 ? (
+                {width < 1200 && !compact ? (
                     <div className={styles.selectLayout}>
                         <Select
                             selected={type}
@@ -153,8 +153,10 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                                 </Button>
                             </div>
                         </> :
-                        <div className="grid grid-cols-5 justify-center items-center">
-                            <div className="rounded-l-[8px] h-[44px] pr-[1rem] border-t-[1px] border-b-[1px] border-l-[1px]">
+                        <div
+                            className="grid grid-cols-[1fr_1fr_1fr_1fr_fit-content(100%)] justify-center items-center max-w-[800px]">
+                            <div
+                                className="rounded-l-[8px] h-[44px] pr-[1rem] border-t-[1px] border-b-[1px] border-l-[1px]">
                                 <Select
                                     compact={compact}
                                     selected={selectedTypeCategory}
@@ -174,24 +176,59 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                                     img={icon.src}
                                 />
                             </div>
-                            <div className="h-[44px] pr-[1rem] border-t-[1px] border-b-[1px] border-l-[1px]">
-                                <Select
-                                    compact={compact}
-                                    selected={location}
-                                    options={city}
-                                    setAction={(i) => dispatch(setLocation(city[i as number]))}
-                                    placeholder="Локация"
-                                    img={locationIcon.src}
-                                />
+                            <div
+                                className="h-[44px] pr-[1rem] border-t-[1px] border-b-[1px] w-fit border-l-[1px] relative">
+                                <div>
+                                    <div
+                                        className={clsx(styles.selectLayout, styles.compact, "!p-0 !w-fit !min-w-[250px]")}
+                                        onClick={() => {
+                                            setIsOpen(!isOpen);
+                                        }}
+                                        ref={openRef}
+                                    >
+                                        {dateRange[0] && dateRange[1] ? (
+                                            <div className={clsx(
+                                                styles.date,
+                                                isOpen && styles.focusDate,
+                                                "!min-h-[42px] !h-[42px] !text-[14px] !w-fit !m-0 gap-[1.5rem]"
+                                            )}>
+                                                <p className={clsx(styles.range, "whitespace-nowrap")}>
+                                                    {formatDate(dateRange[0])} - {formatDate(dateRange[1])}
+                                                </p>
+                                                <img src={calendarSmall.src} alt=""/>
+                                            </div>
+                                        ) : (
+                                            <div className={clsx(
+                                                styles.date,
+                                                isOpen && styles.focusDate,
+                                                "!min-h-[42px] !h-[42px] !text-[14px] !w-fit !m-0 gap-[1.5rem]"
+                                            )}>
+                                                <p>Дата начала аренды</p>
+                                                <img src={calendarSmall.src} className="w-[16px] h-[16px]" alt=""/>
+                                            </div>
+                                        )}
+                                    </div>
+                                    {isOpen && (
+                                        <div ref={ref}
+                                             className={clsx(styles.calendar, "min-w-[350px] absolute top-[-40px]")}>
+                                            <MyCalendar
+                                                setShow={setIsOpen}
+                                                date={dateRange}
+                                                setDate={setDateRange}
+                                            />
+                                        </div>
+                                    )}
+                                </div>
                             </div>
-                            <div className="h-[44px] pr-[1rem] border-solid border-t-[1px] border-b-[1px] border-l-[1px]">
+                            <div
+                                className="h-[44px] pr-[1rem] border-solid border-t-[1px] border-b-[1px] border-l-[1px]">
                                 <Select
                                     compact={compact}
                                     selected={location}
                                     options={city}
                                     setAction={(i) => dispatch(setLocation(city[i as number]))}
                                     placeholder="Локация"
-                                    img={locationIcon.src}
+                                    img={locationSmall.src}
                                 />
                             </div>
                             <button className="w-fit bg-[#FA1153] p-[13px] rounded-[8px] ml-[-5px]">

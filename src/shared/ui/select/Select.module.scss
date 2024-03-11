@@ -8,6 +8,7 @@
   align-items: center;
   justify-content: center;
 
+
   .heading {
     min-height: 80px;
     display: flex;
@@ -92,12 +93,21 @@
       max-height: 42px;
       padding-left: 12px;
       padding-right: 12px;
+      grid-gap: 1.5rem;
     }
     .ul {
       top: calc(100% + 4px);
     }
     * {
       font-size: 14px !important;
+    }
+
+    & .selected {
+      white-space: nowrap;
+    }
+    & img {
+      width: 16px;
+      height: 16px;
     }
   }
 }

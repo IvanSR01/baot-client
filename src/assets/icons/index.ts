@@ -13,7 +13,8 @@ import boatLine from "./_media/clarity_boat-line.svg";
 import searchFilter from "./_media/search-filter.svg";
 import faSolidListBlack from "./_media/fa-solid_list-black.svg";
 import materialSymbolsMap from "./_media/material-symbols_map-black.svg";
-
+import calendarSmall from "./_media/calendar-small.svg";
+import locationSmall from "./_media/location-small.svg";
 
 export {
     logotype,
@@ -30,5 +31,7 @@ export {
     boatLine,
     searchFilter,
     faSolidListBlack,
-    materialSymbolsMapBlack
+    materialSymbolsMapBlack,
+    calendarSmall,
+    locationSmall
 }

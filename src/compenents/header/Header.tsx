@@ -15,6 +15,7 @@ import { useAuth } from "./useAuth";
 import {logotype} from "@/assets/icons";
 import {usePathname} from "next/navigation";
 import SearchFilter from "@/compenents/search-filter/SearchFilter.tsx";
+import Media from "react-media";
 const Header: FC = () => {
   const isAuth = useAuth();
   const dispatch = useAppDispatch();
@@ -29,9 +30,9 @@ const Header: FC = () => {
           </Link>
           {
             path.includes("/catalog") ?
-                <>
+                <Media query="(min-width: 1260px)">
                   <SearchFilter compact/>
-                </> : <></>
+                </Media> : <></>
           }
           <div className={styles.links}>
             <Image src={favorite} alt="" width={24} height={24} />

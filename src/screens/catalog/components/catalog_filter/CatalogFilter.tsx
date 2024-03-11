@@ -14,6 +14,7 @@ import {FC, useState} from "react";
 import clsx from "clsx";
 import {CatalogModal} from "@/screens/catalog/components/catalog_modal/CatalogModal.tsx";
 import {useCatalog} from "@/screens/catalog";
+import Media from "react-media";
 
 export const CatalogFilter: FC<{className?: string}> = ({className = ""}) => {
     const [filterActive, setFilterActive] = useState<boolean>(false);
@@ -25,8 +26,8 @@ export const CatalogFilter: FC<{className?: string}> = ({className = ""}) => {
                 <Wrapper>
                     {
                         !filterActive ? <></> :
-                            <div className="py-[60px] flex justify-between">
-                                <div className="grid grid-cols-3 gap-x-[120px] gap-y-[2rem]">
+                            <div className="py-[60px] flex justify-between max-680px:flex-col max-680px:gap-[40px]">
+                                <div className="grid grid-cols-3 max-1060px:grid-cols-2 max-1060px:gap-x-[44px] max-680px:!grid-cols-2 gap-x-[120px] gap-y-[2rem] max-680px:!gap-y-[40px]">
                                     <div className="flex flex-col gap-[12px]">
                                         <p className="text-[1rem] leading-[23px] font-bold tracking-2% mb-[8px]">Основное</p>
                                         <Checkbox>с капитаном</Checkbox>
@@ -67,7 +68,7 @@ export const CatalogFilter: FC<{className?: string}> = ({className = ""}) => {
                                     </div>
                                 </div>
                                 <div>
-                                    <div className="flex flex-col gap-[12px] ml-[27px]">
+                                    <div className="flex flex-col gap-[12px] ml-[27px] max-680px:ml-0">
                                         <p className="text-[1rem] leading-[23px] font-bold tracking-2% mb-[8px]">Конструктив</p>
                                         <Checkbox>для вейкбординга</Checkbox>
                                         <Checkbox>фишплатформа</Checkbox>
@@ -76,12 +77,14 @@ export const CatalogFilter: FC<{className?: string}> = ({className = ""}) => {
                                         <Checkbox>каюта</Checkbox>
                                         <Checkbox>с парусом</Checkbox>
                                     </div>
-                                    <div className="whitespace-nowrap mt-[50px]">
-                                        <Button onClick={() => setFilterActive(false)}>
-                                            <img src={filterWhite.src} className="min-w-[24px] min-h-[24px]" alt=""/>
-                                            Свернуть фильтры
-                                        </Button>
-                                    </div>
+                                    <Media query="(min-width: 1061px)">
+                                        <div className="whitespace-nowrap mt-[50px]">
+                                            <Button onClick={() => setFilterActive(false)}>
+                                                <img src={filterWhite.src} className="min-w-[24px] min-h-[24px]" alt=""/>
+                                                Свернуть фильтры
+                                            </Button>
+                                        </div>
+                                    </Media>
                                 </div>
                             </div>
                     }

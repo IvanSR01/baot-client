@@ -54,7 +54,7 @@ const Select: FC<TypePropsSelect> = (props) => {
                     className={clsx(styles.heading, isOpen && styles["focus__heading"])}
                 >
                     <p>{placeholder}</p>
-                    {img && <Image width={20} height={20} src={img} alt={""}/>}
+                    {img && <Image width={compact ? 16 : 20} height={compact ? 16 : 20} src={img} alt={""}/>}
                 </div>
             )}
             {isOpen ? (

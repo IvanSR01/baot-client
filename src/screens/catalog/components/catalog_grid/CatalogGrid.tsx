@@ -8,7 +8,7 @@ export const CatalogGrid = () => {
     const {mapActive} = useCatalog();
     return mapActive ? <></> : (
         <Wrapper className="!mb-[100px]">
-            <div className="grid grid-cols-3 gap-x-[20px] gap-y-[80px]">
+            <div className="grid grid-cols-3 max-1060px:grid-cols-2 max-834px:!grid-cols-1 max-834px:gap-y-[2rem] max-1060px:gap-y-[40px] gap-x-[20px] gap-y-[80px]">
                 <CatalogCard />
                 <CatalogCard />
                 <CatalogCard />
