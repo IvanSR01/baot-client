@@ -117,13 +117,13 @@ const SearchFilter: FC = () => {
           </div>
           {isOpen && (
             <div ref={ref} className={styles.calendar}>
-              <div className={styles.layout}>
-                <MyCalendar
-                  setShow={setIsOpen}
-                  date={dateRange}
-                  setDate={setDateRange}
-                />
-              </div>
+              {/* <div className={styles.layout}> */}
+              <MyCalendar
+                setShow={setIsOpen}
+                date={dateRange}
+                setDate={setDateRange}
+              />
+              {/* </div> */}
             </div>
           )}
         </div>
