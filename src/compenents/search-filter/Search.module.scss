@@ -1,153 +1,176 @@
 .wrapper {
-	border-radius: 20px;
-	max-width: 1240px;
-	@media (max-width: 1200px) {
-		max-height: none;
-	}
-	.categorys {
-		width: 642px;
-		height: 56px;
-		background-color: #fff;
-		display: flex;
-		gap: 33px;
-		color: #000;
-		border-top-right-radius: 15px;
-		border-top-left-radius: 15px;
-		.item {
-			padding: 22px 17px;
-			min-width: 120px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			font-size: 16px;
-			color: #728487;
-			border-bottom: 4px solid #eeeeee;
-			cursor: pointer;
-			font-weight: 400;
-			white-space: nowrap;
-		}
-		.active {
-			font-weight: 600;
-			color: #00748c;
-			border-bottom: 4px solid #00748c;
-		}
-	}
-	.content {
-		background-color: #fff;
-		max-width: 1242px;
-		width: 90vw;
-		@media (min-width: 1800px) {
-			width: 80vw;
-		}
-		border-top-right-radius: 15px;
-		border-bottom-left-radius: 15px;
-		border-bottom-right-radius: 15px;
-		padding: 12px 40px;
-		display: flex;
-		// justify-content: space-between;
-		align-items: center;
-		min-height: 102px;
-		@media (max-width: 1500px) {
-			justify-content: center;
-			gap: 0;
-			padding: 12px 10px;
-		}
-		@media (max-width: 1200px) {
-			border-top-left-radius: 15px;
-		}
-		flex-wrap: wrap;
-		.selectLayout {
-			max-width: 350px;
-			display: flex;
-			justify-content: flex-start;
-			width: 26vw;
-			// border-right: 2px solid #eeeeee;
-			padding: 0 10px;
-			@media (max-width: 1200px) {
-				max-width: none;
-				width: 85vw;
-				padding: 6px;
-				border-bottom: 2px solid #eeeeee;
-				border-right: 0px;
-			}
-			@media (min-width: 1800px) {
-				width: 23vw;
-			}
-			min-width: 300px;
-		}
-		.border {
-			border: 1px solid #eeee;
-			height: 50px;
-			width: 1px;
-			@media (max-width: 1200px) {
-				display: none;
-			}
-		}
-		.buttonLayout {
-			margin-left: 30px;
-			width: 54px;
-			height: 54px;
-			@media (min-width: 1501px) and (max-width: 1600px) {
-				margin-left: 20px;
-			}
-			@media (max-width: 1200px) {
-				padding-top: 6px;
-				width: 85vw;
-				margin-left: 0;
-			}
-			@media (min-width: 1800px) {
-				width: 3vw;
-			}
-			svg {
-				font-size: 30px;
-			}
-			button {
-				border-radius: 16px;
-				height: 54px;
-			}
-		}
-		.date {
-			position: relative;
-			width: 100%;
-			@media (max-width: 1200px) {
-				margin: 0;
-				width: 85vw;
-			}
-			@media (max-width: 600px) {
-				width: 85vw;
-			}
-			color: #728487;
-			font-size: 18px;
-			min-height: 80px;
-			display: flex;
-			padding: 0 10px 0 20px;
-			margin: 0 10px;
-			align-items: center;
-			justify-content: space-between;
-			border: 1px solid transparent;
-			p {
-				font-weight: bold;
-			}
-			.range {
-				color: #000;
-			}
-		}
-		.calendar {
-			display: flex;
-			justify-content: center;
-		}
-		span {
-			color: #313131;
-			font-weight: 100;
-		}
+  border-radius: 20px;
+  max-width: 1240px;
+  @media (max-width: 1200px) {
+    max-height: none;
+  }
 
-		.focusDate {
-			border: 1px solid #00748c;
-			border-radius: 10px;
-			color: #000;
-			img {
-				color: #00748c;
-			}
-		}
-	}
+  .categorys {
+    width: fit-content;
+    //height: 56px;
+    background-color: #fff;
+    display: flex;
+    gap: 1.5rem;
+    color: #000;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 8px;
+
+    .item {
+      min-width: 154px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: #728487;
+      border-bottom: 3px solid #eeeeee;
+      cursor: pointer;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .active {
+      color: #00748c;
+      border-bottom: 3px solid #00748c;
+    }
+  }
+
+  .content {
+    background-color: #fff;
+    max-width: 1242px;
+    width: 90vw;
+    @media (min-width: 1800px) {
+      width: 80vw;
+    }
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 12px 40px;
+    display: flex;
+    // justify-content: space-between;
+    align-items: center;
+    min-height: 102px;
+    @media (max-width: 1500px) {
+      justify-content: center;
+      gap: 0;
+      padding: 12px 10px;
+    }
+    @media (max-width: 1200px) {
+      border-top-left-radius: 20px;
+    }
+    flex-wrap: wrap;
+
+    .selectLayout {
+      max-width: 350px;
+      display: flex;
+      grid-gap: 30px;
+      justify-content: flex-start;
+      width: 26vw;
+      // border-right: 2px solid #eeeeee;
+      padding: 0 10px;
+      @media (max-width: 1200px) {
+        max-width: none;
+        width: 85vw;
+        padding: 6px;
+        border-bottom: 2px solid #eeeeee;
+        border-right: 0px;
+      }
+      @media (min-width: 1800px) {
+        width: 23vw;
+      }
+      min-width: 300px;
+    }
+
+    .border {
+      border: 1px solid #eeee;
+      height: 50px;
+      width: 1px;
+      @media (max-width: 1200px) {
+        display: none;
+      }
+    }
+
+    .buttonLayout {
+      margin-left: 30px;
+      width: 54px;
+      height: 54px;
+      @media (min-width: 1501px) and (max-width: 1600px) {
+        margin-left: 20px;
+      }
+      @media (max-width: 1200px) {
+        padding-top: 6px;
+        width: 85vw;
+        margin-left: 0;
+      }
+      @media (min-width: 1800px) {
+        width: 3vw;
+      }
+
+      svg {
+        font-size: 30px;
+      }
+
+      button {
+        border-radius: 16px;
+        height: 54px;
+      }
+    }
+
+    .date {
+      position: relative;
+      width: 100%;
+      @media (max-width: 1200px) {
+        margin: 0;
+        width: 85vw;
+      }
+      @media (max-width: 600px) {
+        width: 85vw;
+      }
+      color: #728487;
+      font-size: 18px;
+      min-height: 80px;
+      display: flex;
+      padding: 0 10px 0 20px;
+      margin: 0 10px;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid transparent;
+
+      p {
+        font-weight: bold;
+      }
+
+      .range {
+        color: #000;
+      }
+    }
+
+    .calendar {
+      display: flex;
+      justify-content: center;
+    }
+
+    span {
+      color: #313131;
+      font-weight: 100;
+    }
+
+    .focusDate {
+      border: 1px solid #00748c;
+      border-radius: 10px;
+      color: #000;
+
+      img {
+        color: #00748c;
+      }
+    }
+  }
+
+  &.compact {
+    .content {
+      width: fit-content;
+      height: fit-content;
+      min-height: fit-content;
+      padding: 0;
+    }
+  }
 }

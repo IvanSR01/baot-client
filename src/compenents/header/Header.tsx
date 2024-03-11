@@ -12,32 +12,43 @@ import { setIsOpen } from "@/store/slice/modal.slice";
 import Link from "next/link";
 import { toast } from "react-toastify";
 import { useAuth } from "./useAuth";
+import {logotype} from "@/assets/icons";
+import {usePathname} from "next/navigation";
+import SearchFilter from "@/compenents/search-filter/SearchFilter.tsx";
 const Header: FC = () => {
   const isAuth = useAuth();
   const dispatch = useAppDispatch();
+  const path = usePathname();
+
   return (
     <header className={styles.header}>
       <Wrapper>
         <div className={styles.container}>
           <Link href="/">
-            <img className={styles.logo} src={logo.src} alt="" />
+            <img className={styles.logo} src={logotype.src} alt="" />
           </Link>
+          {
+            path.includes("/catalog") ?
+                <>
+                  <SearchFilter compact/>
+                </> : <></>
+          }
           <div className={styles.links}>
-            <Image src={favorite} alt="" width={40} height={30} />
+            <Image src={favorite} alt="" width={24} height={24} />
             {isAuth ? (
               <Image
                 src={profile}
                 alt=""
-                width={40}
-                height={30}
+                width={24}
+                height={24}
                 onClick={() => toast.info("Вы автрозиравонны")}
               />
             ) : (
               <Image
                 src={profile}
                 alt=""
-                width={40}
-                height={30}
+                width={24}
+                height={24}
                 onClick={() => dispatch(setIsOpen(true))}
               />
             )}

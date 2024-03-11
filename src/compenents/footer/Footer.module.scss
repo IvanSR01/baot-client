@@ -13,7 +13,7 @@
 		flex-wrap: wrap;
 		justify-content: space-between;
 		gap: 20px;
-		padding: 52px 20vw 38px;
+		padding: 52px 16.5vw 38px;
 		@media (max-width: 1000px) {
 			justify-content: flex-start;
 			padding: 30px 5vw;
@@ -46,8 +46,9 @@
 			gap: 10px;
 			font-weight: 400;
 			a {
-				font-size: 16px;
+				font-size: 1rem;
 				line-height: 23px;
+				letter-spacing: -0.02rem;
 				text-wrap: balance;
 				width: 260px;
 				flex-grow: 1;
@@ -89,13 +90,13 @@
 	}
 	.row__two {
 		border-top: 1px solid #fff;
-		padding: 0 20vw;
+		padding: 20px 16.5vw;
 		@media (max-width: 600px) {
 			padding: 5px 5vw 0 5vw;
 		}
 		color: #fff;
 		display: flex;
-		gap: 40px;
+		gap: 20px;
 		align-items: center;
 		font-weight: bold;
 		font-size: 20px;
@@ -103,11 +104,8 @@
 			font-weight: 900;
 			display: flex;
 			align-items: center;
-			gap: 10px;
+			gap: .5rem;
 			font-size: 25px;
-			img {
-				height: 100px;
-			}
 		}
 	}
 }

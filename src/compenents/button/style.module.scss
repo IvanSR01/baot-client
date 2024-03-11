@@ -1,0 +1,60 @@
+.button {
+  width: 100%;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  color: white;
+  background: #00748C;
+  border: 1px solid #00748C;
+  cursor: pointer;
+  justify-content: center;
+
+  &.large {
+    padding: 13px 1.5rem;
+    font-size: 1.125rem;
+    line-height: 21.6px;
+    font-weight: 600;
+    letter-spacing: -0.01rem;
+    grid-gap: 10px;
+  }
+
+  &.medium {
+    padding: 12px 1.5rem;
+    font-size: 1rem;
+    line-height: 19.2px;
+    font-weight: 600;
+    letter-spacing: -0.01rem;
+    grid-gap: 12px;
+  }
+
+  &.small {
+    padding: 10.5px .75rem;
+    font-size: 0.875rem;
+    line-height: 21px;
+    font-weight: 700;
+    letter-spacing: -0.03rem;
+    grid-gap: 8px;
+  }
+
+  &.primary {
+    background: #00748C;
+    border-color: #00748C;
+    color: white;
+  }
+  &.secondary {
+    background: #EEF3F4;
+    border-color: #EEF3F4;
+    color: #00748C;
+  }
+  &.transparent-primary {
+    background: white;
+    border-color: #EEEEEE;
+    color: #00748C;
+  }
+  &.transparent-black {
+    background: white;
+    border-color: #EEEEEE;
+    color: #18292D;
+  }
+
+}

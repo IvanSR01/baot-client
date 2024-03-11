@@ -1,0 +1,41 @@
+.button {
+  width: 24px;
+  height: 16px;
+  border-radius: 107px;
+  background: #EEF3F4;
+  position: relative;
+  transition: 150ms ease-in background;
+}
+
+.button::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #00748C;
+  transition: 250ms ease-in background;
+  left: 2px;
+  top: 2px;
+  position: absolute;
+}
+
+.button.active {
+  background: #00748C;
+}
+
+.button.active::before {
+  left: auto;
+  right: 2px;
+  background: #eef3f4;
+}
+.label {
+  font-size: 0.875rem;
+  line-height: 21px;
+  letter-spacing: -0.03rem;
+  font-weight: 700;
+  color: #728487;
+  transition: 250ms ease-in-out color;
+}
+.label.active {
+  color: #18292D;
+}

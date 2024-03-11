@@ -7,16 +7,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
   .heading {
     min-height: 80px;
     display: flex;
-    padding: 0 10px 0 20px;
+    padding: 0 10px 0 1rem;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     border: 1px solid transparent;
 		color: #728487;
     cursor: pointer;
+
+
     p {
       font-weight: bold;
 			font-size: 18px;
@@ -82,4 +85,19 @@
 	.ul::-webkit-scrollbar {
 		width: 0;
 	}
+  &.compact {
+    height: 42px;
+    .heading {
+      min-height: 42px;
+      max-height: 42px;
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+    .ul {
+      top: calc(100% + 4px);
+    }
+    * {
+      font-size: 14px !important;
+    }
+  }
 }
