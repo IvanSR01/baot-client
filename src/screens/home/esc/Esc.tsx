@@ -1,14 +1,9 @@
-import icon from '@/assets/img/Mask group.svg'
 import CustomLink from '@/shared/ui/custom-link/CustomLink'
 import { FC } from 'react'
 import { IoIosArrowDown } from 'react-icons/io'
 import styles from './Esc.module.scss'
 import FullEsc from './FullEsc/FullEsc'
 import { ESC } from '@/shared/var/esc'
-import Wrapper from '@/compenents/wrapper/Wrapper'
-import img from '@/assets/img/image 20.png'
-import Image from 'next/image'
-
 const Esc: FC = () => {
 	return (
 		<>

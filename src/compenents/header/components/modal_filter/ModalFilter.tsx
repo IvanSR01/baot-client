@@ -1,7 +1,7 @@
 "use client"
 import {useHeader} from "@/compenents/header/HeaderProvider.tsx";
 import {calendarSmall, locationSmall, materialSymbolsClose, searchHeader} from "@/assets/icons";
-import {Dispatch, FC, SetStateAction, useEffect, useRef, useState} from "react";
+import {Dispatch, FC, Fragment, SetStateAction, useEffect, useRef, useState} from "react";
 import {useAppDispatch, useAppSelector} from "@/hook/useActions.ts";
 import {categorys, city, subCategorys} from "@/shared/var/categorys.ts";
 import icon from "@/assets/img/arrow.svg";
@@ -172,13 +172,15 @@ const ModalFilterSelect: FC<IModalFilterSelectProps> = (props) => {
                 {
                     items.map(
                         (el, ind) =>
-                            <button
-                                className="text-[14px] leading-[21px] text-left py-[12px] px-[16px]"
-                                onClick={() => {
-                                    onChange(ind)
-                                    setActive(false)
-                                }}
-                            >{el}</button>
+                            <Fragment key={ind}>
+                                <button
+                                    className="text-[14px] leading-[21px] text-left py-[12px] px-[16px]"
+                                    onClick={() => {
+                                        onChange(ind)
+                                        setActive(false)
+                                    }}
+                                >{el}</button>
+                            </Fragment>
                     )
                 }
             </div>
