@@ -62,9 +62,10 @@ const ResetModal: FC<TypePropsResetModel> = ({
 						className={clsx(styles.input, error ? styles.error : styles.border)}
 						id={'phone'}
 						placeholder={'Телефон'}
+						type='tel'
 						value={phone}
 						onChange={e => setPhone(e.target.value)}
-						maxLength={39}
+						maxLength={20}
 					/>
 					<label htmlFor={'phone'}>Телефон</label>
 					{error && <p>{error}</p>}

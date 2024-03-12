@@ -38,7 +38,7 @@ const Phone: FC<TypePropsPhone> = ({ isLogin, onClick, onSubmit }) => {
 						placeholder={'Код'}
 						value={pincode}
 						onChange={e => setPincode(e.target.value)}
-						maxLength={39}
+						maxLength={20}
 					/>
 					<label
 						htmlFor={'bic'}

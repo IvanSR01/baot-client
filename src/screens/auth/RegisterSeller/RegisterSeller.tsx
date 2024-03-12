@@ -92,11 +92,25 @@ const RegisterSeller: FC = () => {
                 key={i}
               >
                 <input
-                  {...register(item.name, { required: "Заполните поле", maxLength: 39 })}
+                  {...register(item.name, {
+                    required: "Заполните поле",
+                    maxLength: 20,
+                    pattern:
+                      item.name === "phone"
+                        ? {
+                            value: /\s?\(?\d{3}\)?-?\d{2}-?\d{2}/,
+                            message: "Некорректный формат телефона",
+                          }
+                        : {
+                            value: /.*/, // Регулярное выражение для любой строки
+                            message: "", // Пустая строка, поскольку это не регулярное выражение
+                          },
+                  })}
                   className={clsx(
                     styles.input,
                     errors[item.name] ? styles.error : styles.border
                   )}
+                  type={item.name === "phone" ? "tel" : "text"}
                   id={item.name}
                   placeholder={item.placeholder}
                 />
@@ -116,13 +130,16 @@ const RegisterSeller: FC = () => {
               )}
             >
               <input
-                {...register("password", { required: "Заполните поле", maxLength: 39 })}
+                {...register("password", {
+                  required: "Заполните поле",
+                  maxLength: 20,
+                })}
                 className={clsx(
                   styles.input,
                   errors["password"] ? styles.error : styles.border
                 )}
                 id={"password"}
-                type={viewPassword.password ? "password" : "text"}
+                type={!viewPassword.password ? "password" : "text"}
                 placeholder={"Пароль"}
               />
               <label htmlFor={"password"}>{"Пароль"}</label>
@@ -147,13 +164,16 @@ const RegisterSeller: FC = () => {
               )}
             >
               <input
-                {...register("confirm", { required: "Заполните поле", maxLength: 39 })}
+                {...register("confirm", {
+                  required: "Заполните поле",
+                  maxLength: 20,
+                })}
                 className={clsx(
                   styles.input,
                   errors["confirm"] ? styles.error : styles.border
                 )}
                 id={"confirm"}
-                type={viewPassword.confirm ? "password" : "text"}
+                type={!viewPassword.confirm ? "password" : "text"}
                 placeholder={"Повтор пароля"}
               />
               <label htmlFor={"confirm"}>{"Повтор пароля"}</label>
@@ -178,7 +198,10 @@ const RegisterSeller: FC = () => {
               )}
             >
               <input
-                {...register("personalUrl", { required: "Заполните поле", maxLength: 39 })}
+                {...register("personalUrl", {
+                  required: "Заполните поле",
+                  maxLength: 20,
+                })}
                 className={clsx(
                   styles.input,
                   errors["personalUrl"] ? styles.error : styles.border
@@ -218,7 +241,7 @@ const RegisterSeller: FC = () => {
                     )}
                   >
                     <input
-                      {...register("itn", {maxLength: 39})}
+                      {...register("itn", { maxLength: 39 })}
                       className={clsx(
                         styles.input,
                         errors["itn"] ? styles.error : styles.border
@@ -238,7 +261,7 @@ const RegisterSeller: FC = () => {
                     )}
                   >
                     <input
-                      {...register("cardNumber", {maxLength: 39})}
+                      {...register("cardNumber", { maxLength: 39 })}
                       className={clsx(
                         styles.input,
                         errors["cardNumber"] ? styles.error : styles.border
@@ -261,7 +284,10 @@ const RegisterSeller: FC = () => {
                     )}
                   >
                     <input
-                      {...register("nameACompany", { required: true, maxLength: 39 })}
+                      {...register("nameACompany", {
+                        required: true,
+                        maxLength: 39,
+                      })}
                       className={clsx(
                         styles.input,
                         errors["nameACompany"] ? styles.error : styles.border
@@ -306,7 +332,10 @@ const RegisterSeller: FC = () => {
                     )}
                   >
                     <input
-                      {...register("paymentAccount", { required: false, maxLength: 39 })}
+                      {...register("paymentAccount", {
+                        required: false,
+                        maxLength: 39,
+                      })}
                       className={clsx(
                         styles.input,
                         errors["paymentAccount"] ? styles.error : styles.border
