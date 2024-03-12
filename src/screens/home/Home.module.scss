@@ -47,6 +47,7 @@
       .arrowPrev,
       .arrowNext {
         position: absolute !important;
+				cursor: pointer;
         top: 50%;
         transform: translateY(-50%);
       }

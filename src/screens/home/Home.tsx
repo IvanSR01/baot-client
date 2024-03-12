@@ -54,7 +54,7 @@ const Home: FC<TypePropsHome> = () => {
       <Wrapper>
         <div className={styles.container}>
           <div className={styles.section}>
-            <IconButton
+            {/* <IconButton
               placeholder="<"
               size="lg"
               color="white"
@@ -63,10 +63,15 @@ const Home: FC<TypePropsHome> = () => {
               onClick={() => scrollUp()}
               // disabled={selectedCategory === 0}
               className={styles.arrowPrev}
-            >
-              <Image src={iconPrev} alt="prev" />
-            </IconButton>
-            <IconButton
+            > */}
+            <Image
+              src={iconPrev}
+              alt="prev"
+              className={styles.arrowPrev}
+              onClick={() => scrollUp()}
+            />
+            {/* </IconButton> */}
+            {/* <IconButton
               placeholder=">"
               size="lg"
               color="black"
@@ -76,7 +81,13 @@ const Home: FC<TypePropsHome> = () => {
               className={styles.arrowNext}
             >
               <Image src={iconNext} alt="next" />
-            </IconButton>
+            </IconButton> */}
+            <Image
+              src={iconNext}
+              alt="next"
+              className={styles.arrowNext}
+              onClick={() => scrollDown()}
+            />
             <h1>
               Аренда яхты{" "}
               <span>
