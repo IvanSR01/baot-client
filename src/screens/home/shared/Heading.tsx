@@ -12,7 +12,7 @@ const Heading: FC<{ heading: string; link: string; style?: string }> = ({
   const width = useSize();
   return (
     <div className={style ? style : styles.heading}>
-      <h1>{heading}</h1>
+      <h2 className="text-[48px] leading-[57.6px] tracking-2% text-[#18292D] font-medium">{heading}</h2>
       {width <= 700 ? (
         <></>
       ) : (

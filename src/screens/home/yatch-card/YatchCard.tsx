@@ -11,7 +11,7 @@ const YatchCard: FC<TypeYatchCard> = ({ img, className, type }) => {
     <div className={clsx(styles.card, className)}>
       <div className={clsx(styles.upper, "")}></div>
       <div className={clsx(styles.img)}>
-        <Image src={img} alt={""} width={0} height={0} />
+        <Image src={img} alt={""} width={0} height={0}  className="max-h-[300px] max-375px:max-h-[330px]" />
       </div>
 
       <div className={styles.row}>
