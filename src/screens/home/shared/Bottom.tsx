@@ -11,8 +11,8 @@ const Bottom: FC<{ link: string }> = ({ link }) => {
 			{width <= 700 ? (
 				<div
 				>
-					<CustomLink path='/'>
-						Все {link} в <City />
+					<CustomLink path='catalog'>
+						Все {link} в q <City />
 					</CustomLink>
 				</div>
 			) : (

@@ -16,7 +16,7 @@ const Heading: FC<{ heading: string; link: string; style?: string }> = ({
       {width <= 700 ? (
         <></>
       ) : (
-        <CustomLink path="/">
+        <CustomLink path="/catalog">
           Все {link} в <City />
         </CustomLink>
       )}

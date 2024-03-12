@@ -17,6 +17,7 @@ import MyCalendar from "../calendar/Calendar";
 import styles from "./Search.module.scss";
 import formatDate from "@/shared/utils/format-date";
 import {calendarSmall, locationSmall, searchFilter} from "@/assets/icons";
+import Link from "next/link";
 
 interface ISearchFilterProps {
     compact?: boolean;
@@ -148,9 +149,11 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                             </div>
                             <div className={styles.border}></div>
                             <div className={styles.buttonLayout}>
-                                <Button>
-                                    <CiSearch/> {width >= 1200 ? <></> : <>Поиск</>}
-                                </Button>
+                                <Link href="/catalog">
+                                    <Button>
+                                        <CiSearch/> {width >= 1200 ? <></> : <>Поиск</>}
+                                    </Button>
+                                </Link>
                             </div>
                         </> :
                         <div
@@ -231,9 +234,9 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                                     img={locationSmall.src}
                                 />
                             </div>
-                            <button className="w-fit bg-[#FA1153] p-[13px] rounded-[8px] ml-[-5px]">
-                                <img width="18px" height="18px" src={searchFilter.src} alt=""/>
-                            </button>
+                                <button className="w-fit bg-[#FA1153] p-[13px] rounded-[8px] ml-[-5px]">
+                                    <img width="18px" height="18px" src={searchFilter.src} alt=""/>
+                                </button>
                         </div>
                 }
             </div>
