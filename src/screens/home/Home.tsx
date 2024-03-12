@@ -28,18 +28,39 @@ const Home: FC<TypePropsHome> = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const width = useSize();
   const scrollUp = () => {
-    console.log(containerRef?.current?.scrollLeft);
     if (containerRef.current) {
-      containerRef.current.scrollLeft -= width <= 1200 ? 354 : 420; // Измените значение, чтобы увеличить скорость прокрутки
+      const containerWidth = containerRef.current.clientWidth;
+
+      // Карточка представляет собой половину контейнера
+      const cardWidth =
+        width <= 1200 ? containerWidth / 2 : containerWidth / 3.005;
+
+      // Добавляем gap между карточками (в данном случае, 9.74px)
+      const gap = 9.74;
+
+      const totalCardWidth = cardWidth + gap;
+
+      containerRef.current.scrollLeft -= totalCardWidth;
     }
   };
 
   const scrollDown = () => {
-    console.log(containerRef?.current?.scrollLeft);
     if (containerRef.current) {
-      containerRef.current.scrollLeft += width <= 1200 ? 354 : 420; // Измените значение, чтобы увеличить скорость прокрутки
+      const containerWidth = containerRef.current.clientWidth;
+
+      // Карточка представляет собой половину контейнера
+      const cardWidth =
+        width <= 1200 ? containerWidth / 2 : containerWidth / 3.005;
+
+      // Добавляем gap между карточками (в данном случае, 9.74px)
+      const gap = 9.74;
+
+      const totalCardWidth = cardWidth + gap;
+
+      containerRef.current.scrollLeft += totalCardWidth;
     }
   };
+
   return (
     <div className={styles.wrapper}>
       <Header />

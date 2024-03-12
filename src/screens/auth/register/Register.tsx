@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 import { errorCatch } from "@/$api/api.helpers";
 import Header from "@/compenents/header/Header";
@@ -16,6 +17,8 @@ import { FC, useState } from "react";
 import { useForm } from "react-hook-form";
 import { IoIosArrowDown } from "react-icons/io";
 import styles from "../Auth.module.scss";
+import { useCheckPassword } from "@/hook/useCheckPassword";
+import { patterns } from "@/shared/var/patterns";
 
 const Register: FC = () => {
   const [agree, setAgree] = useState({
@@ -52,11 +55,11 @@ const Register: FC = () => {
     },
   });
   const onSubmit = async (data: any) => {
-    console.log(data);
-    if (data.password !== data.confirm)
-      return setError("confirm", {
-        message: "Пароль не совпадают",
-      });
+    useCheckPassword(data.password, data.confirm, (e: string) =>
+      setError("password", {
+        message: e,
+      })
+    );
     mutateHas({ phone: data.phone, email: data.email });
   };
   const [viewPassword, setViewPassword] = useState({
@@ -85,16 +88,12 @@ const Register: FC = () => {
                   {...register(item.name, {
                     required: "Заполните поле",
                     maxLength: 20,
-                    pattern:
-                      item.name === "phone"
-                        ? {
-                            value: /\s?\(?\d{3}\)?-?\d{2}-?\d{2}/,
-                            message: "Некорректный формат телефона",
-                          }
-                        : {
-                            value: /.*/, // Регулярное выражение для любой строки
-                            message: "", // Пустая строка, поскольку это не регулярное выражение
-                          },
+                    pattern: patterns[item.name]
+                      ? patterns[item.name]
+                      : {
+                          value: /.*/, // Регулярное выражение для любой строки
+                          message: "", // Пустая строка, поскольку это не регулярное выражение
+                        },
                   })}
                   className={clsx(
                     styles.input,

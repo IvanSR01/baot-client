@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 import { errorCatch } from "@/$api/api.helpers";
 import Header from "@/compenents/header/Header";
@@ -19,6 +20,8 @@ import { IoIosArrowDown, IoIosDocument } from "react-icons/io";
 import styles from "../Auth.module.scss";
 import AuthSelect from "../select/Select";
 import { PiLinkSimpleHorizontalFill } from "react-icons/pi";
+import { patterns } from "@/shared/var/patterns";
+import { useCheckPassword } from "@/hook/useCheckPassword";
 const RegisterSeller: FC = () => {
   const options = ["Физлица и самозанятые", "ООО и ИП"];
   const [selected, setSelected] = useState("");
@@ -63,10 +66,11 @@ const RegisterSeller: FC = () => {
     },
   });
   const onSubmit = async (data: any) => {
-    if (data.password !== data.confirm)
-      return setError("confirm", {
-        message: "Пароль не совпадают",
-      });
+    useCheckPassword(data.password, data.confirm, (e: string) =>
+      setError("password", {
+        message: e,
+      })
+    );
     mutateHas({ phone: data.phone, email: data.email });
   };
   const [viewPassword, setViewPassword] = useState({
@@ -95,16 +99,12 @@ const RegisterSeller: FC = () => {
                   {...register(item.name, {
                     required: "Заполните поле",
                     maxLength: 20,
-                    pattern:
-                      item.name === "phone"
-                        ? {
-                            value: /\s?\(?\d{3}\)?-?\d{2}-?\d{2}/,
-                            message: "Некорректный формат телефона",
-                          }
-                        : {
-                            value: /.*/, // Регулярное выражение для любой строки
-                            message: "", // Пустая строка, поскольку это не регулярное выражение
-                          },
+                    pattern: patterns[item.name]
+                      ? patterns[item.name]
+                      : {
+                          value: /.*/, // Регулярное выражение для любой строки
+                          message: "", // Пустая строка, поскольку это не регулярное выражение
+                        },
                   })}
                   className={clsx(
                     styles.input,
