@@ -58,6 +58,7 @@ const AuthModal: FC<TypePropsAuthModal> = ({
 						id={'phoneOrEmail'}
 						placeholder={'Телефон или почта'}
 						value={phoneOrEmail}
+						maxLength={39}
 						onChange={e => setPhoneOrEmail(e.target.value)}
 					/>
 					<label

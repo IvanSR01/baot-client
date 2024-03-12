@@ -1,13 +1,14 @@
 .wrapper {
-	width: 100vw;
-	overflow-y: scroll;
-	@media (min-width: 800px) {
-		overflow-y: visible;
-	}
-	white-space:nowrap;
+  width: 100vw;
+  overflow-y: scroll;
+  @media (min-width: 800px) {
+    overflow-y: visible;
+  }
+  white-space: nowrap;
+  scrollbar-width: none;
   .categorys {
-		white-space:nowrap;
-		padding-bottom: 30px;
+    white-space: nowrap;
+    padding-bottom: 30px;
     width: 800px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -34,4 +35,8 @@
 
 .wrapper::-webkit-scrollbar {
   width: 0;
+  display: none;
+}
+.wrapper::-ms-scrollbar {
+  display: none;
 }

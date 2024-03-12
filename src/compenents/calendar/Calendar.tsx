@@ -7,9 +7,12 @@ const MyCalendar: FC<TypePropsCalendar> = ({ setDate, date, setShow, ref }) => {
   const [dateRange, setDateRange] = useState<any>([new Date(), new Date()]);
 
   const handleDateChange = (value: any) => {
-    if (date[0] && date[1]) setShow && setShow(false);
-    setDateRange(value);
-    setDate(value);
+    if (value >= new Date()) {
+      if (date[0] && date[1]) setShow && setShow(false);
+      setDateRange(value);
+      setDate(value);
+    } else {
+    }
   };
 
   return (
@@ -19,7 +22,9 @@ const MyCalendar: FC<TypePropsCalendar> = ({ setDate, date, setShow, ref }) => {
         value={dateRange}
         selectRange={true}
         className={"calendar"}
-        navigationLabel={({ date, label, locale, view }) => label.replace('г.', '')}
+        navigationLabel={({ date, label, locale, view }) =>
+          label.replace("г.", "")
+        }
       />
     </div>
   );

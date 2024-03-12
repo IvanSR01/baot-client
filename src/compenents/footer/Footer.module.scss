@@ -1,116 +1,120 @@
 .wrapper {
-	background: url('../../assets/img/bg-footer.png') no-repeat center;
-	background-size: cover;
-	width: 100vw;
-	display: flex;
-	justify-content: center;	
-	.container {
-		// max-width: 1240px;
-	}
-	.row {
-		// max-width: 1240px;
-		width: 100vw;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		gap: 20px;
-		padding: 52px 20vw 38px;
-		@media (max-width: 1000px) {
-			padding: 30px 4vw 0px 4vw;
-			justify-content: space-between;
-			gap: 10px;
-		}
-		color: #fff;
-		font-size: 20px;
-		@media (max-width: 600px) {
-			padding: 30px 10vw 0px 5vw;
-			font-size: 14px;
-		}
-		a {
-			color: #fff;
-			text-decoration: none;
-		}
+  background: url("../../assets/img/bg-footer.png") no-repeat center;
+  background-size: cover;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  .container {
+    // max-width: 1240px;
+  }
+  .row {
+    // max-width: 1240px;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 52px 20vw 38px;
+    @media (max-width: 1200px) {
+      padding: 30px 4vw 0px 4vw;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    color: #fff;
+    font-size: 20px;
+    @media (max-width: 600px) {
+      padding: 30px 10vw 0px 5vw;
+      font-size: 14px;
+    }
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
 
-		h4 {
-			font-size: 18px;
-			line-height: 21px;
-			@media (max-width: 600px) {
-				margin-top: 10px;
-				font-size: 16px;
-			}
-			font-weight: bold;
-		}
-		.items {
-			margin-top: 20px;
-			width: 260px;
-			display: flex;
-			flex-wrap: wrap;
-			gap: 10px;
-			font-weight: 400;
-			a {
-				font-size: 16px;
-				line-height: 23px;
-				text-wrap: balance;
-				width: 260px;
-				flex-grow: 1;
-			}
+    h4 {
+      font-size: 18px;
+      line-height: 21px;
+			
+      @media (max-width: 600px) {
+        margin-top: 10px;
+        font-size: 16px;
+      }
+      font-weight: bold;
+    }
+    .items {
+      margin-top: 20px;
+      width: 260px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-weight: 400;
+      a {
+        font-size: 16px;
+        line-height: 23px;
+        text-wrap: balance;
+        width: 260px;
+        flex-grow: 1;
+      }
 
-			&.social {
-				margin-top: 12px;
+      &.social {
+        margin-top: 12px;
 
-				img {
-					margin-right: 20px;
-				}
+        img {
+          margin-right: 20px;
+        }
 
-				&:first-of-type {
-					margin-bottom: 24px;
-				}
-			}
-		}
-		.links:nth-child(1) {
-			max-width: 101.5px;
-		}
-		.links:nth-child(2) {
-			max-width: 187px;
-		}
-		.items:nth-child(3) {
-			max-width: 187px;
-		}
-		.mes {
-			@media (max-width: 600px) {
-				margin-top: 20px;
-				display: flex;
-				justify-content: space-between;
-				width: 100vw;
-				.links {
-					width: 50%;
-				}
-				max-width: 335px;
-			}
-		}
-		margin-bottom: 10px;
-	}
-	.row__two {
-		border-top: 1px solid #fff;
-		padding: 0 20vw;
-		@media (max-width: 600px) {
-			padding: 5px 5vw 0 5vw;
-		}
-		color: #fff;
-		display: flex;
-		gap: 40px;
-		align-items: center;
-		font-weight: bold;
-		font-size: 20px;
-		.logo {
-			font-weight: 900;
-			display: flex;
-			align-items: center;
-			gap: 10px;
-			font-size: 25px;
-			img {
-				height: 100px;
-			}
-		}
-	}
+        &:first-of-type {
+          margin-bottom: 24px;
+        }
+      }
+    }
+    .links:nth-child(1) {
+      max-width: 101.5px;
+    }
+    .links:nth-child(2) {
+      max-width: 187px;
+    }
+    .items:nth-child(3) {
+      max-width: 187px;
+    }
+    .mes {
+      @media (max-width: 600px) {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        width: 100vw;
+        .links {
+          width: 50%;
+        }
+        max-width: 335px;
+      }
+    }
+    margin-bottom: 10px;
+  }
+  .row__two {
+    border-top: 1px solid #fff;
+    padding: 0 10vw;
+		@media (max-width: 1200px) {
+      padding: 0px 4vw 0px 4vw;
+    }
+    @media (max-width: 600px) {
+      padding: 0px 10vw 0px 5vw;
+    }
+    color: #fff;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+    .logo {
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 25px;
+      img {
+        height: 100px;
+      }
+    }
+  }
 }

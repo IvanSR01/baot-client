@@ -1,9 +1,10 @@
 .card {
 	position: relative;
-	min-width: calc(100% / 3);
+	// min-width: calc(100% / 3);
+	min-width: 406px;
 
 	@media (max-width: 1440px) {
-		min-width: 50%;
+		// min-width: 50%;
 
 		/* &:nth-of-type(3) {
 			display: none;
@@ -11,12 +12,7 @@
 	}
 
 	@media (max-width: 600px) {
-		min-width: 101%;
-		/* width: 100%; */
-
-		/* &:nth-of-type(2) {
-			display: none;
-		} */
+		min-width: 335px;
 	}
 
 	background-color: #fff;
@@ -28,7 +24,10 @@
 	}
 	.img {
 		img {
-			width: 400;
+			width: 406px;
+			@media (max-width: 600px) {
+				width: 335px;
+			}
 			height: 300px;
 			border-top-left-radius: 20px;
 			border-top-right-radius: 20px;

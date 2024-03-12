@@ -15,7 +15,7 @@ const Workshops: FC = () => {
               link="популярные мастерские"
             />
             <div className={styles.items}>
-              {[...Array(8)].map((_, i) => (
+              {[...Array(6)].map((_, i) => (
                 <div className={styles.item} key={i}>
                   <div>
                     <img src={icon.src} alt="" />

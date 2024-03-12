@@ -53,6 +53,7 @@ const ChangeModal: FC<TypePropsChangeModal> = ({ onClick, setPrevPage }) => {
 						id={'password'}
 						placeholder={'Пароль'}
 						value={password}
+						maxLength={39}
 						onChange={e => setPassword(e.target.value)}
 					/>
 					<label htmlFor={'password'}>Пароль</label>

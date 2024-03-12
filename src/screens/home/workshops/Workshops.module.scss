@@ -70,8 +70,19 @@
 	.items::-webkit-scrollbar {
 		width: 0;
 	}
+	.items::-webkit-scrollbar {
+		width: 0;
+		display: none;
+	}
+	.items::-ms-scrollbar {
+		display: none;
+	}
 }
 
 .wrapper::-webkit-scrollbar {
-  width: 0;
+	width: 0;
+	display: none;
+}
+.wrapper::-ms-scrollbar {
+	display: none;
 }

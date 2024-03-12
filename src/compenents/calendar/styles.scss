@@ -2,24 +2,27 @@
   position: absolute;
   top: 100px;
   z-index: 101;
-	width: 100%;
+  width: 100%;
   .calendar {
     width: 100%;
     border: 1px solid #00748c;
     font-size: 18px;
-		border-radius: 8px;
-		box-shadow: 4px 4px 13.7px 0px rgba(10, 80.5, 85, 0.1);
-		padding: 10px;
-		gap: 20px;
+    border-radius: 8px;
+    box-shadow: 4px 4px 13.7px 0px rgba(10, 80.5, 85, 0.1);
+    padding: 10px;
+    gap: 20px;
   }
-
 }
 
 
 .react-calendar__month-view__days__day {
   margin: 4px; /* Увеличьте или уменьшите значение по вашему усмотрению */
 }
-
+.react-calendar__month-view__days {
+	width: 100% !important;
+	display: flex;
+	justify-content: space-between;
+}
 .react-calendar__tile--hasActive {
   color: #728487; /* Цвет для прошедших дней */
 }
@@ -30,12 +33,12 @@
   top: 14.5px;
   left: 12.79px;
   font-size: 14px;
-  color: #FFFFFF;
+  color: #ffffff;
   line-height: 21px;
   letter-spacing: -0.42px;
-  background-color: #00748C;
-	border-radius: 8px;
-	padding: 15px;
+  background-color: #00748c;
+  border-radius: 8px;
+  padding: 15px;
 }
 
 .react-calendar__tile {
@@ -44,9 +47,9 @@
   color: #000000;
   line-height: 21px;
   letter-spacing: -0.42px;
-  cursor: pointer; 
-	border-radius: 8px;
-	padding: 15px;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 15px;
 }
 
 .react-calendar__tile--now,
@@ -58,13 +61,13 @@
 }
 
 .react-calendar__tile--now {
-  background-color: #00748C !important; /* Цвет для текущего дня */
-  color: #FFFFFF;
+  background-color: #00748c !important; /* Цвет для текущего дня */
+  color: #ffffff;
 }
 
 .react-calendar__tile--active {
-  background-color: #00748C !important; /* Цвет для других выделенных дней */
-  color: #FFFFFF;
+  background-color: #00748c !important; /* Цвет для других выделенных дней */
+  color: #ffffff;
 }
 
 .react-calendar__navigation__arrow {
@@ -85,4 +88,12 @@
 }
 .react-calendar__navigation__label {
   text-transform: capitalize;
+}
+
+.react-calendar__navigation__arrow:hover {
+  background-color: transparent; /* или любой другой цвет или свойство, которое вы хотите использовать */
+}
+
+div.react-calendar__navigation button.react-calendar__navigation__arrow:hover {
+  background-color: transparent;
 }

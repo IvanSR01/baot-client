@@ -64,6 +64,7 @@ const ResetModal: FC<TypePropsResetModel> = ({
 						placeholder={'Телефон'}
 						value={phone}
 						onChange={e => setPhone(e.target.value)}
+						maxLength={39}
 					/>
 					<label htmlFor={'phone'}>Телефон</label>
 					{error && <p>{error}</p>}
