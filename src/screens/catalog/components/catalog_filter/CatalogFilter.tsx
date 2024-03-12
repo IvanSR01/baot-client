@@ -26,7 +26,7 @@ export const CatalogFilter: FC<{className?: string}> = ({className = ""}) => {
                 <Wrapper>
                     {
                         !filterActive ? <></> :
-                            <div className="py-[60px] flex justify-between max-680px:flex-col max-680px:gap-[40px]">
+                            <div className="py-[60px] flex justify-between max-680px:flex-col max-1060px:gap-[44px] max-1060px:justify-center">
                                 <div className="grid grid-cols-3 max-1060px:grid-cols-2 max-1060px:gap-x-[44px] max-680px:!grid-cols-2 gap-x-[120px] gap-y-[2rem] max-680px:!gap-y-[40px]">
                                     <div className="flex flex-col gap-[12px]">
                                         <p className="text-[1rem] leading-[23px] font-bold tracking-2% mb-[8px]">Основное</p>
@@ -68,7 +68,7 @@ export const CatalogFilter: FC<{className?: string}> = ({className = ""}) => {
                                     </div>
                                 </div>
                                 <div>
-                                    <div className="flex flex-col gap-[12px] ml-[27px] max-680px:ml-0">
+                                    <div className="flex flex-col gap-[12px] ml-[27px] max-1060px:ml-0">
                                         <p className="text-[1rem] leading-[23px] font-bold tracking-2% mb-[8px]">Конструктив</p>
                                         <Checkbox>для вейкбординга</Checkbox>
                                         <Checkbox>фишплатформа</Checkbox>
@@ -122,13 +122,13 @@ export const CatalogFilter: FC<{className?: string}> = ({className = ""}) => {
                         <div className="w-fit">
                             {
                                 !mapActive ?
-                                    <Button onClick={() => setMapActive(true)} colorTheme="transparent-black" size="small">
+                                    <Button onClick={() => setMapActive(true)} colorTheme="transparent-black" size="small" className="max-834px:!p-[12.5px]">
                                         <img src={materialSymbolsMapBlack.src} alt=""/>
-                                        Посмотреть на карте
+                                        <span className="max-834px:hidden">Посмотреть на карте</span>
                                     </Button> :
-                                    <Button colorTheme="secondary" size="small">
+                                    <Button colorTheme="secondary" size="small" className="max-834px:!p-[12.5px]">
                                         <img src={materialSymbolsMap.src} alt=""/>
-                                        Посмотреть на карте
+                                        <span className="max-834px:d-none max-834px:hidden">Посмотреть на карте</span>
                                     </Button>
                             }
 

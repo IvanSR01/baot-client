@@ -15,10 +15,14 @@ import faSolidListBlack from "./_media/fa-solid_list-black.svg";
 import materialSymbolsMap from "./_media/material-symbols_map-black.svg";
 import calendarSmall from "./_media/calendar-small.svg";
 import locationSmall from "./_media/location-small.svg";
+import logotypeSmall from "./_media/logotype-short.svg";
+import searchHeader from "./_media/search.svg";
+import materialSymbolsClose from "./_media/material-symbols_close.svg";
 
 export {
     logotype,
     logotypeFill,
+    logotypeSmall,
     filter,
     faSolidList,
     materialSymbolsMap,
@@ -33,5 +37,7 @@ export {
     faSolidListBlack,
     materialSymbolsMapBlack,
     calendarSmall,
-    locationSmall
+    locationSmall,
+    searchHeader,
+    materialSymbolsClose
 }

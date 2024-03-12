@@ -4,10 +4,11 @@ import imgT from "@/assets/img/Rectangle 2821.png";
 import imgD from "@/assets/img/Rectangle 2231.png";
 import favIcon from "@/assets/img/heart.png";
 import React from "react";
+import c from "./style.module.scss";
 import {boatLine, peoples, ship, star, tablerBed, timer} from "@/assets/icons";
 export const CatalogCard = () => {
     return (
-        <div className="relative block">
+        <div className={`relative block ${c.card}`}>
             <div>
                 <CarouselDefault
                     imgs={[img.src, imgT.src, imgD.src, img.src, imgT.src]}
@@ -16,13 +17,13 @@ export const CatalogCard = () => {
             <div className="absolute top-[18px] right-[20px]">
                 <img src={favIcon.src} alt=''/>
             </div>
-            <div className="py-[1rem] px-[2rem] border border-solid border-t-0 border-b-[1px] border-r-[1px] border-l-[1px] rounded-b-[2rem]">
+            <div className={`${c.content} py-[1rem] px-[2rem] border border-solid border-t-0 border-b-[1px] border-r-[1px] border-l-[1px] rounded-b-[2rem]`}>
                 <div className="flex items-center mb-[1rem]">
                     <img src={star.src} alt=""/>
-                    <span className="ml-[4px] text-[#18292D] text-[12px] font-medium tracking-3% leading-[1.25rem]">4.9 (50)</span>
+                    <span className="ml-[4px] text-[#18292D] text-[12px] font-semibold tracking-3% leading-[1.25rem]">4.9 (50)</span>
 
                     <img src={timer.src} className="ml-[20px]" alt=""/>
-                    <span className="ml-[4px] text-[#18292D] text-[12px] font-medium tracking-3% leading-[1.25rem]">Ожидание: 1-2 часа</span>
+                    <span className="ml-[4px] text-[#18292D] text-[12px] font-semibold tracking-3% leading-[1.25rem]">Ожидание: 1-2 часа</span>
                 </div>
                 <hr/>
                 <div className="flex items-center justify-between py-[1rem]">

@@ -3,7 +3,8 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import { TypePropsCalendar } from "./Calendar.type";
 import "./styles.scss";
-const MyCalendar: FC<TypePropsCalendar> = ({ setDate, date, setShow, ref }) => {
+import clsx from "clsx";
+const MyCalendar: FC<TypePropsCalendar> = ({ setDate, date, setShow, ref, className }) => {
   const [dateRange, setDateRange] = useState<any>([new Date(), new Date()]);
 
   const handleDateChange = (value: any) => {
@@ -13,7 +14,7 @@ const MyCalendar: FC<TypePropsCalendar> = ({ setDate, date, setShow, ref }) => {
   };
 
   return (
-    <div className={"calendar-container"} ref={ref}>
+    <div className={clsx("calendar-container", className)} ref={ref}>
       <Calendar
         onChange={handleDateChange}
         value={dateRange}
