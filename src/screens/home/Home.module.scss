@@ -23,6 +23,7 @@
       line-height: 61px;
 
       @media (max-width: 600px) {
+        margin-bottom: 19px;
       }
       @media (max-width: 960px) {
         line-height: 40px;
@@ -90,10 +91,10 @@
         line-height: 57.6px;
         font-size: 48px;
         font-weight: 500;
+        margin-bottom: 30px;
         @media (max-width: 600px) {
           font-size: 26px;
         }
-        margin-bottom: 30px;
       }
       @media (max-width: 600px) {
         margin-top: 90px;
