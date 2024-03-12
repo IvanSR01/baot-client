@@ -7,10 +7,10 @@ const MyCalendar: FC<TypePropsCalendar> = ({ setDate, date, setShow, ref }) => {
   const [dateRange, setDateRange] = useState<any>([new Date(), new Date()]);
 
   const handleDateChange = (value: any) => {
-    if (value >= new Date()) {
-      if (date[0] && date[1]) setShow && setShow(false);
+    if (value[0].getDate() >= new Date().getDate()) {
       setDateRange(value);
       setDate(value);
+      if (value[0]) setShow && setShow(false);
     } else {
     }
   };

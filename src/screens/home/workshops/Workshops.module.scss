@@ -1,6 +1,12 @@
 .wrapper {
   padding: 60px 0;
   background-color: #00748c0d;
+	display: flex;
+	justify-content: center;
+	.max {
+		max-width: 1240px;
+		width: 90vw;
+	}
   .heading {
     display: flex;
     justify-content: space-between;

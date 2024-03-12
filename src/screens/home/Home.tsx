@@ -30,16 +30,14 @@ const Home: FC<TypePropsHome> = () => {
   const scrollUp = () => {
     console.log(containerRef?.current?.scrollLeft);
     if (containerRef.current) {
-      containerRef.current.scrollLeft -=
-        width <= 1200 ? width * 0.45 : 420; // Измените значение, чтобы увеличить скорость прокрутки
+      containerRef.current.scrollLeft -= width <= 1200 ? 354 : 420; // Измените значение, чтобы увеличить скорость прокрутки
     }
   };
 
   const scrollDown = () => {
     console.log(containerRef?.current?.scrollLeft);
     if (containerRef.current) {
-      containerRef.current.scrollLeft +=
-        width <= 1200 ? width * 0.45 : 420; // Измените значение, чтобы увеличить скорость прокрутки
+      containerRef.current.scrollLeft += width <= 1200 ? 354 : 420; // Измените значение, чтобы увеличить скорость прокрутки
     }
   };
   return (
@@ -54,34 +52,12 @@ const Home: FC<TypePropsHome> = () => {
       <Wrapper>
         <div className={styles.container}>
           <div className={styles.section}>
-            {/* <IconButton
-              placeholder="<"
-              size="lg"
-              color="white"
-              // ripple={true}
-              variant="text"
-              onClick={() => scrollUp()}
-              // disabled={selectedCategory === 0}
-              className={styles.arrowPrev}
-            > */}
             <Image
               src={iconPrev}
               alt="prev"
               className={styles.arrowPrev}
               onClick={() => scrollUp()}
             />
-            {/* </IconButton> */}
-            {/* <IconButton
-              placeholder=">"
-              size="lg"
-              color="black"
-              variant="text"
-              onClick={() => scrollDown()}
-              // disabled={selectedCategory === 4}
-              className={styles.arrowNext}
-            >
-              <Image src={iconNext} alt="next" />
-            </IconButton> */}
             <Image
               src={iconNext}
               alt="next"
@@ -111,30 +87,34 @@ const Home: FC<TypePropsHome> = () => {
       <Esc />
       <Wrapper>
         <div className={clsx(styles.container, styles.mb)}>
-          <Heading heading="Прокат лодок" link="лодки" />
-          <div className={clsx(styles.itemsYatch, styles.mb)}>
-            {[...Array(3)].map((_, i) => (
-              <YatchCard
-                type="'dada"
-                img={img}
-                className={styles.procat}
-                key={i}
-              />
-            ))}
+          <div className={styles.max}>
+            <Heading heading="Прокат лодок" link="лодки" />
+            <div className={clsx(styles.itemsYatch, styles.mb)}>
+              {[...Array(3)].map((_, i) => (
+                <YatchCard
+                  type="'dada"
+                  img={img}
+                  className={styles.procat}
+                  key={i}
+                />
+              ))}
+            </div>
+            <Bottom link="лодки" />
           </div>
-          <Bottom link="лодки" />
         </div>
       </Wrapper>
       <Workshops />
       <Wrapper>
         <div className={clsx(styles.container, styles.mb)}>
-          <Heading heading="Яхтклубы" link="яхтклубы" />
-          <div className={clsx(styles.itemsYatch, styles.mb)}>
-            {[...Array(2)].map((_, i) => (
-              <YatchCard className={styles.yatch} img={img} key={i} />
-            ))}
+          <div className={styles.max}>
+            <Heading heading="Яхтклубы" link="яхтклубы" />
+            <div className={clsx(styles.itemsYatch, styles.mb)}>
+              {[...Array(2)].map((_, i) => (
+                <YatchCard className={styles.yatch} img={img} key={i} />
+              ))}
+            </div>
+            <Bottom link="яхтклубы" />
           </div>
-          <Bottom link="яхтклубы" />
         </div>
       </Wrapper>
       <HomeModal />

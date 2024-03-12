@@ -89,7 +89,9 @@
 .react-calendar__navigation__label {
   text-transform: capitalize;
 }
-
+.react-calendar__navigation__label:hover {
+	background-color: transparent !important;
+}
 .react-calendar__navigation__arrow:hover {
   background-color: transparent; /* или любой другой цвет или свойство, которое вы хотите использовать */
 }
