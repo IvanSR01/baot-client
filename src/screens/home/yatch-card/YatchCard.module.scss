@@ -11,7 +11,7 @@
 		width: 100%;
 		position: absolute;
 		bottom: -28%;
-		@media (min-width: 1000px) {
+		@media (min-width: 401px) {
 			bottom: -18%;
 		}
 		// border: 2px solid #e6e6e6;
@@ -63,7 +63,7 @@
 	.row {
 		cursor: pointer;
 		bottom: -18%;
-		@media (min-width: 1000px) {
+		@media (min-width: 401px) {
 			bottom: -10%;
 		}
 	}

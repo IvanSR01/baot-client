@@ -31,7 +31,7 @@ const Home: FC<TypePropsHome> = () => {
     console.log(containerRef?.current?.scrollLeft);
     if (containerRef.current) {
       containerRef.current.scrollLeft -=
-        width <= 1200 ? width * 0.45 : width * 0.25; // Измените значение, чтобы увеличить скорость прокрутки
+        width <= 1200 ? width * 0.45 : 420; // Измените значение, чтобы увеличить скорость прокрутки
     }
   };
 
@@ -39,7 +39,7 @@ const Home: FC<TypePropsHome> = () => {
     console.log(containerRef?.current?.scrollLeft);
     if (containerRef.current) {
       containerRef.current.scrollLeft +=
-        width <= 1200 ? width * 0.45 : width * 0.25; // Измените значение, чтобы увеличить скорость прокрутки
+        width <= 1200 ? width * 0.45 : 420; // Измените значение, чтобы увеличить скорость прокрутки
     }
   };
   return (
