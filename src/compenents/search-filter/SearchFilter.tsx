@@ -152,7 +152,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                             <div className={styles.border}></div>
                             <div className={clsx(styles.buttonLayout, "!ml-[auto] max-1200px:!w-[100%] max-1200px:!pt-[0]")}>
                                 <Link href="/catalog">
-                                    <Button className="max-1200px:font-medium">
+                                    <Button className="max-1200px:font-medium min-w-[54px]">
                                         <CiSearch className="max-1200px:w-[20px] max-1200px:h-[20px]" /> {width >= 1200 ? <></> : <>Поиск</>}
                                     </Button>
                                 </Link>
