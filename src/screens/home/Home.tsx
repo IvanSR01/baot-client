@@ -98,7 +98,7 @@ const Home: FC<TypePropsHome> = () => {
 			</Wrapper>
 			<Esc />
 			<Wrapper>
-				<div className={clsx(styles.container, styles.mb, "!mb-[150px]")}>
+				<div className={clsx(styles.container, styles.mb, "!mb-[150px] max-475px:!mb-[90px]")}>
 					<Heading heading='Прокат лодок' link='лодки' className="min-1260px:!mb-[30px] min-475px:!mb-[32px] max-475px:!mb-[24px]" />
 					<div className={clsx(styles.itemsYatch, "")}>
 						{[...Array(3)].map((_, i) => (
@@ -110,7 +110,7 @@ const Home: FC<TypePropsHome> = () => {
 							/>
 						))}
 					</div>
-					<div className="max-475px:mt-[50px]">
+					<div className="max-475px:mt-[80px] max-475px:ml-[0] max-475px:w-[100%]">
 						<Bottom link='лодки' />
 					</div>
 				</div>

@@ -13,7 +13,7 @@ const Bottom: FC<{ link: string }> = ({ link }) => {
 					className="max-475px:text-left w-[100%] max-475px:!mt-[32px]"
 				>
 					<CustomLink path='catalog'>
-						Все {link} в q <City />
+						Все {link} в <City />
 					</CustomLink>
 				</div>
 			) : (
