@@ -1,5 +1,5 @@
 'use client'
-import React, { FC } from 'react'
+import React, {FC, useState} from 'react'
 import styles from './HomeCard.module.scss'
 import img from '@/assets/img/Rectangle 28.png'
 import imgT from '@/assets/img/Rectangle 2821.png'
@@ -10,7 +10,10 @@ import iconThree from '@/assets/star.svg'
 import { TypePropsHomeCard } from './HomeCard.type'
 import CarouselDefault from '@/shared/ui/carousel/Carousel'
 import Badge from '@/compenents/badge/Badge'
+import {favoriteActive} from "@/assets/icons";
 const HomeCard: FC<TypePropsHomeCard> = ({ status }) => {
+	const [isFavorite, setIsFavorite] = useState(false);
+
 	return (
 		<div className={styles.card}>
 			<div className={clsx(styles.upper, '')}>
@@ -22,9 +25,12 @@ const HomeCard: FC<TypePropsHomeCard> = ({ status }) => {
 				/>
 			</div>
 			<div className={styles.border}>
-				<div className={styles.fav}>
-					<img src={favIcon.src} alt='' />
-				</div>
+				<button type="button" onClick={() => setIsFavorite(!isFavorite)} className={styles.fav}>
+					{
+						isFavorite ? <img src={favoriteActive.src} alt='' /> : <img src={favIcon.src} alt='' />
+					}
+					<img src={favoriteActive.src} alt='' />
+				</button>
 				<div className={styles.row}>
 					<div>
 						<h3>Porshe Panamera</h3>

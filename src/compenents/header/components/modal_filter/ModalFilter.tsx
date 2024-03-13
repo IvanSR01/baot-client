@@ -38,10 +38,10 @@ export const ModalFilter = () => {
     }, []);
 
     return (
-        <div>
+        <div className="w-[100%] mx-[14.77px]">
             <button
                 type="button"
-                className="flex gap-[31px] items-center px-[16px] py-[8px] border-solid border-[1px] border-[#EEEEEE] rounded-[8px]"
+                className="flex gap-[31px] items-center justify-between px-[16px] py-[8px] border-solid border-[1px] border-[#EEEEEE] rounded-[8px] w-[100%]"
                 onClick={() => {
                     setModalActive(true)
                     document.body.style.overflowY = "hidden"
@@ -106,7 +106,10 @@ export const ModalFilter = () => {
                                         <MyCalendar
                                             className="!relative !top-[16px]"
                                             date={dateRange}
-                                            setDate={setDateRange}
+                                            setDate={(i) => {
+                                                setDateRange(i)
+                                                setDateOpened(false)
+                                            }}
                                         />
                                 }
                             </div>
@@ -154,7 +157,7 @@ const ModalFilterSelect: FC<IModalFilterSelectProps> = (props) => {
     return (
         <div className={`relative ${active ? "pb-[16px] border-solid border-b-[1px] border-b-[#EEEEEE]" : ""}`}>
             <div
-                onClick={() => setActive(true)}
+                onClick={() => setActive(!active)}
                 className="cursor-pointer flex items-center justify-between my-[8px] py-[16px] border-solid border-b-[1px] border-b-[#EEEEEE]"
             >
                 <div>
@@ -168,7 +171,7 @@ const ModalFilterSelect: FC<IModalFilterSelectProps> = (props) => {
                 <img src={iconSrc} width={16} height={16} alt=""/>
             </div>
             <div
-                className={`transition ${active ? "visible" : "hidden"} border-[1px] border-[#EEEEEE] border-solid flex flex-col rounded-[8px] p-[8px] mt-[4px]`}>
+                className={`transition ${active ? "visible z-[1000]" : "hidden"} border-[1px] border-[#EEEEEE] border-solid flex flex-col rounded-[8px] p-[8px] mt-[4px]`}>
                 {
                     items.map(
                         (el, ind) =>

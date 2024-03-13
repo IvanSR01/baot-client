@@ -157,7 +157,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                             </div>
                         </> :
                         <div
-                            className="grid grid-cols-[1fr_1fr_1fr_1fr_fit-content(100%)] justify-center items-center max-w-[800px]">
+                            className="grid grid-cols-[fit-content(100%)_fit-content(100%)_fit-content(100%)_fit-content(100%)_fit-content(100%)] justify-center items-center max-w-[800px]">
                             <div
                                 className="rounded-l-[8px] h-[44px] pr-[1rem] border-t-[1px] border-b-[1px] border-l-[1px]">
                                 <Select
@@ -167,6 +167,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                                     setAction={(i) => setSelectedTypeCategory(typeCategory[i as number])}
                                     placeholder="Тип"
                                     img={icon.src}
+                                    className="rounded-[8px]"
                                 />
                             </div>
                             <div className="h-[44px] pr-[1rem] border-t-[1px] border-b-[1px] border-l-[1px]">
@@ -183,7 +184,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                                 className="h-[44px] pr-[1rem] border-t-[1px] border-b-[1px] w-fit border-l-[1px] relative">
                                 <div>
                                     <div
-                                        className={clsx(styles.selectLayout, styles.compact, "!p-0 !w-fit !min-w-[250px]")}
+                                        className={clsx(styles.selectLayout, styles.compact, "!p-0 !w-fit !min-w-[250px] cursor-pointer")}
                                         onClick={() => {
                                             setIsOpen(!isOpen);
                                         }}

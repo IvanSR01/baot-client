@@ -64,6 +64,11 @@
 				&:first-of-type {
 					margin-bottom: 24px;
 				}
+
+				@media screen and (max-width: 475px){
+					width: fit-content;
+					gap: 0;
+				}
 			}
 		}
 		.links:nth-child(1) {
@@ -91,6 +96,10 @@
 			grid-gap: 36px 50px;
 			padding-bottom: 20px;
 			padding-top: 40px;
+		}
+		@media screen and (min-width: 2560px) {
+			grid-gap: 191px;
+			justify-content: center;
 		}
 	}
 	.row__two {

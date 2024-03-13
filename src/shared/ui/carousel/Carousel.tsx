@@ -35,7 +35,9 @@ const CarouselDefault: FC<TypePropsCarousel> = ({ imgs }) => {
           color="white"
           variant="text"
           onClick={handlePrev}
-          className="!absolute top-2/4 left-4 -translate-y-2/4"
+          translate="no"
+          ripple={false}
+          className="!absolute top-2/4 left-4 -translate-y-2/4 focus:!bg-[transparent] active:!bg-[transparent] hover:!bg-[transparent] !bg-[transparent]"
         >
           <Image src={iconPrev} alt="prev" />
         </IconButton>
@@ -47,7 +49,9 @@ const CarouselDefault: FC<TypePropsCarousel> = ({ imgs }) => {
           color="white"
           variant="text"
           onClick={handleNext}
-          className="!absolute top-2/4 right-4 -translate-y-2/4"
+          translate="no"
+          ripple={false}
+          className="!absolute top-2/4 right-4 -translate-y-2/4 focus:!bg-[transparent] active:!bg-[transparent] hover:!bg-[transparent] !bg-[transparent]"
 
         >
           <Image src={iconNext} alt="next" />

@@ -23,6 +23,7 @@ const MyCalendar: FC<TypePropsCalendar> = ({ setDate, date, setShow, ref, classN
         value={dateRange}
         selectRange={true}
         className={"calendar"}
+        minDate={new Date()}
         navigationLabel={({ date, label, locale, view }) =>
           label.replace("г.", "")
         }

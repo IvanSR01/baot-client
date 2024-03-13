@@ -1,12 +1,16 @@
+"use client"
 import CarouselDefault from "@/shared/ui/carousel/Carousel.tsx";
 import img from "@/assets/img/Rectangle 28.png";
 import imgT from "@/assets/img/Rectangle 2821.png";
 import imgD from "@/assets/img/Rectangle 2231.png";
 import favIcon from "@/assets/img/heart.png";
-import React from "react";
+import React, {useState} from "react";
 import c from "./style.module.scss";
-import {boatLine, peoples, ship, star, tablerBed, timer} from "@/assets/icons";
+import {boatLine, favoriteActive, peoples, ship, star, tablerBed, timer} from "@/assets/icons";
+import styles from "@/screens/home/home-card/HomeCard.module.scss";
 export const CatalogCard = () => {
+    const [isFavorite, setIsFavorite] = useState(false);
+
     return (
         <div className={`relative block ${c.card}`}>
             <div>
@@ -15,9 +19,13 @@ export const CatalogCard = () => {
                 />
             </div>
             <div className="absolute top-[18px] right-[20px]">
-                <img src={favIcon.src} alt=''/>
+                <button type="button" onClick={() => setIsFavorite(!isFavorite)} className={styles.fav}>
+                    {
+                        isFavorite ? <img src={favoriteActive.src} alt='' /> : <img src={favIcon.src} alt='' />
+                    }
+                </button>
             </div>
-            <div className={`${c.content} py-[1rem] px-[2rem] border border-solid border-t-0 border-b-[1px] border-r-[1px] border-l-[1px] rounded-b-[2rem]`}>
+            <div className={`${c.content} py-[1rem] px-[2rem] border border-solid border-t-0 border-b-[1px] border-r-[1px] border-l-[1px] rounded-b-[1.25rem]`}>
                 <div className="flex items-center mb-[1rem]">
                     <img src={star.src} alt=""/>
                     <span className="ml-[4px] text-[#18292D] text-[12px] font-semibold tracking-3% leading-[1.25rem]">4.9 (50)</span>

@@ -12,7 +12,8 @@ const Select: FC<TypePropsSelect> = (props) => {
         setAction,
         placeholder,
         img,
-        compact = false
+        compact = false,
+        className = ""
     } = props;
     const [isOpen, setIsOpen] = useState(false);
     const onClickSetActions = (i: number) => {
@@ -34,7 +35,7 @@ const Select: FC<TypePropsSelect> = (props) => {
         };
     }, []);
     return (
-        <div className={clsx(styles.wrapper, compact ? styles.compact : "")} ref={ref}>
+        <div className={clsx(styles.wrapper, compact ? styles.compact : "", className)} ref={ref}>
             {selected ? (
                 <div
                     onClick={() => setIsOpen(!isOpen)}

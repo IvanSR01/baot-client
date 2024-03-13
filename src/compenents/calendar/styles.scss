@@ -12,6 +12,12 @@
     padding: 10px;
     gap: 20px;
   }
+  button, button[disabled], button.react-calendar__tile--hover, button.react-calendar__tile:enabled:hover {
+    background: white;
+  }
+  button[disabled].react-calendar__navigation__arrow {
+    opacity: 0;
+  }
 }
 
 
