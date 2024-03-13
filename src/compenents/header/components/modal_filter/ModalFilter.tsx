@@ -56,7 +56,7 @@ export const ModalFilter = () => {
             {
                 !modalActive ?
                     <></> :
-                    <div className="fixed w-[100%] h-[100%] bg-white left-0 top-0 px-[20px] pt-[56px] pb-[51px] z-10">
+                    <div className="fixed w-[100%] h-[100%] bg-white left-0 top-0 px-[20px] pt-[56px] pb-[51px] z-[100]">
                         <button
                             className="absolute top-[22px] right-[20px]"
                             onClick={() => {
@@ -84,7 +84,7 @@ export const ModalFilter = () => {
                         />
                         <div ref={ref}>
                             <div
-                                onClick={() => setDateOpened(true)}
+                                onClick={() => setDateOpened(!dateOpened)}
                                 className="cursor-pointer flex items-center justify-between my-[8px] py-[16px] border-solid border-b-[1px] border-b-[#EEEEEE]"
                             >
                                 <div>
@@ -125,7 +125,7 @@ export const ModalFilter = () => {
                         />
 
                         <Button onClick={() => {setModalActive(false)}} className="!border-[#FA1153] !bg-[#FA1153] mt-[12px] !rounded-[16px] !text-[16px] !font-medium !leading-[19.2px]">
-                            <CiSearch width="20px" height="20px" />
+                            <CiSearch className="w-[20px] h-[20px] my-[3px]" width="20px" height="20px" />
                             Поиск
                         </Button>
                     </div>
