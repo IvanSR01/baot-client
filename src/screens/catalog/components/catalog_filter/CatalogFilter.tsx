@@ -96,12 +96,12 @@ export const CatalogFilter: FC<{className?: string}> = ({className = ""}) => {
                         <div className="w-fit">
                             {
                                 !filterActive ?
-                                    <Button onClick={() => setFilterActive(true)} colorTheme="transparent-primary" size="medium">
-                                        <img src={filter.src} alt=""/>
+                                    <Button className="max-475px:!leading-[12px] max-475px:!gap-[8px] max-475px:!text-[12px] max-475px:!px-[12px] max-475px:!py-[10.5px]" onClick={() => setFilterActive(true)} colorTheme="transparent-primary" size="medium">
+                                        <img className="max-475px:w-[16px] max-475px:h-[16px]" src={filter.src} alt=""/>
                                         Фильтры
                                     </Button> :
-                                    <Button onClick={() => setFilterActive(false)} colorTheme="secondary" size="medium">
-                                        <img src={filter.src} alt=""/>
+                                    <Button className="max-475px:!leading-[12px] max-475px:!gap-[8px] max-475px:!text-[12px] max-475px:!px-[12px] max-475px:!py-[10.5px]" onClick={() => setFilterActive(false)} colorTheme="secondary" size="medium">
+                                        <img className="max-475px:w-[16px] max-475px:h-[16px]" src={filter.src} alt=""/>
                                         Свернуть фильтры
                                     </Button>
                             }
@@ -109,12 +109,12 @@ export const CatalogFilter: FC<{className?: string}> = ({className = ""}) => {
                         <div className="w-fit ml-auto">
                             {
                                 mapActive ?
-                                    <Button onClick={() => setMapActive(false)} colorTheme="transparent-black" size="small">
-                                        <img src={faSolidListBlack.src} alt=""/>
+                                    <Button className="max-475px:!leading-[12px] max-475px:!gap-[8px] max-475px:!text-[12px] max-475px:!px-[12px] max-475px:!py-[10.5px]" onClick={() => setMapActive(false)} colorTheme="transparent-black" size="small">
+                                        <img className="max-475px:w-[16px] max-475px:h-[16px]" src={faSolidListBlack.src} alt=""/>
                                         Список
                                     </Button> :
-                                    <Button colorTheme="secondary" size="small">
-                                        <img src={faSolidList.src} alt=""/>
+                                    <Button className="max-475px:!leading-[12px] max-475px:!gap-[8px] max-475px:!text-[12px] max-475px:!px-[12px] max-475px:!py-[10.5px]" colorTheme="secondary" size="small">
+                                        <img className="max-475px:w-[16px] max-475px:h-[16px]" src={faSolidList.src} alt=""/>
                                         Список
                                     </Button>
                             }

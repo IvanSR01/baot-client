@@ -12,9 +12,9 @@ export const Checkbox: FC<ICheckboxProps> = ({children, onChange = () => {}}) =>
         setActive(!active)
     }
     return (
-        <div className="flex gap-[.5rem] items-center">
-            <button onClick={() => setActive(!active)} className={clsx(c.button, active ? c.active : "")}></button>
+        <button onClick={() => setActive(!active)} className="flex gap-[.5rem] items-center">
+            <div className={clsx(c.button, active ? c.active : "")}></div>
             <span className={clsx(active ? (c.label + " " + c.active) : c.label)}>{children}</span>
-        </div>
+        </button>
     );
 }

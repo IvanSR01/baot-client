@@ -9,6 +9,8 @@ module.exports = withMT({
     screens: {
       "max-375px": {"max": "375px"},
       "min-375px": {"min": "376px"},
+      "max-475px": {"max": "475px"},
+      "min-475px": {"min": "475px"},
       "max-680px": {"max": "680px"},
       "min-680px": {"min": "681px"},
       "max-834px": {"max": "834px"},

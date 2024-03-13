@@ -38,7 +38,7 @@ export const ModalFilter = () => {
     }, []);
 
     return (
-        <div className="w-[100%] mx-[14.77px]">
+        <div className="w-[100%] mx-[14.77px] max-475px:w-[unset] max-475px:mx-[0]">
             <button
                 type="button"
                 className="flex gap-[31px] items-center justify-between px-[16px] py-[8px] border-solid border-[1px] border-[#EEEEEE] rounded-[8px] w-[100%]"
