@@ -47,7 +47,7 @@ const Home: FC<TypePropsHome> = () => {
 			<Header />
 			<Intro>
 				<div className={styles.intro}>
-					<h2 className="tracking-4%">Откройте новые горизонты праздника с нашими яхтами и лодками</h2>
+					<h2>Откройте новые горизонты праздника с нашими яхтами и лодками</h2>
 					<SearchFilter />
 				</div>
 			</Intro>
@@ -76,7 +76,7 @@ const Home: FC<TypePropsHome> = () => {
 						>
 							<Image src={iconNext} alt='next' />
 						</IconButton>
-						<h1 className="tracking-2%">
+						<h1>
 							Аренда яхты{' '}
 							<span>
 								в <City />

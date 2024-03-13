@@ -16,7 +16,7 @@
 		}
 		.layout {
 			display: flex;
-			justify-content: flex-start;
+			justify-content: start;
 			flex-wrap: wrap;
 			width: 500px;
 			// @media (min-width: 2000px) {
@@ -38,7 +38,7 @@
 				width: 100vw;
 			}
 			display: flex;
-			justify-content: flex-end;
+			justify-content: end;
 			height: 649px;
 			padding: 50px 0px;
 		}

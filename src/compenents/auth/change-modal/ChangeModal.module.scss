@@ -53,7 +53,7 @@
 			flex-direction: row;
 			justify-content: space-between;
 			align-items: center;
-			padding: 16px 28px;
+			padding: 16px 50px 16px 28px;
 			gap: 199px;
 
 			width: 470px;
@@ -75,6 +75,8 @@
 		svg {
 			top: 20px;
 			right: 28px;
+			width: 13.21px;
+			height: 13.21px;
 			position: absolute;
 			z-index: 100;
 			transition: fill 0.5s;
@@ -107,7 +109,7 @@
 			justify-content: center;
 			background-color: #fff;
 			height: 25px;
-			padding: 0px 3px;
+			padding: 0px 5px;
 			font-weight: 700;
 			top: 15px;
 			left: 25px;
@@ -128,17 +130,24 @@
 		fill: #eb5e55;
 	}
 	.colorsInput {
-			fill: #b2c7cb;
-			color: #728487;
+		fill: #b2c7cb;
+		color: #728487;
+	}
+	.button {
+		margin-top: 24px;
+		border-radius: 8px;
+		background-color: #00748c;
+	}
+	.button:hover {
+		background-color: #079ab9;
+	}
+	.button:active {
+		background: rgb(0, 116, 140);
 	}
   .pin {
     margin-top: 20px;
   }
-  .button {
-    margin-top: 24px;
-    border-radius: 8px;
-    background-color: #00748c;
-  }
+
   .bottom {
     padding-top: 24px;
     font-size: 14px;

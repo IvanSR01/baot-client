@@ -51,6 +51,7 @@ const PasswordModal: FC<TypePropsPasswordModal> = ({ onClick, onSubmit }) => {
 						placeholder={'Пароль'}
 						type={isViewPass ? 'text' : 'password'}
 						value={password}
+						maxLength={20}
 						onChange={e => setPassword(e.target.value)}
 					/>
 					<label htmlFor={'password'}>Пароль</label>
