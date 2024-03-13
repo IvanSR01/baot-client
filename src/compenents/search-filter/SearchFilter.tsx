@@ -16,7 +16,7 @@ import {CiSearch} from "react-icons/ci";
 import MyCalendar from "../calendar/Calendar";
 import styles from "./Search.module.scss";
 import formatDate from "@/shared/utils/format-date";
-import {calendarSmall, locationSmall, searchFilter} from "@/assets/icons";
+import {arrowActive, calendarActive, calendarSmall, locationActive, locationSmall, searchFilter} from "@/assets/icons";
 import Link from "next/link";
 
 interface ISearchFilterProps {
@@ -95,6 +95,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                                     setAction={(i) => setSelectedSubCategory(subCategorys[i as number])}
                                     placeholder="Подкатегория"
                                     img={icon.src}
+                                    imgActive={arrowActive.src}
                                 />
                             </div>
                             <div className={styles.border}></div>
@@ -119,12 +120,16 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                                                     {formatDate(dateRange[0])} - {formatDate(dateRange[1])}
                                                 </p>
                                             </div>
-                                            <img src={img.src} alt=""/>
+                                            {
+                                                isOpen ? <img src={calendarActive.src} alt=""/> : <img src={img.src} alt=""/>
+                                            }
                                         </div>
                                     ) : (
                                         <div className={clsx(styles.date, isOpen && styles.focusDate, "max-1200px:!max-w-[100%] max-1200px:!min-h-[unset] max-1200px:!h-[unset] max-1200px:!p-[8px_12px]")}>
                                             <p className="text-[18px] leading-[23px] tracking-2% !font-normal max-1200px:!text-[14px] max-1200px:!leading-[16.8px]">Дата начала аренды</p>
-                                            <img src={img.src} className="max-1200px:w-[16px] max-1200px:h-[16px]" alt=""/>
+                                            {
+                                                isOpen ? <img src={calendarActive.src} alt=""/> : <img src={img.src} alt=""/>
+                                            }
                                         </div>
                                     )}
                                 </div>
@@ -146,6 +151,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                                     setAction={(i) => dispatch(setLocation(city[i as number]))}
                                     placeholder="Локация"
                                     img={locationIcon.src}
+                                    imgActive={locationActive}
                                     className="min-1260px:[&>div>div]:mt-[4px] min-1260px:[&>div>div]:ml-[18px] !max-w-[100%]"
                                 />
                             </div>
@@ -210,7 +216,9 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                                                 "!min-h-[42px] !h-[42px] !text-[14px] !w-fit !m-0 gap-[1.5rem]"
                                             )}>
                                                 <p>Дата начала аренды</p>
-                                                <img src={calendarSmall.src} className="w-[16px] h-[16px]" alt=""/>
+                                                {
+                                                    isOpen ? <img src={calendarActive.src} className="w-[16px] h-[16px]" alt=""/> : <img src={calendarSmall.src} className="w-[16px] h-[16px]" alt=""/>
+                                                }
                                             </div>
                                         )}
                                     </div>
@@ -235,6 +243,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                                     setAction={(i) => dispatch(setLocation(city[i as number]))}
                                     placeholder="Локация"
                                     img={locationSmall.src}
+                                    imgActive={locationActive.src}
                                 />
                             </div>
                                 <button className="w-fit bg-[#FA1153] p-[13px] rounded-[8px] ml-[-5px]">

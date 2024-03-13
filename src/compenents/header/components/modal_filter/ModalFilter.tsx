@@ -1,6 +1,13 @@
 "use client"
 import {useHeader} from "@/compenents/header/HeaderProvider.tsx";
-import {calendarSmall, locationSmall, materialSymbolsClose, searchHeader} from "@/assets/icons";
+import {
+    arrowActive,
+    calendarActive,
+    calendarSmall, locationActive,
+    locationSmall,
+    materialSymbolsClose,
+    searchHeader
+} from "@/assets/icons";
 import {Dispatch, FC, Fragment, SetStateAction, useEffect, useRef, useState} from "react";
 import {useAppDispatch, useAppSelector} from "@/hook/useActions.ts";
 import {categorys, city, subCategorys} from "@/shared/var/categorys.ts";
@@ -64,6 +71,7 @@ export const ModalFilter = () => {
                     <div className="fixed w-[100%] h-[100%] bg-white left-0 top-0 px-[20px] pt-[56px] pb-[51px] z-[100]">
                         <ModalFilterSelect
                             iconSrc={icon.src}
+                            iconActive={arrowActive.src}
                             placeholder="Выберите категорию"
                             items={categorys}
                             label="Категория"
@@ -72,6 +80,7 @@ export const ModalFilter = () => {
                         />
                         <ModalFilterSelect
                             iconSrc={icon.src}
+                            iconActive={arrowActive.src}
                             placeholder="Выберите подкатегорию"
                             items={subCategorys}
                             label="Подкатегория"
@@ -93,7 +102,9 @@ export const ModalFilter = () => {
                                         }
                                     </p>
                                 </div>
-                                <img src={calendarSmall.src} className="w-[16px] h-[16px]" alt=""/>
+                                {
+                                    dateOpened ? <img src={calendarActive.src} className="w-[16px] h-[16px]" alt=""/> : <img src={calendarSmall.src} className="w-[16px] h-[16px]" alt=""/>
+                                }
                             </div>
                             <div>
                                 {
@@ -113,6 +124,7 @@ export const ModalFilter = () => {
 
                         <ModalFilterSelect
                             iconSrc={locationSmall.src}
+                            iconActive={locationActive.src}
                             placeholder="Выберите локацию"
                             items={city}
                             label="Локация"
@@ -143,6 +155,7 @@ interface IModalFilterSelectProps {
     selected: number | string;
     onChange: Dispatch<SetStateAction<number>>;
     iconSrc: string;
+    iconActive: string;
     placeholder: string;
     label: string;
 }
@@ -154,6 +167,7 @@ const ModalFilterSelect: FC<IModalFilterSelectProps> = (props) => {
         selected,
         onChange,
         iconSrc,
+        iconActive,
         label,
         placeholder
     } = props;
@@ -172,7 +186,9 @@ const ModalFilterSelect: FC<IModalFilterSelectProps> = (props) => {
                         }
                     </p>
                 </div>
-                <img src={iconSrc} width={16} height={16} alt=""/>
+                {
+                    active ? <img src={iconActive} width={16} height={16} alt=""/> : <img src={iconSrc} width={16} height={16} alt=""/>
+                }
             </div>
             <div
                 className={`transition ${active ? "visible z-[1000]" : "hidden"} border-[1px] border-[#EEEEEE] border-solid flex flex-col rounded-[8px] p-[8px] mt-[4px]`}>

@@ -4,6 +4,9 @@ import {TypePropsSelect} from "./Select.type";
 import styles from "./Select.module.scss";
 import Image from "next/image";
 import clsx from "clsx";
+import {arrowActive, calendarActive} from "@/assets/icons";
+import img from "@/assets/img/calendar@1x.svg";
+
 
 const Select: FC<TypePropsSelect> = (props) => {
     const {
@@ -13,7 +16,8 @@ const Select: FC<TypePropsSelect> = (props) => {
         placeholder,
         img,
         compact = false,
-        className = ""
+        className = "",
+        imgActive = arrowActive.src
     } = props;
     const [isOpen, setIsOpen] = useState(false);
     const onClickSetActions = (i: number) => {
@@ -43,11 +47,19 @@ const Select: FC<TypePropsSelect> = (props) => {
                 >
                     <div>
                         {
-                            compact ? <></> : <span className="text-[16px] leading-[23px] tracking-2% !font-normal max-1200px:!text-[12px] max-1200px:!leading-[12px]">{placeholder}</span>
+                            compact ? <></> : <span
+                                className="text-[16px] leading-[23px] tracking-2% !font-normal max-1200px:!text-[12px] max-1200px:!leading-[12px]">{placeholder}</span>
                         }
                         <p className={clsx(styles.selected, "capitalize text-[18px] !font-semibold leading-[21.6px] !tracking-1% mt-[4px]  max-1200px:!text-[14px] max-1200px:!leading-[16.8px]")}>{selected}</p>
                     </div>
-                    {img && <Image width={20} height={20} className={compact ? "" : "max-1200px:!w-[16px] max-1200px:!h-[16px]"} src={img} alt={""}/>}
+                    {
+                        img ? (isOpen ?
+                                <Image width={20} height={20} className={compact ? "" : "max-1200px:!w-[16px] max-1200px:!h-[16px]"}
+                                       src={imgActive} alt=""/> :
+                                <Image width={20} height={20} className={compact ? "" : "max-1200px:!w-[16px] max-1200px:!h-[16px]"}
+                                       src={img} alt=""/>)
+                            : <></>
+                    }
                 </div>
             ) : (
                 <div
@@ -55,7 +67,16 @@ const Select: FC<TypePropsSelect> = (props) => {
                     className={clsx(styles.heading, isOpen && styles["focus__heading"], "!px-[12px]")}
                 >
                     <p className="text-[16px] leading-[23px] tracking-2% !font-normal max-1200px:!text-[14px] max-1200px:!leading-[16.8px]">{placeholder}</p>
-                    {img && <Image width={compact ? 16 : 20} height={compact ? 16 : 20} className={compact ? "" : "max-1200px:!w-[16px] max-1200px:!h-[16px]"} src={img} alt={""}/>}
+                    {
+                        img ? (isOpen ?
+                                <Image width={20} height={20}
+                                       className={compact ? "" : "max-1200px:!w-[16px] max-1200px:!h-[16px]"}
+                                       src={imgActive} alt=""/> :
+                                <Image width={20} height={20}
+                                       className={compact ? "" : "max-1200px:!w-[16px] max-1200px:!h-[16px]"}
+                                       src={img} alt=""/>)
+                            : <></>
+                    }
                 </div>
             )}
             {isOpen ? (

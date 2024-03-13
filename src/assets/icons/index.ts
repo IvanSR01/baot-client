@@ -19,6 +19,9 @@ import logotypeSmall from "./_media/logotype-short.svg";
 import searchHeader from "./_media/search.svg";
 import materialSymbolsClose from "./_media/material-symbols_close.svg";
 import favoriteActive from "./_media/favorite-active.svg";
+import arrowActive from "./_media/arrow-active.svg";
+import locationActive from "./_media/location-active.svg";
+import calendarActive from "./_media/calendar-active.svg";
 
 export {
     logotype,
@@ -41,5 +44,8 @@ export {
     locationSmall,
     searchHeader,
     materialSymbolsClose,
-    favoriteActive
+    favoriteActive,
+    arrowActive,
+    locationActive,
+    calendarActive
 }
