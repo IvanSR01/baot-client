@@ -9,6 +9,7 @@ import Wrapper from '@/compenents/wrapper/Wrapper'
 import img from '@/assets/img/image 20.png'
 import Image from 'next/image'
 import clsx from "clsx";
+import City from "@/screens/home/shared/City.tsx";
 
 const Esc: FC = () => {
 	return (
@@ -32,7 +33,7 @@ const Esc: FC = () => {
 									</div>
 								))}
 							</div>
-							<CustomLink path='/'>Все яхтклубы в москве</CustomLink>
+							<CustomLink path='/'>Все яхтклубы в <City /></CustomLink>
 						</div>
 					</div>
 
