@@ -14,6 +14,7 @@ const Workshops: FC = () => {
             style={styles.heading}
             heading="Популярные мастерские"
             link="популярные мастерские"
+            className="min-1260px:!mb-[52px] min-475px:!mb-[32px] max-475px:!mb-[32px]"
           />
           <div className={styles.items}>
             {[...Array(6)].map((_, i) => (

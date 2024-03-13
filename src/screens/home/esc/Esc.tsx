@@ -8,6 +8,7 @@ import { ESC } from '@/shared/var/esc'
 import Wrapper from '@/compenents/wrapper/Wrapper'
 import img from '@/assets/img/image 20.png'
 import Image from 'next/image'
+import clsx from "clsx";
 
 const Esc: FC = () => {
 	return (
@@ -16,14 +17,16 @@ const Esc: FC = () => {
 				<div className={styles.wrapper}>
 					<div className={styles.left}>
 						<div className={styles.layout}>
-							<h2>Экскурсии</h2>
+							<h2
+								className="block tracking-2% font-medium min-1200px:text-[48px] min-1200px:leading-[57.6px] max-1200px:text-[36px] max-1200px:leading-[43.2px] max-834px:!text-[26px] max-834px:!leading-[31.2px] min-1200px:mb-[32px] max-1200px:!mb-[24px] max-834px:pb-[8px]"
+							>Экскурсии</h2>
 							<div className={styles.items}>
 								{ESC.map((item, i) => (
-									<div className={styles.item} key={i}>
+									<div className={clsx(styles.item, "min-1200px:py-[24px] max-1200px:py-[20px] max-834px:!py-[24px]")} key={i}>
 										<div className={styles.subItem}>
 											{/* <Image src={item.svg} alt={item.title} /> */}
 											<item.svg />
-											<p>{item.title}</p>
+											<p className="min-1200px:text-[18px] max-1200px:text-[14px] font-normal tracking-2% leading-[23px]">{item.title}</p>
 										</div>
 										<IoIosArrowDown />
 									</div>

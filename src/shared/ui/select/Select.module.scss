@@ -7,7 +7,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 300px;
 
+
+  @media screen and (max-width: 1200px){
+    width: 100%;
+    max-width: 100%;
+    height: unset;
+    min-height: unset;
+  }
 
   .heading {
     min-height: 80px;
@@ -20,6 +28,12 @@
 		color: #728487;
     cursor: pointer;
 
+    @media screen and (max-width: 1200px) {
+      height: unset;
+      min-height: unset;
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
 
     p {
       font-weight: bold;
@@ -62,6 +76,10 @@
     list-style-type: none;
     border-radius: 10px;
     box-shadow: 4px 4px 13.699999809265137px 0px #0A51551A;
+
+    @media screen and (max-width: 1200px) {
+      top: calc(100% + 4px);
+    }
     
     .li {
 			padding-left: 10px;

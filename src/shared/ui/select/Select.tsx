@@ -39,23 +39,23 @@ const Select: FC<TypePropsSelect> = (props) => {
             {selected ? (
                 <div
                     onClick={() => setIsOpen(!isOpen)}
-                    className={clsx(styles.heading, isOpen && styles["focus__heading"])}
+                    className={clsx(styles.heading, isOpen && styles["focus__heading"], "!px-[12px] max-1200px:py-[8px]")}
                 >
                     <div>
                         {
-                            compact ? <></> : <span>{placeholder}</span>
+                            compact ? <></> : <span className="text-[16px] leading-[23px] tracking-2% !font-normal max-1200px:!text-[12px] max-1200px:!leading-[12px]">{placeholder}</span>
                         }
-                        <p className={clsx(styles.selected, "capitalize")}>{selected}</p>
+                        <p className={clsx(styles.selected, "capitalize text-[18px] !font-semibold leading-[21.6px] !tracking-1% mt-[4px]  max-1200px:!text-[14px] max-1200px:!leading-[16.8px]")}>{selected}</p>
                     </div>
-                    {img && <Image width={20} height={20} src={img} alt={""}/>}
+                    {img && <Image width={20} height={20} className={compact ? "" : "max-1200px:!w-[16px] max-1200px:!h-[16px]"} src={img} alt={""}/>}
                 </div>
             ) : (
                 <div
                     onClick={() => setIsOpen(!isOpen)}
-                    className={clsx(styles.heading, isOpen && styles["focus__heading"])}
+                    className={clsx(styles.heading, isOpen && styles["focus__heading"], "!px-[12px]")}
                 >
-                    <p>{placeholder}</p>
-                    {img && <Image width={compact ? 16 : 20} height={compact ? 16 : 20} src={img} alt={""}/>}
+                    <p className="text-[16px] leading-[23px] tracking-2% !font-normal max-1200px:!text-[14px] max-1200px:!leading-[16.8px]">{placeholder}</p>
+                    {img && <Image width={compact ? 16 : 20} height={compact ? 16 : 20} className={compact ? "" : "max-1200px:!w-[16px] max-1200px:!h-[16px]"} src={img} alt={""}/>}
                 </div>
             )}
             {isOpen ? (

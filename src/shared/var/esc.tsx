@@ -12,22 +12,22 @@ import item5 from '@/assets/svg/menu-5.svg'
 export const ESC = [
 	{
 		title: 'По каналам',
-		svg: () => <SvgOne />,
+		svg: () => <SvgOne width="32px" height="32px" />,
 	},
 	{
 		title: 'Речные',
-		svg: () => <SvgTwo />,
+		svg: () => <SvgTwo width="32px" height="32px" />,
 	},
 	{
 		title: 'По москве реке',
-		svg: () => <SvgThree />,
+		svg: () => <SvgThree width="32px" height="32px" />,
 	},
 	{
 		title: 'На парсной яхте',
-		svg: () => <SvgFour />,
+		svg: () => <SvgFour width="32px" height="32px" />,
 	},
 	{
 		title: 'Рыбалка гайдинг',
-		svg: () => <Svg />,
+		svg: () => <Svg width="32px" height="32px" />,
 	},
 ]

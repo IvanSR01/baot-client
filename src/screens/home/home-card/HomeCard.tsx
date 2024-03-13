@@ -29,7 +29,6 @@ const HomeCard: FC<TypePropsHomeCard> = ({ status }) => {
 					{
 						isFavorite ? <img src={favoriteActive.src} alt='' /> : <img src={favIcon.src} alt='' />
 					}
-					<img src={favoriteActive.src} alt='' />
 				</button>
 				<div className={styles.row}>
 					<div>

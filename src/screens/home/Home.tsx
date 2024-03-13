@@ -47,7 +47,7 @@ const Home: FC<TypePropsHome> = () => {
 			<Header />
 			<Intro>
 				<div className={styles.intro}>
-					<h2>Откройте новые горизонты праздника с нашими яхтами и лодками</h2>
+					<h2 className="tracking-2% text-[60px] leading-[61px] mb-[48px] max-475px:-tracking-4%">Откройте новые горизонты праздника с нашими яхтами и лодками</h2>
 					<SearchFilter />
 				</div>
 			</Intro>
@@ -76,12 +76,12 @@ const Home: FC<TypePropsHome> = () => {
 						>
 							<Image src={iconNext} alt='next' />
 						</IconButton>
-						<h1>
+						<h2 className="text-[48px] leading-[57.6px] mb-[30px] tracking-2% font-medium max-1260px:text-[36px] max-1260px:leading-[43.2px] max-1260px:mb-[32px] max-475px:!mb-[20px] max-475px:!text-[26px] max-475px:!leading-[31.2px]">
 							Аренда яхты{' '}
 							<span>
 								в <City />
 							</span>
-						</h1>
+						</h2>
 						<Category
 							selectedCategory={selectedCategory}
 							setSelectedCategory={setSelectedCategory}
@@ -98,9 +98,9 @@ const Home: FC<TypePropsHome> = () => {
 			</Wrapper>
 			<Esc />
 			<Wrapper>
-				<div className={clsx(styles.container, styles.mb)}>
-					<Heading heading='Прокат лодок' link='лодки' />
-					<div className={clsx(styles.itemsYatch, styles.mb)}>
+				<div className={clsx(styles.container, styles.mb, "!mb-[150px]")}>
+					<Heading heading='Прокат лодок' link='лодки' className="min-1260px:!mb-[30px] min-475px:!mb-[32px] max-475px:!mb-[24px]" />
+					<div className={clsx(styles.itemsYatch, "")}>
 						{[...Array(3)].map((_, i) => (
 							<YatchCard
 								type="'dada"
@@ -110,13 +110,15 @@ const Home: FC<TypePropsHome> = () => {
 							/>
 						))}
 					</div>
-					<Bottom link='лодки' />
+					<div className="max-475px:mt-[50px]">
+						<Bottom link='лодки' />
+					</div>
 				</div>
 			</Wrapper>
 			<Workshops />
 			<Wrapper>
 				<div className={clsx(styles.container, styles.mb)}>
-					<Heading heading='Яхтклубы' link='яхтклубы' />
+					<Heading heading='Яхтклубы' link='яхтклубы' className="min-1260px:!mb-[36px] min-475px:!mb-[32px] max-475px:!mb-[24px]"  />
 					<div className={clsx(styles.itemsYatch, styles.mb)}>
 						{[...Array(2)].map((_, i) => (
 							<YatchCard className={styles.yatch} img={img} key={i} />

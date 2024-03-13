@@ -9,6 +9,13 @@
 	display: flex;
 	justify-content: center;
 
+	@media screen and (max-width: 1060px) {
+		padding: 0;
+		width: 100%;
+		padding-top: 70.24px;
+		padding-bottom: 70.24px;
+	}
+
 	@media screen and (max-width: 600px) {
 		padding: 0;
 		width: 100%;

@@ -57,15 +57,6 @@ export const ModalFilter = () => {
                 !modalActive ?
                     <></> :
                     <div className="fixed w-[100%] h-[100%] bg-white left-0 top-0 px-[20px] pt-[56px] pb-[51px] z-[100]">
-                        <button
-                            className="absolute top-[22px] right-[20px]"
-                            onClick={() => {
-                                setModalActive(false)
-                                document.body.style.overflowY = "visible"
-                            }}
-                        >
-                            <img src={materialSymbolsClose.src} alt=""/>
-                        </button>
                         <ModalFilterSelect
                             iconSrc={icon.src}
                             placeholder="Выберите категорию"
@@ -85,11 +76,11 @@ export const ModalFilter = () => {
                         <div ref={ref}>
                             <div
                                 onClick={() => setDateOpened(!dateOpened)}
-                                className="cursor-pointer flex items-center justify-between my-[8px] py-[16px] border-solid border-b-[1px] border-b-[#EEEEEE]"
+                                className="cursor-pointer flex items-center justify-between my-[8px] py-[16px] pt-[22px] border-solid border-b-[1px] border-b-[#EEEEEE]"
                             >
                                 <div>
-                                    <span className="text-[12px] tracking-2% leading-[12px] text-[#728487]">Даты начала аренды</span>
-                                    <p className="text-[14px] leading-[16.8px] tracking-1% font-semibold text-[#18292D]">
+                                    <span className="text-[12px] tracking-2% leading-[12px] text-[#728487] block">Даты начала аренды</span>
+                                    <p className="text-[14px] leading-[16.8px] tracking-1% font-semibold text-[#18292D] mt-[4px]">
                                         {
                                             dateRange[0] && dateRange[1] ?
                                                 <>{formatDate(dateRange[0])} - {formatDate(dateRange[1])}</> :
@@ -128,6 +119,15 @@ export const ModalFilter = () => {
                             <CiSearch className="w-[20px] h-[20px] my-[3px]" width="20px" height="20px" />
                             Поиск
                         </Button>
+                        <button
+                            className="absolute top-[22px] right-[20px]"
+                            onClick={() => {
+                                setModalActive(false)
+                                document.body.style.overflowY = "visible"
+                            }}
+                        >
+                            <img src={materialSymbolsClose.src} alt=""/>
+                        </button>
                     </div>
             }
         </div>
@@ -155,14 +155,14 @@ const ModalFilterSelect: FC<IModalFilterSelectProps> = (props) => {
     } = props;
 
     return (
-        <div className={`relative ${active ? "pb-[16px] border-solid border-b-[1px] border-b-[#EEEEEE]" : ""}`}>
+        <div className={`relative ${active ? "pb-[16px] border-solid border-b-[1px] border-b-[#EEEEEE]" : ""} pt-[16px] first:mt-[8px] first:!pt-[0] [&:nth-child(2)]:pt-[24px]`}>
             <div
                 onClick={() => setActive(!active)}
-                className="cursor-pointer flex items-center justify-between my-[8px] py-[16px] border-solid border-b-[1px] border-b-[#EEEEEE]"
+                className="cursor-pointer flex items-center justify-between my-[8px] py-[16px] border-solid border-b-[1px] border-b-[#EEEEEE]  mt-[0] pt-[0]"
             >
                 <div>
-                    <span className="text-[12px] tracking-2% leading-[12px] text-[#728487]">{label}</span>
-                    <p className="text-[14px] leading-[16.8px] tracking-1% font-semibold text-[#18292D]">
+                    <span className="text-[12px] tracking-2% leading-[12px] text-[#728487] block">{label}</span>
+                    <p className="text-[14px] leading-[16.8px] tracking-1% font-semibold text-[#18292D] mt-[4px]">
                         {
                             typeof selected === "string" && selected.length > 0 ? selected : items[selected as number] ?? placeholder
                         }

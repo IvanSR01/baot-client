@@ -55,7 +55,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                     {categorys.map((item, i) => (
                         <button
                             className={clsx(
-                                "leading-[23px] tracking-2% pt-[1rem] pb-[0.75rem]",
+                                "leading-[23px] tracking-2% pt-[1rem] pb-[14px]",
                                 styles.item,
                                 i === selectedCategory && styles.active
                             )}
@@ -67,7 +67,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                     ))}
                 </div>
             )}
-            <div className={styles.content}>
+            <div className={clsx(styles.content, `!justify-start !gap-[15px] !pl-[46px] !pr-[54px] ${!compact ? "max-1200px:p-[12px] max-1200px:gap-[6px]" : ""}`)}>
                 {width < 1200 && !compact ? (
                     <div className={styles.selectLayout}>
                         <Select
@@ -99,31 +99,32 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                             </div>
                             <div className={styles.border}></div>
                             <div
+                                className="max-1200px:w-[100%]"
                                 style={{
                                     position: "relative",
                                 }}
                             >
                                 <div
-                                    className={styles.selectLayout}
+                                    className={clsx(styles.selectLayout, "w-[100%]")}
                                     onClick={() => {
                                         setIsOpen(!isOpen);
                                     }}
                                     ref={openRef}
                                 >
                                     {dateRange[0] && dateRange[1] ? (
-                                        <div className={clsx(styles.date, isOpen && styles.focusDate)}>
+                                        <div className={clsx(styles.date, isOpen && styles.focusDate, "max-1200px:!max-w-[100%] max-1200px:!min-h-[unset] max-1200px:!h-[unset] max-1200px:!p-[8px_12px]")}>
                                             <div>
-                                                <span>Дата начала аренды</span>
-                                                <p className={styles.range}>
+                                                <span className="text-[16px] leading-[23px] tracking-2% !font-normal max-1200px:!text-[12px] max-1200px:!leading-[12px]">Дата начала аренды</span>
+                                                <p className="capitalize text-[18px] !font-semibold leading-[21.6px] tracking-1% mt-[4px] text-[#18292D]  max-1200px:!text-[14px] max-1200px:!leading-[16.8px]">
                                                     {formatDate(dateRange[0])} - {formatDate(dateRange[1])}
                                                 </p>
                                             </div>
                                             <img src={img.src} alt=""/>
                                         </div>
                                     ) : (
-                                        <div className={clsx(styles.date, isOpen && styles.focusDate)}>
-                                            <p>Дата начала аренды</p>
-                                            <img src={img.src} alt=""/>
+                                        <div className={clsx(styles.date, isOpen && styles.focusDate, "max-1200px:!max-w-[100%] max-1200px:!min-h-[unset] max-1200px:!h-[unset] max-1200px:!p-[8px_12px]")}>
+                                            <p className="text-[18px] leading-[23px] tracking-2% !font-normal max-1200px:!text-[14px] max-1200px:!leading-[16.8px]">Дата начала аренды</p>
+                                            <img src={img.src} className="max-1200px:w-[16px] max-1200px:h-[16px]" alt=""/>
                                         </div>
                                     )}
                                 </div>
@@ -138,20 +139,21 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                                 )}
                             </div>
                             <div className={styles.border}></div>
-                            <div className={styles.selectLayout}>
+                            <div className={clsx(styles.selectLayout, "w-[100%]")}>
                                 <Select
                                     selected={location}
                                     options={city}
                                     setAction={(i) => dispatch(setLocation(city[i as number]))}
                                     placeholder="Локация"
                                     img={locationIcon.src}
+                                    className="min-1260px:[&>div>div]:mt-[4px] min-1260px:[&>div>div]:ml-[18px] !max-w-[100%]"
                                 />
                             </div>
                             <div className={styles.border}></div>
-                            <div className={styles.buttonLayout}>
+                            <div className={clsx(styles.buttonLayout, "!ml-[auto] max-1200px:!w-[100%] max-1200px:!pt-[0]")}>
                                 <Link href="/catalog">
-                                    <Button>
-                                        <CiSearch/> {width >= 1200 ? <></> : <>Поиск</>}
+                                    <Button className="max-1200px:font-medium">
+                                        <CiSearch className="max-1200px:w-[20px] max-1200px:h-[20px]" /> {width >= 1200 ? <></> : <>Поиск</>}
                                     </Button>
                                 </Link>
                             </div>

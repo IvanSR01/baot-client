@@ -40,7 +40,7 @@
 			display: flex;
 			justify-content: end;
 			height: 649px;
-			padding: 50px 0px;
+			padding: 58.5px 0px;
 		}
 		h2 {
 			font-size: 48px;
@@ -58,13 +58,13 @@
 			@media (max-width: 600px) {
 				width: 90vw;
 			}
-			margin-bottom: 10px;
+			margin-bottom: 24px;
 		}
 		.item {
 			box-sizing: content-box;
 			border-top: 1px solid #eeeeee;
 			border-bottom: 1px solid #eeeeee;
-			padding: 24px 0px;
+			//padding: 24px 0px;
 			cursor: pointer;
 			// height: 50px;
 			display: flex;
@@ -102,6 +102,9 @@
 			svg {
 				fill: #00748c;
 				color: #00748c;
+			}
+			p {
+				font-weight: 600;
 			}
 		}
 		.right {
