@@ -105,7 +105,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                                 }}
                             >
                                 <div
-                                    className={clsx(styles.selectLayout, "w-[100%]")}
+                                    className={clsx(styles.selectLayout, "w-[100%] cursor-pointer")}
                                     onClick={() => {
                                         setIsOpen(!isOpen);
                                     }}
