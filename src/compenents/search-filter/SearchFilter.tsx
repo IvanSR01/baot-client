@@ -67,7 +67,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                     ))}
                 </div>
             )}
-            <div className={clsx(styles.content, `!justify-start !gap-[15px] !pl-[46px] !pr-[54px] ${!compact ? "max-1200px:p-[12px] max-1200px:gap-[6px]" : ""}`)}>
+            <div className={clsx(styles.content, `!justify-start !gap-[15px] !pl-[46px] !pr-[54px] ${!compact ? "max-1200px:!p-[12px] max-1200px:gap-[6px] max-475px:px-12" : ""}`)}>
                 {width < 1200 && !compact ? (
                     <div className={styles.selectLayout}>
                         <Select
