@@ -50,7 +50,7 @@ const Select: FC<TypePropsSelect> = (props) => {
                             compact ? <></> : <span
                                 className="text-[16px] leading-[23px] tracking-2% !font-normal max-1200px:!text-[12px] max-1200px:!leading-[12px]">{placeholder}</span>
                         }
-                        <p className={clsx(styles.selected, "capitalize text-[18px] !font-semibold leading-[21.6px] !tracking-1% mt-[4px]  max-1200px:!text-[14px] max-1200px:!leading-[16.8px]")}>{selected}</p>
+                        <p className={clsx(styles.selected, `capitalize text-[18px] ${compact ? "font-bold" : "!font-medium"} leading-[21.6px] !tracking-1% mt-[4px]  max-1200px:!text-[14px] max-1200px:!leading-[16.8px]`)}>{selected}</p>
                     </div>
                     {
                         img ? (isOpen ?
@@ -66,7 +66,7 @@ const Select: FC<TypePropsSelect> = (props) => {
                     onClick={() => setIsOpen(!isOpen)}
                     className={clsx(styles.heading, isOpen && styles["focus__heading"], "!px-[12px]")}
                 >
-                    <p className="text-[16px] leading-[23px] tracking-2% !font-normal max-1200px:!text-[14px] max-1200px:!leading-[16.8px]">{placeholder}</p>
+                    <p className={`text-[16px] !text-[#18292D]  leading-[23px] ${compact ? "font-bold tracking-3%" : "!font-medium tracking-2%"} max-1200px:!text-[14px] max-1200px:!leading-[16.8px]`}>{placeholder}</p>
                     {
                         img ? (isOpen ?
                                 <Image width={20} height={20}
@@ -80,10 +80,10 @@ const Select: FC<TypePropsSelect> = (props) => {
                 </div>
             )}
             {isOpen ? (
-                <ul className={styles.ul}>
+                <ul className={clsx(styles.ul, "!min-w-fit")}>
                     {options.map((item, i) => (
                         <li
-                            className={clsx(styles.li, "capitalize")}
+                            className={clsx(styles.li, `tracking-1% leading-[21px] !text-[#18292D] ${compact ? "!min-w-[100%] !w-full !max-w-[100%] !px-[16px] !whitespace-nowrap tracking-1%" : ""}`)}
                             onClick={() => onClickSetActions(i)}
                             key={i}
                         >

@@ -126,7 +126,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                                         </div>
                                     ) : (
                                         <div className={clsx(styles.date, isOpen && styles.focusDate, "max-1200px:!max-w-[100%] max-1200px:!min-h-[unset] max-1200px:!h-[unset] max-1200px:!p-[8px_12px]")}>
-                                            <p className="text-[18px] leading-[23px] tracking-2% !font-normal max-1200px:!text-[14px] max-1200px:!leading-[16.8px]">Дата начала аренды</p>
+                                            <p className="text-[18px] leading-[23px] tracking-2% !font-medium max-1200px:!text-[14px] max-1200px:!leading-[16.8px]">Дата начала аренды</p>
                                             {
                                                 isOpen ? <img src={calendarActive.src} alt=""/> : <img src={img.src} alt=""/>
                                             }
@@ -136,6 +136,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                                 {isOpen && (
                                     <div ref={ref} className={styles.calendar}>
                                         <MyCalendar
+                                            className="!top-[78px]"
                                             setShow={setIsOpen}
                                             date={dateRange}
                                             setDate={setDateRange}
@@ -143,7 +144,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                                     </div>
                                 )}
                             </div>
-                            <div className={styles.border}></div>
+                            <div className={clsx(styles.border, "min-1330px:mr-[10px]")}></div>
                             <div className={clsx(styles.selectLayout, "w-[100%]")}>
                                 <Select
                                     selected={location}
@@ -215,7 +216,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                                                 isOpen && styles.focusDate,
                                                 "!min-h-[42px] !h-[42px] !text-[14px] !w-fit !m-0 gap-[1.5rem]"
                                             )}>
-                                                <p>Дата начала аренды</p>
+                                                <p className="!text-[#18292D] font-bold tracking-3%">Даты начала аренды</p>
                                                 {
                                                     isOpen ? <img src={calendarActive.src} className="w-[16px] h-[16px]" alt=""/> : <img src={calendarSmall.src} className="w-[16px] h-[16px]" alt=""/>
                                                 }
@@ -246,7 +247,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                                     imgActive={locationActive.src}
                                 />
                             </div>
-                                <button className="w-fit bg-[#FA1153] p-[13px] rounded-[8px] ml-[-5px]">
+                                <button className="w-fit bg-[#FA1153] p-[13px] rounded-[8px] ml-[-5px] min-w-[42px]">
                                     <img width="18px" height="18px" src={searchFilter.src} alt=""/>
                                 </button>
                         </div>
