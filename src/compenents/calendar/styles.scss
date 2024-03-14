@@ -97,6 +97,9 @@
 .react-calendar__tile--tile.react-calendar__tile--active {
   color: #728487; /* Цвет для прошедших дней */
 }
+.react-calendar__navigation__next2-button, .react-calendar__navigation__prev2-button {
+  display: none;
+}
 .react-calendar__navigation__label {
   text-transform: capitalize;
   span {

@@ -79,7 +79,7 @@ const Home: FC<TypePropsHome> = () => {
 						</IconButton>
 						<h2 className="text-[48px] leading-[57.6px] mb-[30px] tracking-2% font-medium max-1260px:text-[36px] max-1260px:leading-[43.2px] max-1260px:mb-[32px] max-475px:!mb-[20px] max-475px:!text-[26px] max-475px:!leading-[31.2px]">
 							Аренда яхты{' '}
-							<Link href="/catalog">
+							<Link href="/catalog" color="text-[#00748C]">
 								в <City />
 							</Link>
 						</h2>
