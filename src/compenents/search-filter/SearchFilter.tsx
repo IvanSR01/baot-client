@@ -145,7 +145,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                                     </div>
                                 )}
                             </div>
-                            <div className={clsx(styles.border, "min-1330px:mr-[0]")}></div>
+                            <div className={clsx(styles.border, "min-1330px:mr-[0] min-1330px:ml-[27px]")}></div>
                             <div className={clsx(styles.selectLayout, "w-[100%]")}>
                                 <Select
                                     selected={location}
@@ -154,7 +154,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                                     placeholder="Локация"
                                     img={locationIcon.src}
                                     imgActive={locationActive}
-                                    className="min-1260px:[&>div>div]:mt-[4px] min-1260px:[&>div>div]:ml-[18px] min-1330px:[&>div>img]:mr-[-12px] !max-w-[100%]"
+                                    className="min-1260px:[&>div>div]:mt-[4px] min-1330px:[&>div]:!max-w-[341px] min-1260px:[&>div>div]:ml-[18px] min-1330px:[&>div>img]:mr-[12px] !max-w-[100%]"
                                 />
                             </div>
                             <div className={styles.border}></div>
