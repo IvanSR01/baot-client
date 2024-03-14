@@ -66,7 +66,7 @@ const Select: FC<TypePropsSelect> = (props) => {
                     onClick={() => setIsOpen(!isOpen)}
                     className={clsx(styles.heading, isOpen && styles["focus__heading"], "!px-[12px]")}
                 >
-                    <p className={`text-[16px] !text-[#18292D]  leading-[23px] ${compact ? "font-bold tracking-3%" : "!font-medium tracking-2%"} max-1200px:!text-[14px] max-1200px:!leading-[16.8px]`}>{placeholder}</p>
+                    <p className={`text-[16px] ${selected ? "!text-[#18292D]" : "!text-[#728487]"}  leading-[23px] ${compact ? "font-bold tracking-3%" : "!font-medium tracking-2%"} max-1200px:!text-[14px] max-1200px:!leading-[16.8px]`}>{placeholder}</p>
                     {
                         img ? (isOpen ?
                                 <Image width={20} height={20}
