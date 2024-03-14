@@ -50,7 +50,7 @@ const Select: FC<TypePropsSelect> = (props) => {
                             compact ? <></> : <span
                                 className="text-[16px] leading-[23px] !text-[#728487] tracking-2% !font-normal max-1200px:!text-[12px] max-1200px:!leading-[12px]">{placeholder}</span>
                         }
-                        <p className={clsx(styles.selected, `capitalize text-[18px] ${compact ? "font-bold" : "!font-medium"} leading-[21.6px] !tracking-1% mt-[4px]  max-1200px:!text-[14px] max-1200px:!leading-[16.8px]`)}>{selected}</p>
+                        <p className={clsx(styles.selected, `capitalize text-[18px] !text-[#18292D] ${compact ? "font-bold" : "!font-semibold"} leading-[21.6px] !tracking-1% mt-[4px]  max-1200px:!text-[14px] max-1200px:!leading-[16.8px]`)}>{selected}</p>
                     </div>
                     {
                         img ? (isOpen ?
