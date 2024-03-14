@@ -67,7 +67,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                     ))}
                 </div>
             )}
-            <div className={clsx(styles.content, `!justify-start !gap-[15px] !pl-[46px] !pr-[54px] ${!compact ? "max-1200px:!p-[12px] max-1200px:gap-[6px] max-475px:px-12" : ""}`)}>
+            <div className={clsx(styles.content, `!justify-start !pl-[46px] !pr-[54px] ${!compact ? "max-1200px:!p-[12px] max-1200px:gap-[6px] max-475px:px-12" : ""}`)}>
                 {width < 1200 && !compact ? (
                     <div className={styles.selectLayout}>
                         <Select
@@ -80,7 +80,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                             placeholder="Категория"
                             img={icon.src}
                         />
-                        <div className={styles.border}></div>
+                        <div className={clsx(styles.border)}></div>
                     </div>
                 ) : (
                     <></>
@@ -99,7 +99,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                                     imgActive={arrowActive.src}
                                 />
                             </div>
-                            <div className={styles.border}></div>
+                            <div className={clsx(styles.border, "min-1330px:!mx-[16px]")}></div>
                             <div
                                 className="max-1200px:w-[100%]"
                                 style={{
@@ -122,14 +122,14 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                                                 </p>
                                             </div>
                                             {
-                                                isOpen ? <img className="mr-[10px]"  src={calendarActive.src} alt=""/> : <img className="mr-[10px]" src={img.src} alt=""/>
+                                                isOpen ? <img className="mr-[13px]"  src={calendarActive.src} alt=""/> : <img className="mr-[13px]" src={img.src} alt=""/>
                                             }
                                         </div>
                                     ) : (
                                         <div className={clsx(styles.date, isOpen && styles.focusDate, "max-1200px:!max-w-[100%] max-1200px:!min-h-[unset] max-1200px:!h-[unset] max-1200px:!p-[8px_12px]")}>
                                             <p className="text-[18px] leading-[23px] tracking-2% !font-medium max-1200px:!text-[14px] max-1200px:!leading-[16.8px]">Дата начала аренды</p>
                                             {
-                                                isOpen ? <img className="mr-[10px]"  src={calendarActive.src} alt=""/> : <img className="mr-[10px]" src={img.src} alt=""/>
+                                                isOpen ? <img className="mr-[13px]"  src={calendarActive.src} alt=""/> : <img className="mr-[13px]" src={img.src} alt=""/>
                                             }
                                         </div>
                                     )}
@@ -145,7 +145,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                                     </div>
                                 )}
                             </div>
-                            <div className={clsx(styles.border, "min-1330px:mr-[0] min-1330px:ml-[27px]")}></div>
+                            <div className={clsx(styles.border, "min-1330px:mx-[16px]")}></div>
                             <div className={clsx(styles.selectLayout, "w-[100%]")}>
                                 <Select
                                     selected={location}
@@ -154,10 +154,10 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                                     placeholder="Локация"
                                     img={locationIcon.src}
                                     imgActive={locationActive}
-                                    className="min-1260px:[&>div>div]:mt-[4px] min-1330px:[&>div]:!max-w-[341px] min-1260px:[&>div>div]:ml-[18px] min-1330px:[&>div>img]:mr-[12px] !max-w-[100%]"
+                                    className="min-1260px:[&>div>div]:mt-[4px] min-1330px:[&>div]:!max-w-[341px] min-1260px:[&>div>div]:ml-[18px] min-1330px:[&>div>img]:!mr-[-12px] !max-w-[100%]"
                                 />
                             </div>
-                            <div className={styles.border}></div>
+                            <div className={clsx(styles.border, "min-1330px:ml-[34px]")}></div>
                             <div className={clsx(styles.buttonLayout, "!ml-[auto] max-1200px:!w-[100%] max-1200px:!pt-[0]")}>
                                 <Link href="/catalog">
                                     <Button className="max-1200px:font-medium min-w-[54px]">
