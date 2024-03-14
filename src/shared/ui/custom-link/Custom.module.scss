@@ -4,13 +4,16 @@
   border-bottom: 1px solid #00748c;
   padding-bottom: 0px;
   transition: color 0.5s;
-	font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.01rem;
+  font-weight: 600;
 }
 
 .link:hover {
   color: #054a58;
   border-bottom: 1px solid #054a58;
 }
+
 .link:active {
   color: #18292d;
   border-bottom: 1px solid #18292d;

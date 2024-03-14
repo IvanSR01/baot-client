@@ -77,9 +77,9 @@ const Home: FC<TypePropsHome> = () => {
 						>
 							<Image src={iconNext} alt='next' />
 						</IconButton>
-						<h2 className="text-[48px] leading-[57.6px] mb-[30px] tracking-2% font-medium max-1260px:text-[36px] max-1260px:leading-[43.2px] max-1260px:mb-[32px] max-475px:!mb-[20px] max-475px:!text-[26px] max-475px:!leading-[31.2px]">
+						<h2 className="text-[#18292D] text-[48px] leading-[57.6px] mb-[30px] tracking-2% font-medium max-1260px:text-[36px] max-1260px:leading-[43.2px] max-1260px:mb-[32px] max-475px:!mb-[20px] max-475px:!text-[26px] max-475px:!leading-[31.2px]">
 							Аренда яхты{' '}
-							<Link href="/catalog" color="text-[#00748C]">
+							<Link href="/catalog" className="text-[#00748C]">
 								в <City />
 							</Link>
 						</h2>
