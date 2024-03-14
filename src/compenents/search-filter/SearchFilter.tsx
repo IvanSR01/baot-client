@@ -116,7 +116,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                                     {dateRange[0] && dateRange[1] ? (
                                         <div className={clsx(styles.date, isOpen && styles.focusDate, "max-1200px:!max-w-[100%] max-1200px:!min-h-[unset] max-1200px:!h-[unset] max-1200px:!p-[8px_12px]")}>
                                             <div>
-                                                <span className="text-[16px] leading-[23px] tracking-2% !font-normal max-1200px:!text-[12px] max-1200px:!leading-[12px]">Дата начала аренды</span>
+                                                <span className="text-[16px] leading-[23px] tracking-2% !font-normal max-1200px:!text-[12px] max-1200px:!leading-[12px] !text-[#728487]">Дата начала аренды</span>
                                                 <p className="capitalize text-[18px] !font-semibold leading-[21.6px] tracking-1% mt-[4px] text-[#18292D]  max-1200px:!text-[14px] max-1200px:!leading-[16.8px]">
                                                     {formatDate(dateRange[0])} - {formatDate(dateRange[1])}
                                                 </p>
