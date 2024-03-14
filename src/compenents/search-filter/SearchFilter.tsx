@@ -95,6 +95,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                                     setAction={(i) => setSelectedSubCategory(subCategorys[i as number])}
                                     placeholder="Подкатегория"
                                     img={icon.src}
+                                    className="min-1330px:[&>div]:!mr-[10px]"
                                     imgActive={arrowActive.src}
                                 />
                             </div>
@@ -106,7 +107,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                                 }}
                             >
                                 <div
-                                    className={clsx(styles.selectLayout, "w-[100%] cursor-pointer")}
+                                    className={clsx(styles.selectLayout, "w-[100%] cursor-pointer min-1330px:!w-[unset]")}
                                     onClick={() => {
                                         setIsOpen(!isOpen);
                                     }}
@@ -121,14 +122,14 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                                                 </p>
                                             </div>
                                             {
-                                                isOpen ? <img src={calendarActive.src} alt=""/> : <img src={img.src} alt=""/>
+                                                isOpen ? <img className="mr-[10px]"  src={calendarActive.src} alt=""/> : <img className="mr-[10px]" src={img.src} alt=""/>
                                             }
                                         </div>
                                     ) : (
                                         <div className={clsx(styles.date, isOpen && styles.focusDate, "max-1200px:!max-w-[100%] max-1200px:!min-h-[unset] max-1200px:!h-[unset] max-1200px:!p-[8px_12px]")}>
                                             <p className="text-[18px] leading-[23px] tracking-2% !font-medium max-1200px:!text-[14px] max-1200px:!leading-[16.8px]">Дата начала аренды</p>
                                             {
-                                                isOpen ? <img src={calendarActive.src} alt=""/> : <img src={img.src} alt=""/>
+                                                isOpen ? <img className="mr-[10px]"  src={calendarActive.src} alt=""/> : <img className="mr-[10px]" src={img.src} alt=""/>
                                             }
                                         </div>
                                     )}
@@ -144,7 +145,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                                     </div>
                                 )}
                             </div>
-                            <div className={clsx(styles.border, "min-1330px:mr-[10px]")}></div>
+                            <div className={clsx(styles.border, "min-1330px:mr-[0]")}></div>
                             <div className={clsx(styles.selectLayout, "w-[100%]")}>
                                 <Select
                                     selected={location}
@@ -153,7 +154,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                                     placeholder="Локация"
                                     img={locationIcon.src}
                                     imgActive={locationActive}
-                                    className="min-1260px:[&>div>div]:mt-[4px] min-1260px:[&>div>div]:ml-[18px] !max-w-[100%]"
+                                    className="min-1260px:[&>div>div]:mt-[4px] min-1260px:[&>div>div]:ml-[18px] min-1330px:[&>div>img]:mr-[-12px] !max-w-[100%]"
                                 />
                             </div>
                             <div className={styles.border}></div>
