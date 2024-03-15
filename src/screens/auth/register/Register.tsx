@@ -48,6 +48,7 @@ const Register: FC = () => {
     onSuccess: async (data) => {
       try {
         const res = await authService.flashCall(setPhone(data.phone));
+				console.log(res)
         dispatch(
           setUserRegisterion({
             ...getValues(),
