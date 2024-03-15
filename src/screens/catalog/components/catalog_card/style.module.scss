@@ -1,0 +1,14 @@
+.card {
+  border-radius: 15px 15px 1.25rem 1.25rem;
+  transition: box-shadow 0.5s;
+  .content {
+    transition: 250ms ease-in-out border-color;
+  }
+  &:hover {
+    box-shadow: 1px 1px 13.699999809265137px 0 #0a51551a;
+
+    //.content {
+    //  border-color: transparent;
+    //}
+  }
+}

@@ -1,3 +1,4 @@
 export type TypePropsCarousel = {
-	imgs: string[]
+	imgs: string[],
+	className?: string;
 }

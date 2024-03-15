@@ -4,7 +4,8 @@ export type TypePropsCalendar = {
   setDate: Dispatch<SetStateAction<any>>;
 	date: any[]
 	setShow?: Dispatch<SetStateAction<boolean>>
-	ref?: any
+	ref?: any,
+	className?: string;
 };
 
 

@@ -5,7 +5,7 @@ import {
   footerLinksPart,
   footerLinksSec,
 } from "@/shared/var/footer-links";
-import logo from "@/assets/img/logo.svg";
+import {logotypeFill} from "@/assets/icons";
 import Link from "next/link";
 import Image from "next/image";
 import vk from "@/assets/logos/Vector.svg";
@@ -19,7 +19,7 @@ const Footer: FC = () => {
       <div className={styles.container}>
         <div className={styles.row}>
           <div className={styles.links}>
-            <h4>Разделы</h4>
+            <h4 className="text-[1.125rem] tracking-3%">Разделы</h4>
             <div className={styles.items}>
               {footerLinksSec.map((item, i) => (
                 <Link href={item.link} key={i}>
@@ -68,9 +68,9 @@ const Footer: FC = () => {
         </div>
         <div className={styles.row__two}>
           <div className={styles.logo}>
-            <Image src={logo} alt="" height={24} />
+            <Image src={logotypeFill.src} alt="" width={144} height={24} />
           </div>
-          <p>© 2024 ЯХТЫ</p>
+          <p className="text-[1rem] font-semibold max-375px:tracking-2% max-680px:opacity-[64%] max-680px:text-[14px] max-680px:leading-[23px]">© 2024 Налодку</p>
         </div>
       </div>
     </footer>
