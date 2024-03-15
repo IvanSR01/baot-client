@@ -48,6 +48,95 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
             document.body.addEventListener("click", handleClick);
         };
     }, []);
+
+
+
+
+    const NotCompactFilterSelects = () => (
+        <>
+            <div className={clsx(styles.selectLayout, "min-1200px:!max-w-[288px]")}>
+                <Select
+                    selected={selectedSubCategory}
+                    options={subCategorys}
+                    setAction={(i) => setSelectedSubCategory(subCategorys[i as number])}
+                    placeholder="Подкатегория"
+                    img={icon.src}
+                    className={clsx(styles.max288px, "min-1200px:!max-w-[288px]")}
+                    imgActive={arrowActive.src}
+                />
+            </div>
+            <div className={clsx(styles.border)}></div>
+            <div
+                className="max-1200px:w-[100%]"
+                style={{
+                    position: "relative",
+                }}
+            >
+                <div
+                    className={clsx(styles.selectLayout, "cursor-pointer")}
+                    onClick={() => {
+                        setIsOpen(!isOpen);
+                    }}
+                    ref={openRef}
+                >
+                    {dateRange[0] && dateRange[1] ? (
+                        <div className={clsx(styles.date, isOpen && styles.focusDate, `min-1200px:!px-[16px] max-1200px:!max-w-[100%] max-1200px:!min-h-[unset] max-1200px:!h-[unset] max-1200px:!p-[8px_12px] min-1330px:!max-w-[300px]`)}>
+                            <div>
+                                <span className="text-[16px] leading-[23px] tracking-2% !font-normal max-1200px:!text-[12px] max-1200px:!leading-[12px] !text-[#728487]">Дата начала аренды</span>
+                                <p className="capitalize text-[18px] !font-semibold leading-[21.6px] tracking-1% mt-[4px] text-[#18292D]  max-1200px:!text-[14px] max-1200px:!leading-[16.8px]">
+                                    {formatDate(dateRange[0])} - {formatDate(dateRange[1])}
+                                </p>
+                            </div>
+                            {
+                                isOpen ? <img className=""  src={calendarActive.src} alt=""/> : <img className="" src={img.src} alt=""/>
+                            }
+                        </div>
+                    ) : (
+                        <div className={clsx(styles.date, isOpen && styles.focusDate, `max-1200px:!max-w-[100%] max-1200px:!min-h-[unset] max-1200px:!h-[unset] max-1200px:!p-[8px_12px]`)}>
+                            <p className="text-[18px] leading-[23px] tracking-2% !font-medium max-1200px:!text-[14px] max-1200px:!leading-[16.8px]">Дата начала аренды</p>
+                            {
+                                isOpen ? <img className=""  src={calendarActive.src} alt=""/> : <img className="" src={img.src} alt=""/>
+                            }
+                        </div>
+                    )}
+                </div>
+                {isOpen && (
+                    <div ref={ref} className={styles.calendar}>
+                        <MyCalendar
+                            className="!top-[72px]"
+                            setShow={setIsOpen}
+                            date={dateRange}
+                            setDate={setDateRange}
+                        />
+                    </div>
+                )}
+            </div>
+            <div className={clsx(styles.border, "")}></div>
+            <div className={clsx(styles.selectLayout, "w-[100%]")}>
+                <Select
+                    selected={location}
+                    options={city}
+                    setAction={(i) => dispatch(setLocation(city[i as number]))}
+                    placeholder="Локация"
+                    img={locationIcon.src}
+                    imgActive={locationActive}
+                    className="min-1330px:!max-w-[341px]"
+                />
+            </div>
+            <div className={clsx(styles.border, "")}></div>
+            <div className={clsx(styles.buttonLayout, "!ml-[auto] max-1200px:!w-[100%] max-1200px:!pt-[0] min-1200px:max-w-[54px] min-1200px:!ml-[10px]")}>
+                <Link href="/catalog">
+                    <Button className="max-1200px:font-medium min-w-[54px]">
+                        <CiSearch className="max-1200px:w-[20px] max-1200px:h-[20px]" /> {width >= 1200 ? <></> : <>Поиск</>}
+                    </Button>
+                </Link>
+            </div>
+        </>
+    )
+
+
+
+
     return (
         <div className={clsx(styles.wrapper, compact ? styles.compact : "")}>
             {width >= 1200 && !compact && (
@@ -67,7 +156,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                     ))}
                 </div>
             )}
-            <div className={clsx(styles.content, `!justify-start !pl-[46px] !pr-[54px] ${!compact ? "max-1200px:!p-[12px] max-1200px:gap-[6px] max-475px:px-12" : ""}`)}>
+            <div className={clsx(styles.content, `!justify-start !pl-[46px] !pr-[54px] ${!compact ? "max-1200px:!p-[12px] max-1200px:gap-[6px] max-475px:px-12 min-1330px:!grid min-1330px:grid-cols-[288px_2px_300px_2px_341px_2px_54px] min-1330px:!gap-[25.77px] min-1200px:pt-[20px] min-1200px:pb-[17px]" : ""}`)}>
                 {width < 1200 && !compact ? (
                     <div className={styles.selectLayout}>
                         <Select
@@ -88,83 +177,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                 {
                     !compact ?
                         <>
-                            <div className={styles.selectLayout}>
-                                <Select
-                                    selected={selectedSubCategory}
-                                    options={subCategorys}
-                                    setAction={(i) => setSelectedSubCategory(subCategorys[i as number])}
-                                    placeholder="Подкатегория"
-                                    img={icon.src}
-                                    className="min-1330px:[&>div]:!mr-[10px]"
-                                    imgActive={arrowActive.src}
-                                />
-                            </div>
-                            <div className={clsx(styles.border, "min-1330px:!mx-[16px]")}></div>
-                            <div
-                                className="max-1200px:w-[100%]"
-                                style={{
-                                    position: "relative",
-                                }}
-                            >
-                                <div
-                                    className={clsx(styles.selectLayout, "w-[100%] cursor-pointer min-1330px:!w-[unset]")}
-                                    onClick={() => {
-                                        setIsOpen(!isOpen);
-                                    }}
-                                    ref={openRef}
-                                >
-                                    {dateRange[0] && dateRange[1] ? (
-                                        <div className={clsx(styles.date, isOpen && styles.focusDate, "max-1200px:!max-w-[100%] max-1200px:!min-h-[unset] max-1200px:!h-[unset] max-1200px:!p-[8px_12px]")}>
-                                            <div>
-                                                <span className="text-[16px] leading-[23px] tracking-2% !font-normal max-1200px:!text-[12px] max-1200px:!leading-[12px] !text-[#728487]">Дата начала аренды</span>
-                                                <p className="capitalize text-[18px] !font-semibold leading-[21.6px] tracking-1% mt-[4px] text-[#18292D]  max-1200px:!text-[14px] max-1200px:!leading-[16.8px]">
-                                                    {formatDate(dateRange[0])} - {formatDate(dateRange[1])}
-                                                </p>
-                                            </div>
-                                            {
-                                                isOpen ? <img className="mr-[13px]"  src={calendarActive.src} alt=""/> : <img className="mr-[13px]" src={img.src} alt=""/>
-                                            }
-                                        </div>
-                                    ) : (
-                                        <div className={clsx(styles.date, isOpen && styles.focusDate, "max-1200px:!max-w-[100%] max-1200px:!min-h-[unset] max-1200px:!h-[unset] max-1200px:!p-[8px_12px]")}>
-                                            <p className="text-[18px] leading-[23px] tracking-2% !font-medium max-1200px:!text-[14px] max-1200px:!leading-[16.8px]">Дата начала аренды</p>
-                                            {
-                                                isOpen ? <img className="mr-[13px]"  src={calendarActive.src} alt=""/> : <img className="mr-[13px]" src={img.src} alt=""/>
-                                            }
-                                        </div>
-                                    )}
-                                </div>
-                                {isOpen && (
-                                    <div ref={ref} className={styles.calendar}>
-                                        <MyCalendar
-                                            className="!top-[78px]"
-                                            setShow={setIsOpen}
-                                            date={dateRange}
-                                            setDate={setDateRange}
-                                        />
-                                    </div>
-                                )}
-                            </div>
-                            <div className={clsx(styles.border, "min-1330px:mx-[16px]")}></div>
-                            <div className={clsx(styles.selectLayout, "w-[100%]")}>
-                                <Select
-                                    selected={location}
-                                    options={city}
-                                    setAction={(i) => dispatch(setLocation(city[i as number]))}
-                                    placeholder="Локация"
-                                    img={locationIcon.src}
-                                    imgActive={locationActive}
-                                    className="min-1260px:[&>div>div]:mt-[4px] min-1330px:[&>div]:!max-w-[341px] min-1260px:[&>div>div]:ml-[18px] min-1330px:[&>div>img]:!mr-[-12px] !max-w-[100%]"
-                                />
-                            </div>
-                            <div className={clsx(styles.border, "min-1330px:ml-[34px]")}></div>
-                            <div className={clsx(styles.buttonLayout, "!ml-[auto] max-1200px:!w-[100%] max-1200px:!pt-[0]")}>
-                                <Link href="/catalog">
-                                    <Button className="max-1200px:font-medium min-w-[54px]">
-                                        <CiSearch className="max-1200px:w-[20px] max-1200px:h-[20px]" /> {width >= 1200 ? <></> : <>Поиск</>}
-                                    </Button>
-                                </Link>
-                            </div>
+                            <NotCompactFilterSelects />
                         </> :
                         <div
                             className="grid grid-cols-[fit-content(100%)_fit-content(100%)_fit-content(100%)_fit-content(100%)_fit-content(100%)] justify-center items-center max-w-[800px]">
@@ -257,5 +270,4 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
         </div>
     );
 };
-
 export default SearchFilter;
