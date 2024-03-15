@@ -19,7 +19,7 @@ class AuthService {
     this.data.append("phone", phone);
     this.data.append("campaign_id", "467784382");
 
-    const requestOptions = {
+    const requestOptions: any = {
       method: "POST",
       body: this.data,
       redirect: "follow",
