@@ -10,8 +10,9 @@ const Bottom: FC<{ link: string }> = ({ link }) => {
 		<>
 			{width <= 700 ? (
 				<div
+					className="max-475px:text-left w-[100%] max-475px:!mt-[32px]"
 				>
-					<CustomLink path='/'>
+					<CustomLink path='catalog'>
 						Все {link} в <City />
 					</CustomLink>
 				</div>

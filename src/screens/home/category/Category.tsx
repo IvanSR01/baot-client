@@ -12,7 +12,7 @@ interface CategoryProps {
 const Category: FC<CategoryProps> = ({ selectedCategory, setSelectedCategory }) => {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.categorys}>
+      <div className={clsx(styles.categorys, "max-475px:max-w-[calc(100%-20px)]")}>
         {filtersCategorys.map((item, i) => (
           <div
             className={clsx(

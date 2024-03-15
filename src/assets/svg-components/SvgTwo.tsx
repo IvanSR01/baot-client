@@ -1,11 +1,13 @@
-import React from 'react'
+import React, {FC} from 'react'
+import {ISvgComponentProps} from "@/assets/svg-components/_model.ts";
 
-const SvgTwo = () => {
+const SvgTwo: FC<ISvgComponentProps> = ({width = "24px", height = "24px", className = ""}) => {
 	return (
 		<svg
 			xmlns='http://www.w3.org/2000/svg'
-			width='33'
-			height='34'
+			width={width}
+			height={height}
+			className={className}
 			viewBox='0 0 33 34'
 			fill='none'
 		>

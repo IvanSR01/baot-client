@@ -3,38 +3,39 @@ import React from "react";
 import styles from "../Esc.module.scss";
 import img from "@/assets/img/image 20.png";
 import iconT from '@/assets/star.svg'
-import { useSize } from "@/hook/useSize";
+import {useSize} from "@/hook/useSize";
 import icon from "@/assets/img/BigTag.png";
-const FullEsc = () => {
-  const width = useSize();
 
-  return (
-    <>
-      {width <= 700 ? (
-        <></>
-      ) : (
-        <div className={styles.right} >
-          <div className={styles.upper}>
-            <img src={icon.src} alt="" />
-          </div>
-          <div className={styles.img}></div>
-          <div className={styles.row}>
-            <div>
-              <h3>Porshe Panamera</h3>
-              <div className={styles.star}>
-								<img src={iconT.src}/>
-                <p>4.9 (50)</p>
-              </div>
-            </div>
-            <p className={styles.prive}>
-              <sup>от </sup>
-              <b>1400</b> ₽/час
-            </p>
-          </div>
-        </div>
-      )}
-    </>
-  );
+const FullEsc = () => {
+    const width = useSize();
+
+    return (
+        <>
+            {width <= 700 ? (
+                <></>
+            ) : (
+                <div className={styles.right}>
+                    <div className={styles.upper}>
+                        <img src={icon.src} alt=""/>
+                    </div>
+                    <div className={styles.img}></div>
+                    <div className={styles.row}>
+                        <div>
+                            <h3 className="font-semibold tracking-1%">Porshe Panamera</h3>
+                            <div className={styles.star}>
+                                <img src={iconT.src}/>
+                                <p className="font-semibold tracking-3% text-[12px]">4.9 (50)</p>
+                            </div>
+                        </div>
+                        <p className={styles.prive}>
+                            <sup className="font-semibold tracking-3%">от </sup>
+                            <b className="tracking-3% font-bold">1400</b> <span className="tracking-3% font-semibold">₽/час</span>
+                        </p>
+                    </div>
+                </div>
+            )}
+        </>
+    );
 };
 
 export default FullEsc;

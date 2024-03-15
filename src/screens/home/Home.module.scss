@@ -1,4 +1,5 @@
 .wrapper {
+  overflow-x: clip;
   .intro {
     display: flex;
     justify-content: center;
@@ -8,12 +9,12 @@
     // 	width: 100vw;
     // }
     max-width: 1240px;
-    padding: 72px 0 100px;
+    //padding: 72px 0 100px;
     @media (max-width: 1200px) {
-      padding: 30px 0 100px;
+      padding: 0;
     }
     h2 {
-      margin-bottom: 40px;
+      //margin-bottom: 40px;
       text-align: center;
       width: 100%;
       text-wrap: balance;
@@ -132,6 +133,9 @@
   }
   .mb {
     margin-bottom: 100px;
+    @media (max-width: 1060px) {
+      margin-bottom: 80px;
+    }
     @media (max-width: 600px) {
       margin-bottom: 90px;
     }
@@ -167,7 +171,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     gap: 20px;
-    padding-bottom: 100px;
+    //padding-bottom: 100px;
     @media (max-width: 600px) {
       padding-bottom: 0;
       gap: 75px;
@@ -179,7 +183,13 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin: 50px 0px 30px 0px;
+    margin: 100px 0px 30px 0px;
+    @media screen and (max-width: 1200px){
+      margin-top: 80px;
+    }
+    @media screen and (max-width: 834px){
+      margin-top: 90px;
+    }
     h1 {
       font-size: 48px;
       @media (min-width: 601px) and (max-width: 1200px) {
