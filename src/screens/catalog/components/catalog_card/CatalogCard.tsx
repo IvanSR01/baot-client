@@ -6,7 +6,7 @@ import imgD from "@/assets/img/Rectangle 2231.png";
 import favIcon from "@/assets/img/heart.png";
 import React, {useState} from "react";
 import c from "./style.module.scss";
-import {boatLine, favoriteActive, peoples, ship, star, tablerBed, timer} from "@/assets/icons";
+import {boatLine, favorite, favoriteActive, peoples, ship, star, tablerBed, timer} from "@/assets/icons";
 import styles from "@/screens/home/home-card/HomeCard.module.scss";
 export const CatalogCard = () => {
     const [isFavorite, setIsFavorite] = useState(false);
@@ -21,7 +21,7 @@ export const CatalogCard = () => {
             <div className="absolute top-[18px] right-[20px]">
                 <button type="button" onClick={() => setIsFavorite(!isFavorite)} className={styles.fav}>
                     {
-                        isFavorite ? <img src={favoriteActive.src} alt='' /> : <img src={favIcon.src} alt='' />
+                        isFavorite ? <img src={favoriteActive.src} alt='' /> : <img src={favorite.src} alt='' />
                     }
                 </button>
             </div>

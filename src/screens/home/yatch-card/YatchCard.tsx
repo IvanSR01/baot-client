@@ -17,7 +17,7 @@ const YatchCard: FC<TypeYatchCard> = ({ img, className, type }) => {
       <div className={styles.row}>
         {type ? (
           <div>
-            <h4>ПВХ с мотором</h4>
+            <h4 className="font-semibold font-[18px] leading-[21.6px] tracking-1%">ПВХ с мотором</h4>
             <div className={styles.item}>
               <p
                 style={{
@@ -31,17 +31,17 @@ const YatchCard: FC<TypeYatchCard> = ({ img, className, type }) => {
           </div>
         ) : (
           <div>
-            <h4>Ореховая Бухта</h4>
+            <h4 className="font-semibold font-[18px] leading-[21.6px] tracking-1% mb-[8px]">Ореховая Бухта</h4>
             <div className={styles.item}>
               <div className={styles.star}>
-                <img src={iconT.src} alt="" />
-                <p>4.9 (50)</p>
+                <img src={iconT.src} width={18} height={18} alt="" />
+                <p className="font-semibold tracking-3% text-[12px]">4.9 (50)</p>
               </div>
             </div>
-            <div className={styles.item}>
+            <div className={clsx(styles.item, "mt-[4.5px]")}>
               <div className={styles.star}>
                 <img src={icon.src} alt="" />
-                <p>Морской причал</p>
+                <p className="font-semibold tracking-3% text-[12px]">Морской причал</p>
               </div>
             </div>
           </div>

@@ -22,6 +22,7 @@ import favoriteActive from "./_media/favorite-active.svg";
 import arrowActive from "./_media/arrow-active.svg";
 import locationActive from "./_media/location-active.svg";
 import calendarActive from "./_media/calendar-active.svg";
+import favorite from "./_media/heart.svg";
 
 export {
     logotype,
@@ -47,5 +48,6 @@ export {
     favoriteActive,
     arrowActive,
     locationActive,
-    calendarActive
+    calendarActive,
+    favorite,
 }

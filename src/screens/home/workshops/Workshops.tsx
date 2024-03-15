@@ -22,12 +22,12 @@ const Workshops: FC = () => {
                 <div>
                   <img src={icon.src} alt="" />
                 </div>
-                <h3>Remstyle</h3>
+                <h3 className="font-bold text-[20px] leading-[24px] tracking-4%">Remstyle</h3>
                 <div className={styles.star}>
                   <img src={iconT.src} alt="" />
-                  <p>4.9 (50)</p>
+                  <p className="font-semibold tracking-3% leading-[18px] text-[12px]">4.9 (50)</p>
                 </div>
-                <span>Пластиковые лодки и комплектующие</span>
+                <span className="leading-[23px] tracking-2% text-[#728487] ">Пластиковые лодки и комплектующие</span>
               </div>
             ))}
           </div>
