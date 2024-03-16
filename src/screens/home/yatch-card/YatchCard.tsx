@@ -6,6 +6,7 @@ import icon from "@/assets/location.svg";
 import iconT from "@/assets/star.svg";
 import { IoIosArrowDown } from "react-icons/io";
 import { TypeYatchCard } from "./YatchCard.type";
+import {arrowCard} from "@/assets/icons";
 const YatchCard: FC<TypeYatchCard> = ({ img, className, type }) => {
   return (
     <div className={clsx(styles.card, className)}>
@@ -47,7 +48,7 @@ const YatchCard: FC<TypeYatchCard> = ({ img, className, type }) => {
           </div>
         )}
         <div className={styles.arrow}>
-          <IoIosArrowDown />
+            <img src={arrowCard.src} alt=""/>
         </div>
       </div>
     </div>

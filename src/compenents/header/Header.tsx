@@ -27,7 +27,7 @@ const Header: FC = () => {
 
   return (
     <HeaderProvider>
-      <header className={clsx(styles.header, "max-680px:!py-[12px]")}>
+      <header className={clsx(styles.header, "max-680px:!py-[12px] min-1200px:!py-[26px]")}>
         <Wrapper>
           <div className={styles.container}>
             <Link href="/">

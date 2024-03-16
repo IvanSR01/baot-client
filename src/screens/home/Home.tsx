@@ -58,7 +58,7 @@ const Home: FC<TypePropsHome> = () => {
       <Header />
       <Intro>
         <div className={styles.intro}>
-          <h2>Откройте новые горизонты праздника с нашими яхтами и лодками</h2>
+          <h2 className="min-1200px:mb-[48px] min-1200px:leading-[61px] max-1200px:mb-[32px] max-834px:mb-[19px] tracking-4% max-1200px:px-[3px] !font-normal">Откройте новые горизонты праздника с нашими яхтами и лодками</h2>
           <SearchFilter />
         </div>
       </Intro>
@@ -77,9 +77,9 @@ const Home: FC<TypePropsHome> = () => {
               className={styles.arrowNext}
               onClick={() => scrollDown()}
             />
-            <h1>
+            <h1 className="">
               Аренда яхты{" "}
-              <span>
+              <span className="max-1200px:whitespace-pre">
                 в <City />
               </span>
             </h1>
