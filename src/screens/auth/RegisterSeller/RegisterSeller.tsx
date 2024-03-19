@@ -35,7 +35,9 @@ const RegisterSeller: FC = () => {
     formState: { errors },
     setError,
     getValues,
-  } = useForm();
+  } = useForm({
+    mode: "onChange",
+  });
   const dispatch = useAppDispatch();
   const { push } = useRouter();
   const { mutate: mutateHas } = useMutation({
@@ -47,22 +49,29 @@ const RegisterSeller: FC = () => {
       });
     },
     onSuccess: async (data) => {
-      dispatch(
-        setUserRegisterion({
-          ...getValues(),
-          phone: setPhone(data.phone),
-          paymentInfo: {
-            status: selected,
-            nameACompany: getValues("nameACompany"),
-            itn: getValues("itn"),
-            bic: getValues("bic"),
-            cardNumber: getValues("cardNumber"),
-            paymentAccount: getValues("paymentAccount"),
-          },
-          code: data.code,
-        })
-      );
-      push("/auth/verify-phone/seller");
+      try {
+        const res = await authService.flashCall(setPhone(data.phone));
+        dispatch(
+          setUserRegisterion({
+            ...getValues(),
+            phone: setPhone(data.phone),
+            paymentInfo: {
+              status: selected,
+              nameACompany: getValues("nameACompany"),
+              itn: getValues("itn"),
+              bic: getValues("bic"),
+              cardNumber: getValues("cardNumber"),
+              paymentAccount: getValues("paymentAccount"),
+            },
+            code: res,
+          })
+        );
+        push("/auth/verify-phone/seller");
+      } catch (error) {
+        setError("phone", {
+          message: "Ошибка при прозвоне",
+        });
+      }
     },
   });
   const onSubmit = async (data: any) => {
@@ -98,7 +107,10 @@ const RegisterSeller: FC = () => {
                 <input
                   {...register(item.name, {
                     required: "Заполните поле",
-                    maxLength: 20,
+                    maxLength: {
+                      value: 20,
+                      message: `Максимальная длина 20 символов`,
+                    },
                     pattern: patterns[item.name]
                       ? patterns[item.name]
                       : {
@@ -132,7 +144,10 @@ const RegisterSeller: FC = () => {
               <input
                 {...register("password", {
                   required: "Заполните поле",
-                  maxLength: 20,
+                  maxLength: {
+                    value: 20,
+                    message: `Максимальная длина 20 символов`,
+                  },
                 })}
                 className={clsx(
                   styles.input,
@@ -166,7 +181,10 @@ const RegisterSeller: FC = () => {
               <input
                 {...register("confirm", {
                   required: "Заполните поле",
-                  maxLength: 20,
+                  maxLength: {
+                    value: 20,
+                    message: `Максимальная длина 20 символов`,
+                  },
                 })}
                 className={clsx(
                   styles.input,
@@ -200,7 +218,6 @@ const RegisterSeller: FC = () => {
               <input
                 {...register("personalUrl", {
                   required: "Заполните поле",
-                  maxLength: 20,
                 })}
                 className={clsx(
                   styles.input,
@@ -241,7 +258,12 @@ const RegisterSeller: FC = () => {
                     )}
                   >
                     <input
-                      {...register("itn", { maxLength: 39 })}
+                      {...register("itn", {
+                        maxLength: {
+                          value: 12,
+                          message: `Максимальная длина 12 символов`,
+                        },
+                      })}
                       className={clsx(
                         styles.input,
                         errors["itn"] ? styles.error : styles.border
@@ -261,7 +283,12 @@ const RegisterSeller: FC = () => {
                     )}
                   >
                     <input
-                      {...register("cardNumber", { maxLength: 39 })}
+                      {...register("cardNumber", {
+                        maxLength: {
+                          value: 20,
+                          message: `Максимальная длина 20 символов`,
+                        },
+                      })}
                       className={clsx(
                         styles.input,
                         errors["cardNumber"] ? styles.error : styles.border
@@ -312,7 +339,13 @@ const RegisterSeller: FC = () => {
                     )}
                   >
                     <input
-                      {...register("itn", { required: false, maxLength: 39 })}
+                      {...register("itn", {
+                        required: false,
+                        maxLength: {
+                          value:10,
+                          message: `Максимальная длина 10 символов`,
+                        },
+                      })}
                       className={clsx(
                         styles.input,
                         errors["itn"] ? styles.error : styles.border
@@ -334,7 +367,10 @@ const RegisterSeller: FC = () => {
                     <input
                       {...register("paymentAccount", {
                         required: false,
-                        maxLength: 39,
+												maxLength: {
+                          value:39,
+                          message: `Максимальная длина 39 символов`,
+                        },
                       })}
                       className={clsx(
                         styles.input,

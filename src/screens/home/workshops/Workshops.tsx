@@ -8,7 +8,7 @@ import Wrapper from "@/compenents/wrapper/Wrapper";
 const Workshops: FC = () => {
   return (
     <div className={styles.wrapper}>
-      <Wrapper>
+      <Wrapper className="min-1200px:!py-[72.23px]">
         <div className={styles.max}>
           <Heading
             style={styles.heading}
@@ -19,7 +19,7 @@ const Workshops: FC = () => {
           <div className={styles.items}>
             {[...Array(6)].map((_, i) => (
               <div className={styles.item} key={i}>
-                <div>
+                <div className="w-fit">
                   <img src={icon.src} alt="" />
                 </div>
                 <h3 className="font-bold text-[20px] leading-[24px] tracking-4%">Remstyle</h3>

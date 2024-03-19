@@ -10,7 +10,7 @@ import Image from "next/image";
 const CarouselDefault: FC<TypePropsCarousel> = ({ imgs }) => {
   return (
     <Carousel
-      className="rounded-t-xl"
+      className="rounded-t-xl max-1200px:max-h-[190px] max-1200px:overflow-hidden"
       placeholder={undefined}
       navigation= {({ setActiveIndex, activeIndex, length }) => (
         <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">

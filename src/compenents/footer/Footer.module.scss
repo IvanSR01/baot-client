@@ -43,11 +43,11 @@
 			width: 260px;
 			display: flex;
 			flex-wrap: wrap;
-			gap: 10px;
+			gap: 8px;
 			font-weight: 400;
 			a {
 				font-size: 1rem;
-				line-height: 23px;
+				line-height: 20px;
 				letter-spacing: -0.02rem;
 				text-wrap: balance;
 				width: 260px;
@@ -120,6 +120,10 @@
 			align-items: center;
 			gap: .5rem;
 			font-size: 25px;
+		}
+		@media screen and (min-width: 1201px) {
+			padding-top: 22.75px;
+			padding-bottom: 25.18px;
 		}
 		@media screen and (max-width: 600px) {
 			gap: 2px;

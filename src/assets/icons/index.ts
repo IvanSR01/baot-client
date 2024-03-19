@@ -23,6 +23,7 @@ import arrowActive from "./_media/arrow-active.svg";
 import locationActive from "./_media/location-active.svg";
 import calendarActive from "./_media/calendar-active.svg";
 import favorite from "./_media/heart.svg";
+import arrowCard from "./_media/arrow-card.svg";
 
 export {
     logotype,
@@ -50,4 +51,5 @@ export {
     locationActive,
     calendarActive,
     favorite,
+    arrowCard
 }

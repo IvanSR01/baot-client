@@ -5,6 +5,7 @@
   width: 100%;
   .calendar {
     width: 100%;
+		max-width: 500px;
     border: 1px solid #00748c;
     font-size: 18px;
     border-radius: 8px;
@@ -34,6 +35,9 @@
 }
 
 .react-calendar__tile--now {
+	display: flex;
+	align-items: center;
+	justify-content: center;
   max-width: 60px;
   height: auto;
   top: 14.5px;
@@ -48,6 +52,9 @@
 }
 
 .react-calendar__tile {
+	display: flex;
+	align-items: center;
+	justify-content: center;
   max-width: 60px;
   font-size: 14px;
   font-weight: 700;

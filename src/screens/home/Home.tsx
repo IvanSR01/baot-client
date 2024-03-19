@@ -36,102 +36,105 @@ const Home: FC<TypePropsHome> = () => {
 		}
 	}
 
-	const scrollDown = () => {
-		console.log(containerRef?.current?.scrollLeft)
-		if (containerRef.current) {
-			containerRef.current.scrollLeft +=
-				width <= 1200 ? width * 0.45 : width * 0.25 // Измените значение, чтобы увеличить скорость прокрутки
-		}
-	}
-	return (
-		<div className={styles.wrapper}>
-			<Header />
-			<Intro>
-				<div className={styles.intro}>
-					<h2 className="tracking-2% text-[60px] leading-[61px] mb-[48px] max-475px:-tracking-4%">Откройте новые горизонты праздника с нашими яхтами и лодками</h2>
-					<SearchFilter />
-				</div>
-			</Intro>
-			<Wrapper>
-				<div className={styles.container}>
-					<div className={styles.section}>
-						<IconButton
-							placeholder='<'
-							size='lg'
-							color='white'
-							variant='text'
-							onClick={() => scrollUp()}
-							// disabled={selectedCategory === 0}
-							className={styles.arrowPrev}
-						>
-							<Image src={iconPrev} alt='prev' />
-						</IconButton>
-						<IconButton
-							placeholder='>'
-							size='lg'
-							color='black'
-							variant='text'
-							onClick={() => scrollDown()}
-							// disabled={selectedCategory === 4}
-							className={styles.arrowNext}
-						>
-							<Image src={iconNext} alt='next' />
-						</IconButton>
-						<h2 className="text-[#18292D] text-[48px] leading-[57.6px] mb-[30px] tracking-2% font-medium max-1260px:text-[36px] max-1260px:leading-[43.2px] max-1260px:mb-[32px] max-475px:!mb-[20px] max-475px:!text-[26px] max-475px:!leading-[31.2px]">
-							Аренда яхты{' '}
-							<Link href="/catalog" className="text-[#00748C]">
-								в <City />
-							</Link>
-						</h2>
-						<Category
-							selectedCategory={selectedCategory}
-							setSelectedCategory={setSelectedCategory}
-						/>
-						<div className={styles.itemsLayout} ref={containerRef}>
-							<div className={styles.items}>
-								{[...Array(5)].map((_, i) => (
-									<HomeCard status={i % 2 === 1 ? 'promo' : 'sale'} key={i} />
-								))}
-							</div>
-						</div>
-					</div>
-				</div>
-			</Wrapper>
-			<Esc />
-			<Wrapper>
-				<div className={clsx(styles.container, styles.mb, "!mb-[150px] max-475px:!mb-[90px]")}>
-					<Heading heading='Прокат лодок' link='лодки' className="min-1260px:!mb-[30px] min-475px:!mb-[32px] max-475px:!mb-[24px]" />
-					<div className={clsx(styles.itemsYatch, "")}>
-						{[...Array(3)].map((_, i) => (
-							<YatchCard
-								type="'dada"
-								img={img}
-								className={styles.procat}
-								key={i}
-							/>
-						))}
-					</div>
-					<div className="max-475px:mt-[80px] max-475px:ml-[0] max-475px:w-[100%]">
-						<Bottom link='лодки' />
-					</div>
-				</div>
-			</Wrapper>
-			<Workshops />
-			<Wrapper>
-				<div className={clsx(styles.container, styles.mb)}>
-					<Heading heading='Яхтклубы' link='яхтклубы' className="min-1260px:!mb-[36px] min-475px:!mb-[32px] max-475px:!mb-[24px]"  />
-					<div className={clsx(styles.itemsYatch, styles.mb)}>
-						{[...Array(2)].map((_, i) => (
-							<YatchCard className={styles.yatch} img={img} key={i} />
-						))}
-					</div>
-					<Bottom link='яхтклубы' />
-				</div>
-			</Wrapper>
-			<HomeModal />
-			<Footer />
-		</div>
-	)
-}
+  const scrollDown = () => {
+    if (containerRef.current) {
+      const containerWidth = containerRef.current.clientWidth;
+      console.log(containerWidth);
+
+      // Карточка представляет собой половину контейнера
+      const cardWidth =
+        width <= 1200 ? containerWidth / 2 : containerWidth / 3.005;
+
+      // Добавляем gap между карточками (в данном случае, 9.74px)
+      const gap = 16;
+
+      const totalCardWidth = cardWidth + gap;
+
+      containerRef.current.scrollLeft += totalCardWidth;
+    }
+  };
+
+  return (
+    <div className={styles.wrapper}>
+      <Header />
+      <Intro>
+        <div className={styles.intro}>
+          <h2 className="min-1200px:mb-[48px] min-1200px:leading-[61px] max-1200px:mb-[32px] max-834px:mb-[19px] tracking-4% max-1200px:px-[3px] !font-normal">Откройте новые горизонты праздника с нашими яхтами и лодками</h2>
+          <SearchFilter />
+        </div>
+      </Intro>
+      <Wrapper>
+        <div className={styles.container}>
+          <div className={styles.section}>
+            <Image
+              src={iconPrev}
+              alt="prev"
+              className={styles.arrowPrev}
+              onClick={() => scrollUp()}
+            />
+            <Image
+              src={iconNext}
+              alt="next"
+              className={styles.arrowNext}
+              onClick={() => scrollDown()}
+            />
+            <h1 className="">
+              Аренда яхты{" "}
+              <span className="max-1200px:whitespace-pre">
+                в <City />
+              </span>
+            </h1>
+            <Category
+              selectedCategory={selectedCategory}
+              setSelectedCategory={setSelectedCategory}
+            />
+            <div className={styles.itemsLayout} ref={containerRef}>
+              <div className={styles.items}>
+                {[...Array(5)].map((_, i) => (
+                  <HomeCard status={i % 2 === 1 ? "promo" : "sale"} key={i} />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </Wrapper>
+      <Esc />
+      <Wrapper>
+        <div className={clsx(styles.container, styles.mb)}>
+          <div className={styles.max}>
+            <Heading heading="Прокат лодок" link="лодки" />
+            <div className={clsx(styles.itemsYatch, styles.mb)}>
+              {[...Array(3)].map((_, i) => (
+                <YatchCard
+                  type="'dada"
+                  img={img}
+                  className={styles.procat}
+                  key={i}
+                />
+              ))}
+            </div>
+            <Bottom link="лодки" />
+          </div>
+        </div>
+      </Wrapper>
+      <Workshops />
+      {/* <Wrapper>
+        <div className={clsx(styles.container, styles.mb)}>
+          <div className={styles.max}>
+            <Heading heading="Яхтклубы" link="яхтклубы" />
+            <div className={clsx(styles.itemsYatch, styles.mb)}>
+              {[...Array(2)].map((_, i) => (
+                <YatchCard className={styles.yatch} img={img} key={i} />
+              ))}
+            </div>
+            <Bottom link="яхтклубы" />
+          </div>
+        </div>
+      </Wrapper> */}
+      <HomeModal />
+      <Footer />
+    </div>
+  );
+};
 
 export default Home
