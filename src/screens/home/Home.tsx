@@ -46,7 +46,7 @@ const Home: FC<TypePropsHome> = () => {
         width <= 1200 ? containerWidth / 2 : containerWidth / 3.005;
 
       // Добавляем gap между карточками (в данном случае, 9.74px)
-      const gap = 16;
+      const gap = 9.74;
 
       const totalCardWidth = cardWidth + gap;
 
