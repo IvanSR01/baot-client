@@ -1,5 +1,5 @@
 .wrapper {
-  padding: 60px 0;
+  padding: 73px 0;
   background-color: #00748c0d;
   display: flex;
   justify-content: center;
@@ -52,7 +52,7 @@
       h3 {
         color: rgb(24, 41, 45);
         margin-top: 10px;
-        margin-bottom: 10px;
+        margin-bottom: 3px;
         font-size: 20px;
         font-weight: 700;
         line-height: 120%;
@@ -61,6 +61,7 @@
 
       .star {
         display: flex;
+        align-items: center;
         gap: 5px;
         justify-content: center;
       }

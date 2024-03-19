@@ -29,7 +29,6 @@ const Home: FC<TypePropsHome> = () => {
 	const containerRef = useRef<HTMLDivElement>(null)
 	const width = useSize()
 	const scrollUp = () => {
-		console.log(containerRef?.current?.scrollLeft)
 		if (containerRef.current) {
 			containerRef.current.scrollLeft -=
 				width <= 1200 ? width * 0.45 : width * 0.25 // Измените значение, чтобы увеличить скорость прокрутки
