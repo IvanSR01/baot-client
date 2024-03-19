@@ -33,7 +33,9 @@ const Esc: FC = () => {
 									</div>
 								))}
 							</div>
-							<CustomLink path='/catalog'>Все яхтклубы в <City /></CustomLink>
+							<div>
+								<CustomLink path='/catalog'>Все яхтклубы в <City /></CustomLink>
+							</div>
 						</div>
 					</div>
 
