@@ -87,7 +87,7 @@ const Home: FC<TypePropsHome> = () => {
               className={styles.arrowNext}
               onClick={() => scrollDown()}
             />
-            <h1 className="">
+            <h1>
               Аренда яхты{" "}
               <span className="max-1200px:whitespace-pre">
                 в <City />
