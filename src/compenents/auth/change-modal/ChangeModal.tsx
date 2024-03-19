@@ -25,8 +25,8 @@ const ChangeModal: FC<TypePropsChangeModal> = ({ onClick, setPrevPage }) => {
         confirm,
       }),
     onSuccess: () => {
-      setPrevPage();
       onClick();
+      setPrevPage();
     },
     onError: (err: any) => {
       setError(errorCatch(err));
