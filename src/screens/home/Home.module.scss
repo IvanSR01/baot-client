@@ -37,7 +37,7 @@
         font-size: 60px;
       }
       @media (min-width: 1700px) {
-        font-size: 58px;
+        font-size: 60px;
       }
     }
   }
@@ -55,10 +55,15 @@
         position: absolute !important;
         cursor: pointer;
         top: 50%;
-        transform: translateY(-50%);
         @media (max-width: 680px) {
           display: none;
         }
+      }
+      .arrowPrev {
+        transform: translateY(-33%);
+      }
+      .arrowNext {
+        transform: translateY(-79%) translateX(15%);
       }
       .arrowNext:hover,
       .arrowPrev:hover {
@@ -127,7 +132,6 @@
         justify-content: flex-start;
         align-items: flex-start;
         gap: 9.74px;
-        padding: 0px 0px 10px 0px;
       }
     }
   }

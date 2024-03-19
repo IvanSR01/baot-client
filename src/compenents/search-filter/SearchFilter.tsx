@@ -80,7 +80,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                     ref={openRef}
                 >
                     {dateRange[0] && dateRange[1] ? (
-                        <div className={clsx(styles.date, isOpen && styles.focusDate, `min-1200px:!px-[16px] max-1200px:!max-w-[100%] max-1200px:!min-h-[unset] max-1200px:!h-[unset] max-1200px:!p-[8px_12px] min-1330px:!max-w-[300px]`)}>
+                        <div className={clsx(styles.date, isOpen && styles.focusDate, `min-1200px:!px-[16px] max-1200px:!max-w-[100%] max-1200px:!min-h-[unset] max-1200px:!h-[unset] max-1200px:!p-[8px_12px] min-1200px:!max-w-[272px]`)}>
                             <div>
                                 <span className="text-[16px] leading-[23px] tracking-2% !font-normal max-1200px:!text-[12px] max-1200px:!leading-[12px] !text-[#728487]">Дата начала аренды</span>
                                 <p className="capitalize text-[18px] !font-semibold leading-[21.6px] tracking-1% mt-[4px] text-[#18292D]  max-1200px:!text-[14px] max-1200px:!leading-[16.8px]">
@@ -88,14 +88,14 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                                 </p>
                             </div>
                             {
-                                isOpen ? <img className=""  src={calendarActive.src} alt=""/> : <img className="" src={img.src} alt=""/>
+                                isOpen ? <img className="max-1200px:w-[16px] max-1200px:-h-[16px]"  src={calendarActive.src} alt=""/> : <img className="max-1200px:w-[16px] max-1200px:-h-[16px]" src={img.src} alt=""/>
                             }
                         </div>
                     ) : (
-                        <div className={clsx(styles.date, isOpen && styles.focusDate, `max-1200px:!max-w-[100%] max-1200px:!min-h-[unset] max-1200px:!h-[unset] max-1200px:!p-[8px_12px]`)}>
+                        <div className={clsx(styles.date, isOpen && styles.focusDate, `max-1200px:!max-w-[100%] max-1200px:!min-h-[unset] max-1200px:!h-[unset] max-1200px:!p-[8px_12px] min-1200px:!max-w-[272px]`)}>
                             <p className="text-[18px] leading-[23px] tracking-2% !font-semibold max-1200px:!text-[14px] max-1200px:!leading-[16.8px]">Дата начала аренды</p>
                             {
-                                isOpen ? <img className=""  src={calendarActive.src} alt=""/> : <img className="" src={img.src} alt=""/>
+                                isOpen ? <img className="max-1200px:w-[16px] max-1200px:-h-[16px]"  src={calendarActive.src} alt=""/> : <img className="max-1200px:w-[16px] max-1200px:-h-[16px]" src={img.src} alt=""/>
                             }
                         </div>
                     )}
@@ -103,7 +103,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                 {isOpen && (
                     <div ref={ref} className={styles.calendar}>
                         <MyCalendar
-                            className="!top-[72px]"
+                            className="min-1200px:!top-[72px] max-1200px:!top-[calc(100%-2px)] max-1200px:px-[6px]"
                             setShow={setIsOpen}
                             date={dateRange}
                             setDate={setDateRange}
@@ -124,9 +124,9 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                 />
             </div>
             <div className={clsx(styles.border, "")}></div>
-            <div className={clsx(styles.buttonLayout, "!ml-[auto] max-1200px:!w-[100%] max-1200px:!pt-[0] min-1200px:max-w-[54px] min-1200px:!ml-[10px]")}>
-                <Link href="/catalog">
-                    <Button className="max-1200px:font-medium min-w-[54px]">
+            <div className={clsx(styles.buttonLayout, "!ml-[auto] max-1200px:!w-[100%] max-1200px:!pt-[0] min-1200px:max-w-[54px] max-1200px:!mt-[6px]")}>
+                <Link href="/catalog" className=" block">
+                    <Button className="max-1200px:font-medium min-w-[54px] max-1200px:!gap-[15px]">
                         <CiSearch className="max-1200px:w-[20px] max-1200px:h-[20px]" /> {width >= 1200 ? <></> : <>Поиск</>}
                     </Button>
                 </Link>
@@ -156,7 +156,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
                     ))}
                 </div>
             )}
-            <div className={clsx(styles.content, `!justify-start !pl-[46px] !pr-[54px] ${!compact ? "max-1200px:!p-[12px] max-1200px:gap-[6px] max-475px:px-12 min-1330px:!grid min-1330px:grid-cols-[288px_2px_300px_2px_341px_2px_54px] min-1330px:!gap-[25.77px] min-1200px:pt-[20px] min-1200px:pb-[17px]" : ""}`)}>
+            <div className={clsx(styles.content, `!justify-start !pl-[46px] !pr-[54px] ${!compact ? "max-1200px:!p-[12px] max-1200px:gap-[6px] max-475px:px-12 min-1330px:!grid min-1330px:grid-cols-[288px_2px_272px_2px_341px_2px_54px] min-1330px:!gap-[30.41px] min-1200px:pt-[20px] min-1200px:pb-[17px]" : ""}`)}>
                 {width < 1200 && !compact ? (
                     <div className={styles.selectLayout}>
                         <Select

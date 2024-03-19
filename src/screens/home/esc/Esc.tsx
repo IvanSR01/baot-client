@@ -19,7 +19,7 @@ const Esc: FC = () => {
 					<div className={styles.left}>
 						<div className={styles.layout}>
 							<h2
-								className="block tracking-2% font-medium min-1200px:text-[48px] min-1200px:leading-[57.6px] max-1200px:text-[36px] max-1200px:leading-[43.2px] max-834px:!text-[26px] max-834px:!leading-[31.2px] min-1200px:mb-[32px] max-1200px:!mb-[24px] max-834px:pb-[8px]"
+								className="block tracking-2% font-medium min-1200px:text-[48px] min-1200px:leading-[57.6px] max-1200px:text-[36px] max-1200px:leading-[43.2px] max-834px:!font-medium max-834px:!text-[26px] max-834px:!leading-[31.2px] min-1200px:mb-[32px] max-1200px:!mb-[24px] max-834px:pb-[8px]"
 							>Экскурсии</h2>
 							<div className={styles.items}>
 								{ESC.map((item, i) => (
