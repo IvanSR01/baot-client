@@ -8,7 +8,7 @@ import Wrapper from "@/compenents/wrapper/Wrapper";
 const Workshops: FC = () => {
   return (
     <div className={styles.wrapper}>
-      <Wrapper className="min-1200px:!py-[72.23px]">
+      <Wrapper className="">
         <div className={styles.max}>
           <Heading
             style={styles.heading}
@@ -24,7 +24,7 @@ const Workshops: FC = () => {
                 </div>
                 <h3 className="font-bold text-[20px] leading-[24px] tracking-4%">Remstyle</h3>
                 <div className={styles.star}>
-                  <img src={iconT.src} alt="" />
+                  <img src={iconT.src} alt="" className="w-[13px] h-[13px]" />
                   <p className="font-semibold tracking-3% leading-[18px] text-[12px]">4.9 (50)</p>
                 </div>
                 <span className="leading-[23px] tracking-2% text-[#728487] ">Пластиковые лодки и комплектующие</span>
