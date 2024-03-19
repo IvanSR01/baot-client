@@ -31,7 +31,9 @@ const Register: FC = () => {
     formState: { errors },
     setError,
     getValues,
-  } = useForm();
+  } = useForm({
+    mode: "onChange",
+  });
   const dispatch = useAppDispatch();
   const { push } = useRouter();
   const { mutate: mutateHas } = useMutation({
@@ -44,14 +46,22 @@ const Register: FC = () => {
       });
     },
     onSuccess: async (data) => {
-      dispatch(
-        setUserRegisterion({
-          ...getValues(),
-          phone: setPhone(data.phone),
-          code: data.code,
-        })
-      );
-      push("/auth/verify-phone/user");
+      try {
+        const res = await authService.flashCall(setPhone(data.phone));
+				console.log(res)
+        dispatch(
+          setUserRegisterion({
+            ...getValues(),
+            phone: setPhone(data.phone),
+            code: res,
+          })
+        );
+        push("/auth/verify-phone/user");
+      } catch (error) {
+        setError("phone", {
+          message: "Ошибка при прозвоне",
+        });
+      }
     },
   });
   const onSubmit = async (data: any) => {
@@ -87,7 +97,10 @@ const Register: FC = () => {
                 <input
                   {...register(item.name, {
                     required: "Заполните поле",
-                    maxLength: 20,
+                    maxLength: {
+                      value: 20,
+                      message: `Максимальная длина 20 символов`,
+                    },
                     pattern: patterns[item.name]
                       ? patterns[item.name]
                       : {
@@ -121,7 +134,10 @@ const Register: FC = () => {
               <input
                 {...register("password", {
                   required: "Заполните поле",
-                  maxLength: 20,
+                  maxLength: {
+                    value: 20,
+                    message: `Максимальная длина 20 символов`,
+                  },
                 })}
                 className={clsx(
                   styles.input,
@@ -155,7 +171,10 @@ const Register: FC = () => {
               <input
                 {...register("confirm", {
                   required: "Заполните поле",
-                  maxLength: 20,
+                  maxLength: {
+                    value: 20,
+                    message: `Максимальная длина 20 символов`,
+                  },
                 })}
                 className={clsx(
                   styles.input,
