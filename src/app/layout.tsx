@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
 import MainProvider from "@/provider/MainProvider";
-
-const inter = Manrope({ subsets: ["latin"] });
+import "../assets/font/font.css";
 import "./globals.scss";
 
 export const metadata: Metadata = {
@@ -17,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body>
         <MainProvider>{children}</MainProvider>
       </body>
     </html>

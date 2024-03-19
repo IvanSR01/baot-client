@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 "use client";
 import img from "@/assets/img/Rectangle 2692.png";
 import iconPrev from "@/assets/svg/arrow-prev-black.svg";
@@ -23,6 +24,32 @@ import Image from "next/image";
 import HomeModal from "./shared/HomeModal";
 import { useSize } from "@/hook/useSize";
 import SearchFilter from "@/compenents/search-filter/SearchFilter";
+=======
+'use client'
+import img from '@/assets/img/Rectangle 2692.png'
+import iconPrev from '@/assets/svg/arrow-prev-black.svg'
+import iconNext from '@/assets/svg/arrow-next-black.svg'
+import Footer from '@/compenents/footer/Footer'
+import Header from '@/compenents/header/Header'
+import Intro from '@/compenents/intro/Intro'
+import clsx from 'clsx'
+import { FC, useRef, useState } from 'react'
+import styles from './Home.module.scss'
+import type { TypePropsHome } from './Home.type'
+import Category from './category/Category'
+import Esc from './esc/Esc'
+import HomeCard from './home-card/HomeCard'
+import Bottom from './shared/Bottom'
+import City from './shared/City'
+import Heading from './shared/Heading'
+import Workshops from './workshops/Workshops'
+import YatchCard from './yatch-card/YatchCard'
+import Wrapper from '@/compenents/wrapper/Wrapper'
+import Image from 'next/image'
+import HomeModal from './shared/HomeModal'
+import { useSize } from '@/hook/useSize'
+import SearchFilter from '@/compenents/search-filter/SearchFilter'
+>>>>>>> 31730ed14114db37f48297624bcb847ba6bc0612
 import Link from "next/link";
 const Home: FC<TypePropsHome> = () => {
   const [selectedCategory, setSelectedCategory] = useState(0);
