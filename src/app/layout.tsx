@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
-import "./globals.scss";
 import MainProvider from "@/provider/MainProvider";
 
-const inter = Manrope({ subsets: ["latin"], variable: "--font-manrope" });
+const inter = Manrope({ subsets: ["latin"] });
+import "./globals.scss";
 
 export const metadata: Metadata = {
   title: "На лодку",
