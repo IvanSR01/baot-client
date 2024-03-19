@@ -18,7 +18,6 @@ import Heading from './shared/Heading'
 import Workshops from './workshops/Workshops'
 import YatchCard from './yatch-card/YatchCard'
 import Wrapper from '@/compenents/wrapper/Wrapper'
-import { IconButton } from '@material-tailwind/react'
 import Image from 'next/image'
 import HomeModal from './shared/HomeModal'
 import { useSize } from '@/hook/useSize'
@@ -38,7 +37,6 @@ const Home: FC<TypePropsHome> = () => {
   const scrollDown = () => {
     if (containerRef.current) {
       const containerWidth = containerRef.current.clientWidth;
-      console.log(containerWidth);
 
       // Карточка представляет собой половину контейнера
       const cardWidth =
