@@ -39,13 +39,14 @@ const Home: FC<TypePropsHome> = () => {
   const scrollDown = () => {
     if (containerRef.current) {
       const containerWidth = containerRef.current.clientWidth;
+      console.log(containerWidth);
 
       // Карточка представляет собой половину контейнера
       const cardWidth =
         width <= 1200 ? containerWidth / 2 : containerWidth / 3.005;
 
       // Добавляем gap между карточками (в данном случае, 9.74px)
-      const gap = 9.74;
+      const gap = 16;
 
       const totalCardWidth = cardWidth + gap;
 
