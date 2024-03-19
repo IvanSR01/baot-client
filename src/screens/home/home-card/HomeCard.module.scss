@@ -34,10 +34,14 @@
 	}
 	.img {
 		img {
-			width: 400;
+			//width: 400;
 			height: 300px;
 			border-top-left-radius: 20px;
 			border-top-right-radius: 20px;
+
+			@media screen and (max-width: 1200px){
+				border-radius: 8px;
+			}
 		}
 	}
 	transition: box-shadow 0.5s;

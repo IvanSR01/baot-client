@@ -3,6 +3,7 @@
   max-width: 1240px;
   @media (max-width: 1200px) {
     max-height: none;
+    border-radius: 15px;
   }
 
   .categorys {
@@ -58,7 +59,7 @@
     }
     @media (max-width: 1200px) {
       flex-flow: column;
-      border-top-left-radius: 20px;
+      border-radius: 15px;
     }
     //flex-wrap: wrap;
 
