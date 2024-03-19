@@ -1,11 +1,16 @@
 .excursion {
+	background-color: rgba(0, 116, 140, 0.0509803922);
 	.wrapper {
 		display: flex;
 		margin: 0 auto;
 
+		@media screen and (min-width: 1201px){
+			max-width: 1240px;
+			gap: 61.33px;
+		}
+
 		.container {
 			padding: 0px 0px 40px;
-
 			@media (min-width: 1550px) {
 				display: flex;
 				justify-content: flex-end;
@@ -29,11 +34,14 @@
 			@media (max-width: 700px) {
 				max-width: none;
 			}
+
+			@media screen and (min-width: 1201px) {
+				width: 365px;
+			}
 			// width: 100%;
 		}
 		.left {
-			background-color: #00748c0d;
-			width: 50vw;
+			//background-color: #00748c0d;
 			@media (max-width: 700px) {
 				width: 100vw;
 			}
@@ -114,9 +122,11 @@
 		.right {
 			position: relative;
 			/* flex-grow: 1; */
-			width: 70vw;
+			//width: 70vw;
+			width: 100%;
+			max-width: 820px;
 			margin-right: -100px;
-			background-color: #fff;
+			//background-color: #fff;
 			@media (max-width: 1440px) {
 				margin-right: -60px;
 			}
@@ -126,7 +136,7 @@
 				height: 550px;
 				background: url('../../../assets/img/image 20.png') center no-repeat;
 				background-size: cover;
-				max-width: 760px;
+				max-width: 820px;
 			}
 			.upper {
 				top: 25px;
