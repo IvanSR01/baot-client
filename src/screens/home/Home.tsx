@@ -1,53 +1,62 @@
-'use client'
-import img from '@/assets/img/Rectangle 2692.png'
-import iconPrev from '@/assets/svg/arrow-prev-black.svg'
-import iconNext from '@/assets/svg/arrow-next-black.svg'
-import Footer from '@/compenents/footer/Footer'
-import Header from '@/compenents/header/Header'
-import Intro from '@/compenents/intro/Intro'
-import clsx from 'clsx'
-import { FC, useRef, useState } from 'react'
-import styles from './Home.module.scss'
-import type { TypePropsHome } from './Home.type'
-import Category from './category/Category'
-import Esc from './esc/Esc'
-import HomeCard from './home-card/HomeCard'
-import Bottom from './shared/Bottom'
-import City from './shared/City'
-import Heading from './shared/Heading'
-import Workshops from './workshops/Workshops'
-import YatchCard from './yatch-card/YatchCard'
-import Wrapper from '@/compenents/wrapper/Wrapper'
-import { IconButton } from '@material-tailwind/react'
-import Image from 'next/image'
-import HomeModal from './shared/HomeModal'
-import { useSize } from '@/hook/useSize'
-import SearchFilter from '@/compenents/search-filter/SearchFilter'
+"use client";
+import img from "@/assets/img/Rectangle 2692.png";
+import iconPrev from "@/assets/svg/arrow-prev-black.svg";
+import iconNext from "@/assets/svg/arrow-next-black.svg";
+import Footer from "@/compenents/footer/Footer";
+import Header from "@/compenents/header/Header";
+import Intro from "@/compenents/intro/Intro";
+import clsx from "clsx";
+import { FC, useRef, useState } from "react";
+import styles from "./Home.module.scss";
+import type { TypePropsHome } from "./Home.type";
+import Category from "./category/Category";
+import Esc from "./esc/Esc";
+import HomeCard from "./home-card/HomeCard";
+import Bottom from "./shared/Bottom";
+import City from "./shared/City";
+import Heading from "./shared/Heading";
+import Workshops from "./workshops/Workshops";
+import YatchCard from "./yatch-card/YatchCard";
+import Wrapper from "@/compenents/wrapper/Wrapper";
+import { IconButton } from "@material-tailwind/react";
+import Image from "next/image";
+import HomeModal from "./shared/HomeModal";
+import { useSize } from "@/hook/useSize";
+import SearchFilter from "@/compenents/search-filter/SearchFilter";
 import Link from "next/link";
 const Home: FC<TypePropsHome> = () => {
-	const [selectedCategory, setSelectedCategory] = useState(0)
-	const containerRef = useRef<HTMLDivElement>(null)
-	const width = useSize()
-	const scrollUp = () => {
-		if (containerRef.current) {
-			containerRef.current.scrollLeft -=
-				width <= 1200 ? width * 0.45 : width * 0.25 // Измените значение, чтобы увеличить скорость прокрутки
-		}
-	}
-
-  const scrollDown = () => {
+  const [selectedCategory, setSelectedCategory] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const width = useSize();
+  const scrollUp = () => {
     if (containerRef.current) {
       const containerWidth = containerRef.current.clientWidth;
-      console.log(containerWidth);
 
       // Карточка представляет собой половину контейнера
       const cardWidth =
-        width <= 1200 ? containerWidth / 2 : containerWidth / 3.005;
+        width <= 1200 ? containerWidth / 2.06 : containerWidth / 3.06;
 
       // Добавляем gap между карточками (в данном случае, 9.74px)
       const gap = 9.74;
 
-      const totalCardWidth = cardWidth + gap;
+      const totalCardWidth = cardWidth + gap * 2;
+
+      containerRef.current.scrollLeft -= totalCardWidth;
+    }
+  };
+
+  const scrollDown = () => {
+    if (containerRef.current) {
+      const containerWidth = containerRef.current.clientWidth;
+
+      // Карточка представляет собой половину контейнера
+      const cardWidth =
+        width <= 1200 ? containerWidth / 2.06 : containerWidth / 3.06;
+
+      // Добавляем gap между карточками (в данном случае, 9.74px)
+      const gap = 9.74;
+
+      const totalCardWidth = cardWidth + gap * 2;
 
       containerRef.current.scrollLeft += totalCardWidth;
     }
@@ -58,7 +67,9 @@ const Home: FC<TypePropsHome> = () => {
       <Header />
       <Intro>
         <div className={styles.intro}>
-          <h2 className="min-1200px:mb-[48px] min-1200px:leading-[61px] max-1200px:mb-[32px] max-834px:mb-[19px] tracking-4% max-1200px:px-[3px] !font-normal">Откройте новые горизонты праздника с нашими яхтами и лодками</h2>
+          <h2 className="min-1200px:mb-[48px] min-1200px:leading-[61px] max-1200px:mb-[32px] max-834px:mb-[19px] tracking-4% max-1200px:px-[3px] !font-normal">
+            Откройте новые горизонты праздника с нашими яхтами и лодками
+          </h2>
           <SearchFilter />
         </div>
       </Intro>
@@ -136,4 +147,4 @@ const Home: FC<TypePropsHome> = () => {
   );
 };
 
-export default Home
+export default Home;
