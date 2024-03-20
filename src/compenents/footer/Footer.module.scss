@@ -56,9 +56,10 @@
 
 			&.social {
 				margin-top: 12px;
+				gap: 20px;
 
 				img {
-					margin-right: 20px;
+					//margin-right: 20px;
 				}
 
 				&:first-of-type {
@@ -67,7 +68,7 @@
 
 				@media screen and (max-width: 475px){
 					width: fit-content;
-					gap: 0;
+					gap: 20px;
 				}
 			}
 		}
