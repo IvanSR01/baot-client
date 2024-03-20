@@ -1,12 +1,13 @@
 .excursion {
-	background-color: rgba(0, 116, 140, 0.0509803922);
 	.wrapper {
 		display: flex;
 		margin: 0 auto;
+		background-color: rgba(0, 116, 140, 0.0509803922);
+		border-radius: 15px;
 
 		@media screen and (min-width: 1201px){
 			max-width: 1240px;
-			gap: 61.33px;
+			gap: 51.33px;
 		}
 
 		@media screen and (max-width: 1440px){
@@ -57,6 +58,7 @@
 			justify-content: end;
 			height: 649px;
 			padding: 58.5px 0px;
+			padding-left: 52px;
 		}
 		h2 {
 			font-size: 48px;
@@ -133,7 +135,7 @@
 			/* flex-grow: 1; */
 			//width: 70vw;
 			max-width: 820px;
-			margin-right: -100px;
+			//margin-right: -100px;
 			@media screen and (min-width: 1441px){
 				width: 100%;
 				max-width: 820px;
@@ -143,7 +145,7 @@
 			}
 			//background-color: #fff;
 			@media (max-width: 1440px) {
-				margin-right: -60px;
+				//margin-right: -60px;
 			}
 
 			.img {
@@ -151,7 +153,8 @@
 				height: 550px;
 				background: url('../../../assets/img/image 20.png') center no-repeat;
 				background-size: cover;
-				max-width: 820px;
+				max-width: 812px;
+				border-top-right-radius: 15px;
 			}
 			.upper {
 				top: 25px;
@@ -159,11 +162,11 @@
 				position: absolute;
 			}
 			.row {
-				max-width: 820px;
+				max-width: 812px;
 				background-color: #fff;
 				box-shadow: 0px 3px 4px rgba(153, 155, 168, 0.15);
-				border-bottom-left-radius: 10px;
-				border-bottom-right-radius: 10px;
+				//border-bottom-left-radius: 10px;
+				border-bottom-right-radius: 15px;
 				padding: 17px 5vw;
 				display: flex;
 				font-weight: bold;
