@@ -93,6 +93,7 @@
       }
       min-width: 300px;
     }
+	
 
     .border {
       border: 1px solid #eeee;
@@ -131,7 +132,6 @@
 
     .date {
       position: relative;
-      width: 100%;
       @media (max-width: 1200px) {
         margin: 0;
         width: 85vw;
@@ -148,17 +148,13 @@
       font-size: 18px;
       min-height: 64px;
       display: flex;
-      padding: 0 12px;
-      //padding: 0 10px 0 20px;
-      //margin: 0 10px;
+      padding: 0 12px 0px 12px;
       align-items: center;
       justify-content: space-between;
       border: 1px solid transparent;
-
-      //p {
-      //  font-weight: bold;
-      //}
-
+			div {
+				margin-right: 15px;
+			}
       .range {
         color: #000;
       }

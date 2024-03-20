@@ -7,32 +7,39 @@
   white-space: nowrap;
   scrollbar-width: none;
   .categorys {
-    white-space: nowrap;
-    padding-bottom: 30px;
-    width: 800px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    background-color: #fff;
-    display: flex;
-    gap: 36px;
-    color: #000;
-    font-weight: bold;
-    .item {
-      height: 30px;
-      display: flex;
-      align-items: center;
-      font-size: 18px;
-      color: #728487;
-      border-bottom: 2px solid transparent;
-      cursor: pointer;
-      font-weight: 400;
-    }
-    .active {
-      color: #00748c;
-      border-bottom: 2px solid #00748c;
-      font-weight: 700;
-    }
-  }
+		white-space: nowrap;
+		padding-bottom: 30px;
+		min-width: 810px;
+		max-width: 810px;
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+		background-color: #fff;
+		display: flex;
+		justify-content: space-between;
+		gap: 36px;
+		color: #000;
+		font-weight: bold;
+	}
+	
+	.item {
+		// flex-grow: 1;
+		// flex-basis: 111px; /* Используем flex-basis для фиксированной ширины */
+		height: 30px;
+		display: flex;
+		align-items: center;
+		font-size: 18px;
+		color: #728487;
+		border-bottom: 2px solid transparent;
+		cursor: pointer;
+		font-weight: 400;
+	}
+	
+	.active {
+		color: #00748c;
+		border-bottom: 2px solid #00748c;
+		font-weight: 700;
+	}
+	
 }
 
 .wrapper::-webkit-scrollbar {
