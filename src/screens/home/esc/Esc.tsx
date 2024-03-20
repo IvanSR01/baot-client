@@ -1,13 +1,9 @@
-import icon from '@/assets/img/Mask group.svg'
 import CustomLink from '@/shared/ui/custom-link/CustomLink'
 import { FC } from 'react'
 import { IoIosArrowDown } from 'react-icons/io'
 import styles from './Esc.module.scss'
 import FullEsc from './FullEsc/FullEsc'
 import { ESC } from '@/shared/var/esc'
-import Wrapper from '@/compenents/wrapper/Wrapper'
-import img from '@/assets/img/image 20.png'
-import Image from 'next/image'
 import clsx from "clsx";
 import City from "@/screens/home/shared/City.tsx";
 
@@ -33,7 +29,11 @@ const Esc: FC = () => {
 									</div>
 								))}
 							</div>
+<<<<<<< HEAD
 							<div className='min-1200px:mb-[23px]'>
+=======
+							<div className="min-1200px:!mb-[18px]">
+>>>>>>> 2043d90c8b19bb5826af768ffdcc50455e9e472e
 								<CustomLink path='/catalog'>Все яхтклубы в <City /></CustomLink>
 							</div>
 						</div>
