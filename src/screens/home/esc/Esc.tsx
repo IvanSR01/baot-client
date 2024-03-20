@@ -29,11 +29,7 @@ const Esc: FC = () => {
 									</div>
 								))}
 							</div>
-<<<<<<< HEAD
-							<div className='min-1200px:mb-[23px]'>
-=======
 							<div className="min-1200px:!mb-[18px]">
->>>>>>> 2043d90c8b19bb5826af768ffdcc50455e9e472e
 								<CustomLink path='/catalog'>Все яхтклубы в <City /></CustomLink>
 							</div>
 						</div>
