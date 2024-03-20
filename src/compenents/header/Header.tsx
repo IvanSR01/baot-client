@@ -49,6 +49,9 @@ const Header: FC = () => {
                 <Media query="(max-width: 1259px)">
                   <ModalFilter></ModalFilter>
                 </Media>
+                <Media query="(min-width: 1260px)">
+                  <SearchFilter compact></SearchFilter>
+                </Media>
               </>
             ) : null}
 

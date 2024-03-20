@@ -3,20 +3,24 @@
   max-width: 1240px;
   @media (max-width: 1200px) {
     max-height: none;
+    border-radius: 15px;
   }
 
   .categorys {
     width: fit-content;
     //height: 56px;
     background-color: #fff;
-    display: flex;
+    display: grid;
+    grid-template-columns: 154px 184px 101px 136px;
     gap: 1.5rem;
     color: #000;
     border-top-right-radius: 15px;
     border-top-left-radius: 8px;
 
     .item {
-      min-width: 154px;
+      width: 100%;
+      padding-left: 22px;
+      padding-right: 22px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -58,7 +62,7 @@
     }
     @media (max-width: 1200px) {
       flex-flow: column;
-      border-top-left-radius: 20px;
+      border-radius: 15px;
     }
     //flex-wrap: wrap;
 
