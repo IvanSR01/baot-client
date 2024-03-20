@@ -13,6 +13,7 @@ import tg from "@/assets/logos/ic_sharp-telegram.svg";
 import imgTg from "@/assets/logos/logos_telegram.svg";
 import wat from "@/assets/logos/logos_whatsapp-icon.svg";
 import mail from "@/assets/logos/mdi_email-box.svg";
+import clsx from "clsx";
 const Footer: FC = () => {
   return (
     <footer className={styles.wrapper}>
@@ -58,7 +59,7 @@ const Footer: FC = () => {
             </div>
             <div className={styles.links}>
               <h4>Связаться с нами</h4>
-              <div className={`${styles.items} ${styles.social}`}>
+              <div className={`${styles.items} ${styles.social} !gap-[29.97px]`}>
                 <img src={imgTg.src} alt="" />
                 <img src={wat.src} alt="" />
                 <img src={mail.src} alt="" />
