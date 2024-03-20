@@ -11,11 +11,10 @@ import { TypePropsHomeCard } from './HomeCard.type'
 import CarouselDefault from '@/shared/ui/carousel/Carousel'
 import Badge from '@/compenents/badge/Badge'
 import {favorite, favoriteActive} from "@/assets/icons";
-const HomeCard: FC<TypePropsHomeCard> = ({ status }) => {
+const HomeCard: FC<TypePropsHomeCard> = ({ status, ref }) => {
 	const [isFavorite, setIsFavorite] = useState(false);
-
 	return (
-		<div className={styles.card}>
+		<div className={styles.card} ref={ref}>
 			<div className={clsx(styles.upper, '')}>
 				<Badge type={status === 'promo' ? 'sale' : 'popular'} />
 			</div>

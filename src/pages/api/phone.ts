@@ -32,6 +32,7 @@ export default async function handler(
       code: response.data.data.pincode,
     });
   } catch (error) {
+		return res.status(500).json({message: 'Ошибка при прозвоне'});
     console.log(error);
   }
 }

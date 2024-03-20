@@ -60,6 +60,7 @@
     }
     .item {
       position: relative;
+			font-size: 14px;
       .input {
         width: 100%;
         display: flex;
@@ -68,7 +69,6 @@
         padding: 16px 50px 16px 28px;
         min-height: 53px;
 				max-height: 53px;
-
         width: 470px;
         @media (max-width: 600px) {
           width: 311px;
