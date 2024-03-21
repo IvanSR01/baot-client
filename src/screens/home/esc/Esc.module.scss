@@ -25,23 +25,29 @@
         width: 100%;
       }
     }
+
     .left {
-      @media (max-width: 800px) {
-        width: 100vw;
-      }
       display: flex;
       padding: 66px 52px;
+
+      @media (max-width: 835px) {
+        width: 100vw;
+        padding: 60px 52px;
+
+      }
 
       @media (max-width: 475px) {
         padding: 34px 16px
       }
     }
+
     h2 {
       font-size: 36px;
       letter-spacing: -1.5px;
       font-weight: 500;
       // margin-bottom: 32px;
     }
+
     .items {
       width: 100%;
       display: flex;
@@ -51,6 +57,7 @@
       }
       margin-bottom: 16px;
     }
+
     .item {
       box-sizing: content-box;
       border-top: 1px solid #eeeeee;
@@ -74,35 +81,44 @@
       font-size: 18px;
       font-weight: 600;
       color: #728487;
+
       .subItem {
         display: flex;
         gap: 20px;
         align-items: center;
       }
+
       img {
         color: #728487;
         fill: #728487;
       }
+
       svg {
         transform: rotate(-90deg);
-        fill: #000;
+        fill: #728487;
       }
+
       .subItem {
         svg {
           transform: rotate(0deg);
+          fill: #000;
         }
       }
     }
+
     .item:hover {
       color: #00748c;
+
       svg {
         fill: #00748c;
         color: #00748c;
       }
+
       p {
         font-weight: 600;
       }
     }
+
     .right {
       position: relative;
       width: 100%;
@@ -116,13 +132,16 @@
         max-width: 812px;
         border-top-right-radius: 15px;
       }
+
       .upper {
         top: 25px;
         left: -13px;
         position: absolute;
       }
+
       .row {
         max-width: 812px;
+        height: 99px;
         background-color: #fff;
         box-shadow: 0px 3px 4px rgba(153, 155, 168, 0.15);
         //border-bottom-left-radius: 10px;
@@ -133,7 +152,11 @@
         justify-content: space-between;
 
         @media screen and (max-width: 920px) {
-          padding: 21px 30px 21px 30px;
+          padding: 21px 30px;
+        }
+
+        @media screen and (max-width: 835px) {
+          padding: 21px 45px;
         }
 
         h3 {
@@ -144,22 +167,38 @@
           display: flex;
           gap: 5px;
         }
+
         .price {
           color: #00748c;
           width: 100px;
           font-size: 18px;
-          div > sup{
-            margin-right: 12px;
+
+          div{
+            height: min-content;
           }
+
+          div > sup {
+            margin-right: 12px;
+
+            @media (max-width: 835px) {
+              margin-right: 4px;
+            }
+          }
+
           b {
             font-size: 26px;
             line-height: 31px;
           }
-          span{
+
+          span {
             font-size: 18px;
             line-height: 16px;
             display: block;
+
+            @media (max-width: 835px) {
+              margin-top: -3px;            }
           }
+
           text-wrap: balance;
           text-align: right;
         }

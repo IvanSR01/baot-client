@@ -45,7 +45,7 @@
     margin-bottom: 20px;
 
     @media (max-width: 475px){
-      gap: 50px;
+      gap: 23px;
     }
 
     .item {
@@ -61,6 +61,11 @@
         max-width: 141px;
         max-height: 141px;
 
+        @media (max-width: 835px){
+          max-width: 93px;
+          max-height: 93px;
+        }
+
         @media (max-width: 475px){
           max-width: 114px;
           max-height: 114px;
@@ -75,6 +80,10 @@
         font-weight: 700;
         line-height: 120%;
         letter-spacing: -4%;
+
+        @media (max-width: 835px){
+          font-size: 18px;
+        }
       }
 
       .star {
