@@ -117,7 +117,7 @@ const Home: FC<TypePropsHome> = () => {
                 <YatchCard
                   type="'dada"
                   img={img}
-                  className={styles.procat}
+                  className={styles.rental}
                   key={i}
                 />
               ))}

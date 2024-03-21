@@ -1,12 +1,16 @@
 .link {
   font-size: 18px;
   color: #00748c;
-  border-bottom: 1px solid #00748c;
+  text-decoration: underline;
   padding-bottom: 0px;
   transition: color 0.5s;
   line-height: 18px;
   letter-spacing: -0.01rem;
   font-weight: 600;
+
+  @media screen and (max-width: 475px){
+    font-size: 14px;
+  }
 }
 
 .link:hover {

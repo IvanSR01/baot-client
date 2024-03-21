@@ -15,10 +15,15 @@
 		border-top-right-radius: 10px;
 		background-color: #fff;
 		display: flex;
-		justify-content: space-between;
+		justify-content: flex-start;
 		gap: 36px;
 		color: #000;
 		font-weight: bold;
+
+		@media (max-width: 475px) {
+			gap: 24px;
+			padding-bottom: 40px;
+		}
 	}
 	
 	.item {
@@ -31,7 +36,12 @@
 		color: #728487;
 		border-bottom: 2px solid transparent;
 		cursor: pointer;
-		font-weight: 400;
+		font-weight: 600;
+
+		@media (max-width: 475px) {
+			font-size: 14px;
+			line-height: 14px;
+		}
 	}
 	
 	.active {

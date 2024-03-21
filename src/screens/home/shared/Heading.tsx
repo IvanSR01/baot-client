@@ -16,7 +16,7 @@ const Heading: FC<{ heading: string; link: string; style?: string; className?: s
     const width = useSize();
     return (
         <div className={clsx(style ? style : styles.heading, "mb-[30px]", className)}>
-            <h2 className="text-[48px] leading-[57.6px] tracking-2% font-medium max-1260px:text-[36px] max-1260px:leading-[43.2px] max-475px:!text-[26px] max-475px:!leading-[31.2px]">{heading}</h2>
+            <h2 className="text-[48px] leading-[57.6px] tracking-2% font-medium max-1260px:text-[36px] max-1260px:leading-[43.2px] max-475px:!text-[20px] max-475px:!leading-[31.2px]">{heading}</h2>
             {width <= 700 ? (
                 <></>
             ) : (
