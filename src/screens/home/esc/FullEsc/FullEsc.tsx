@@ -28,8 +28,8 @@ const FullEsc = () => {
                             </div>
                         </div>
                         <p className={styles.prive}>
-                            <sup className="font-semibold tracking-3% text-[12px] leading-[31.2px] top-[-1em] mr-[12px]">от </sup>
-                            <b className="tracking-3% font-bold text-[26px] leading-[31.2px] tracking-4%">1400</b> <span className="mt-[-.45rem] block tracking-3% font-semibold text-[12px] leading-[18px]">₽/чел</span>
+                            <sup className="font-semibold tracking-3%">от </sup>
+                            <b className="tracking-3% font-bold">1400</b> <span className="tracking-3% font-semibold">₽/час</span>
                         </p>
                     </div>
                 </div>
