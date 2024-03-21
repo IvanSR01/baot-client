@@ -64,6 +64,12 @@
       flex-flow: column;
       border-radius: 15px;
     }
+
+    @media (max-width: 835px) {
+      max-width: 511px;
+    }
+
+
     //flex-wrap: wrap;
 
     .selectLayout {

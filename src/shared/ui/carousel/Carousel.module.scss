@@ -4,3 +4,14 @@
 	max-height: 25px;
 	cursor: pointer;
 }
+
+
+@media screen and (max-width: 835px){
+	.prevBtn{
+		left: 0;
+	}
+
+	.nextBtn{
+		right: 0;
+	}
+}

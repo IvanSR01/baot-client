@@ -1,11 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import { Carousel, IconButton } from "@material-tailwind/react";
+import clsx from "clsx";
 import { FC, Fragment } from "react";
+import {inspect} from "util";
 import { TypePropsCarousel } from "./Carousel.type";
 import iconPrev from "@/assets/svg/arrow-prev.svg";
 import iconNext from "@/assets/svg/arrow-next.svg";
 import Image from "next/image";
+import styles from "./Carousel.module.scss"
 
 const CarouselDefault: FC<TypePropsCarousel> = ({ imgs }) => {
   return (
@@ -37,7 +40,8 @@ const CarouselDefault: FC<TypePropsCarousel> = ({ imgs }) => {
           onClick={handlePrev}
           translate="no"
           ripple={false}
-          className="!absolute top-2/4 left-4 -translate-y-2/4 focus:!bg-[transparent] active:!bg-[transparent] hover:!bg-[transparent] !bg-[transparent]"
+          className={clsx(styles.prevBtn ,"!absolute top-2/4 left-4 -translate-y-2/4 focus:!bg-[transparent]" +
+            " active:!bg-[transparent] hover:!bg-[transparent] !bg-[transparent]")}
         >
           <Image src={iconPrev} alt="prev" />
         </IconButton>
@@ -51,7 +55,7 @@ const CarouselDefault: FC<TypePropsCarousel> = ({ imgs }) => {
           onClick={handleNext}
           translate="no"
           ripple={false}
-          className="!absolute top-2/4 right-4 -translate-y-2/4 focus:!bg-[transparent] active:!bg-[transparent] hover:!bg-[transparent] !bg-[transparent]"
+          className={clsx(styles.nextBtn, "!absolute top-2/4 right-4 -translate-y-2/4 focus:!bg-[transparent] active:!bg-[transparent] hover:!bg-[transparent] !bg-[transparent]")}
 
         >
           <Image src={iconNext} alt="next" />

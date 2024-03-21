@@ -67,10 +67,12 @@ const Footer: FC = () => {
           </div>
         </div>
         <div className={styles.row__two}>
-          <div className={styles.logo}>
-            <Image src={logotypeFill.src} alt="" width={144} height={24} />
+          <div>
+            <div className={styles.logo}>
+              <Image src={logotypeFill.src} alt="" width={144} height={24} />
+            </div>
+            <p className="text-[1rem] font-semibold tracking-2% max-680px:opacity-[64%] max-680px:text-[14px] max-680px:leading-[23px]">© 2024 Налодку</p>
           </div>
-          <p className="text-[1rem] font-semibold tracking-2% max-680px:opacity-[64%] max-680px:text-[14px] max-680px:leading-[23px]">© 2024 Налодку</p>
         </div>
       </div>
     </footer>

@@ -2,7 +2,6 @@
 	position: relative;
 	min-width: calc(100% / 3);
 
-
 	@media screen and (min-width: 1440px) {
 		//max-width: 400px;
 		//min-width: 400px;
@@ -50,12 +49,23 @@
 		left: -8px;
 		position: absolute;
 		z-index: 20;
+
+		@media screen and (max-width: 835px){
+			top: 12px;
+		}
 	}
 	.fav {
 		top: 25px;
 		right: 25px;
 		position: absolute;
 		cursor: pointer;
+
+		@media screen and (max-width: 835px){
+			top: 12px;
+			right: 12px;
+			width: 18px;
+			height: 18px;
+		}
 	}
 	.arrow {
 		position: absolute;
@@ -112,13 +122,27 @@
 			flex-direction: column;
 			align-items: flex-end;
 
+			div:nth-child(2){
+				margin-top: -3px;
+			}
+
 			.sum {
 				display: flex;
 				align-items: flex-start;
+
+				div{
+					line-height: 20px;
+				}
+
 				b {
 					margin-left: 11px;
 					font-size: 24px;
 					line-height: 28px;
+
+					@media screen and (max-width: 835px){
+						font-size: 20px;
+						margin-left: 8px;
+					}
 				}
 			}
 		}
