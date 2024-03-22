@@ -54,9 +54,11 @@ const Select: FC<TypePropsSelect> = (props) => {
             <p
               className={clsx(
                 styles.selected,
-                `capitalize max-475px:!text-[12px] text-[18px] ${selected || isOpen ? "!text-[#18292D]" : "!text-[#728487]"} ${compact
+                `capitalize max-375px:!text-[12px] text-[18px] ${selected || isOpen
+                  ? "!text-[#18292D]"
+                  : "!text-[#728487]"} ${compact
                   ? "font-bold"
-                  : "!font-semibold"} leading-[21.6px] !tracking-1% mt-[4px]  max-1200px:!text-[14px] max-1200px:!leading-[16.8px]`
+                  : "!font-semibold"} leading-[21.6px] !tracking-1% mt-[4px]  max-1200px:!text-[14px] max-475px:!text-[12px]  max-1200px:!leading-[16.8px]`
               )}
             >{selected}</p>
           </div>

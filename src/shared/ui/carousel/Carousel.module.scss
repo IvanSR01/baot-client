@@ -6,6 +6,21 @@
 }
 
 
+
+
+@media screen and (max-width: 1190px){
+	.imageCarouselWrapper{
+		max-height: 240px;
+	}
+}
+
+@media screen and (max-width: 870px){
+	.imageCarouselWrapper{
+		max-height: 195px;
+	}
+}
+
+
 @media screen and (max-width: 835px){
 	.prevBtn{
 		left: 0;
@@ -13,5 +28,15 @@
 
 	.nextBtn{
 		right: 0;
+	}
+}
+
+@media screen and (max-width: 475px){
+	.prevBtn{
+		left: -10px;
+	}
+
+	.nextBtn{
+		right: -10px;
 	}
 }

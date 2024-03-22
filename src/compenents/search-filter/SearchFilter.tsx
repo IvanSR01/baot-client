@@ -144,7 +144,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
         )}
       >
         <Link href="/catalog" className=" block">
-          <Button className="max-1200px:font-medium min-w-[54px] max-1200px:!gap-[15px]">
+          <Button className="!font-medium min-w-[54px] max-1200px:!gap-[15px]">
             <CiSearch className="max-1200px:w-[20px] max-1200px:h-[20px]" /> {width >= 1200 ? <></> : <>Поиск</>}
           </Button>
         </Link>
