@@ -122,13 +122,13 @@ export const CatalogFilter: FC<{className?: string}> = ({className = ""}) => {
                         <div className="w-fit">
                             {
                                 !mapActive ?
-                                    <Button onClick={() => setMapActive(true)} colorTheme="transparent-black" size="small" className="max-834px:!p-[12.5px]">
+                                    <Button onClick={() => setMapActive(true)} colorTheme="transparent-black" size="small" className="max-835px:!p-[12.5px]">
                                         <img src={materialSymbolsMapBlack.src} alt=""/>
-                                        <span className="max-834px:hidden">Посмотреть на карте</span>
+                                        <span className="max-835px:hidden">Посмотреть на карте</span>
                                     </Button> :
-                                    <Button colorTheme="secondary" size="small" className="max-834px:!p-[12.5px]">
+                                    <Button colorTheme="secondary" size="small" className="max-835px:!p-[12.5px]">
                                         <img src={materialSymbolsMap.src} alt=""/>
-                                        <span className="max-834px:d-none max-834px:hidden">Посмотреть на карте</span>
+                                        <span className="max-835px:d-none max-835px:hidden">Посмотреть на карте</span>
                                     </Button>
                             }
 

@@ -21,7 +21,7 @@ const FullEsc = () => {
                     <div className={styles.img}></div>
                     <div className={styles.row}>
                         <div>
-                            <h3 className="font-semibold tracking-1% max-834px:!text-[16px]">Porshe Panamera</h3>
+                            <h3 className="font-semibold tracking-1% max-835px:!text-[16px]">Porshe Panamera</h3>
                             <div className={styles.star}>
                                 <img src={iconT.src}/>
                                 <p className="font-semibold tracking-3% text-[12px]">4.9 (50)</p>
@@ -29,10 +29,10 @@ const FullEsc = () => {
                         </div>
                         <p className={styles.price}>
                             <div>
-                                <sup className="font-semibold tracking-3% max-834px:!text-[12px]">от </sup>
-                                <b className="tracking-3% font-bold max-834px:!text-[18px]">1400</b>
+                                <sup className="font-semibold tracking-3% max-835px:!text-[12px]">от </sup>
+                                <b className="tracking-3% font-bold max-835px:!text-[18px]">1400</b>
                             </div>
-                            <span className="tracking-3% font-semibold max-834px:!text-[12px]">₽/час</span>
+                            <span className="tracking-3% font-semibold max-835px:!text-[12px]">₽/час</span>
                         </p>
                     </div>
                 </div>

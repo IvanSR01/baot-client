@@ -67,7 +67,7 @@ const Home: FC<TypePropsHome> = () => {
       <Header />
       <Intro>
         <div className={styles.intro}>
-          <h2 className="min-1200px:mb-[48px] min-1200px:leading-[61px] max-1200px:mb-[32px] max-834px:mb-[19px] tracking-4% max-1200px:px-[3px] !font-normal">
+          <h2 className="min-1200px:mb-[48px] min-1200px:leading-[61px] max-1200px:mb-[32px] max-835px:mb-[19px] tracking-4% max-1200px:px-[3px] !font-normal">
             Откройте новые горизонты праздника с нашими яхтами и лодками
           </h2>
           <SearchFilter />

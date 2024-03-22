@@ -15,7 +15,7 @@ export const CatalogModal = () => {
             <Wrapper className="!mb-[100px]">
                 <div className="mt-[92px] mb-[1.5rem]">
                     <h4 className="font-medium text-[40px] tracking-4% leading-[48px]">Популярные предложения</h4>
-                    <div className="grid grid-cols-3 max-1060px:grid-cols-2 max-834px:!grid-cols-1 gap-[20px] mt-[20px]">
+                    <div className="grid grid-cols-3 max-1060px:grid-cols-2 max-835px:!grid-cols-1 gap-[20px] mt-[20px]">
                         <Media query="(max-width: 1060px)">
                             <>
                                 <CatalogCard/>
