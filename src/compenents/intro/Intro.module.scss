@@ -10,20 +10,20 @@
 	justify-content: center;
 
 	@media screen and (max-width: 1060px) {
-		padding: 0;
 		width: 100%;
-		padding-top: 70.24px;
-		padding-bottom: 70.24px;
+		padding: 70.24px 0;
 	}
 
 	@media screen and (max-width: 600px) {
-		padding: 0;
 		width: 100%;
-		padding-top: 30px;
-		padding-bottom: 100px;
+		padding: 52px 0 100px;
 	}
 
 	@media (max-width: 475px) {
 		padding-bottom: 75px;
+	}
+
+	h2{
+		font-weight: 300!important;
 	}
 }

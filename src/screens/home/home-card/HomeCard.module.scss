@@ -8,10 +8,10 @@
 	}
 
 	@media (max-width: 1440px) {
-		min-width: 50%;
+		min-width: 33.33333%;
 
-		@media (max-width: 835px) {
-			min-width: 49%;
+		@media (max-width: 1050px) {
+			min-width: 50%;
 			width: 50%;
 		}
 	}
@@ -30,7 +30,7 @@
 	.img {
 		img {
 			//width: 400;
-			height: 300px;
+			height: 318px;
 			border-top-left-radius: 20px;
 			border-top-right-radius: 20px;
 

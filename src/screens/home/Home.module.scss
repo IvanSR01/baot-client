@@ -71,6 +71,10 @@
         max-width: 722px;
       }
 
+      @media (max-width: 475px) {
+        margin-bottom: 90px;
+      }
+
       .arrowPrev,
       .arrowNext {
         position: absolute !important;

@@ -130,6 +130,7 @@
       position: relative;
       width: 100%;
       max-width: 812px;
+      min-width: 435px;
 
       .img {
         width: 100%;
@@ -138,12 +139,21 @@
         background-size: cover;
         max-width: 812px;
         border-top-right-radius: 15px;
+
+        @media screen and (max-width: 835px) {
+          background-image: url("../../../assets/img/trip_tablet.png")
+        }
       }
 
       .upper {
         top: 25px;
         left: -13px;
         position: absolute;
+
+        @media screen and (max-width: 835px) {
+          width: 160px;
+          top: 20px;
+        }
       }
 
       .row {
