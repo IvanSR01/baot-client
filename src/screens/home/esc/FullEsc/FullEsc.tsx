@@ -11,7 +11,7 @@ const FullEsc = () => {
 
     return (
         <>
-            {width <= 800? (
+            {width <= 690? (
                 <></>
             ) : (
                 <div className={styles.right}>
