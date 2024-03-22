@@ -8,6 +8,7 @@ import React, {useState} from "react";
 import c from "./style.module.scss";
 import {boatLine, favorite, favoriteActive, peoples, ship, star, tablerBed, timer} from "@/assets/icons";
 import styles from "@/screens/home/home-card/HomeCard.module.scss";
+import clsx from "clsx";
 export const CatalogCard = () => {
     const [isFavorite, setIsFavorite] = useState(false);
 
@@ -36,7 +37,7 @@ export const CatalogCard = () => {
                 </div>
                 <hr/>
                 <div className="flex items-center justify-between py-[1rem] max-835px:py-[13px]">
-                    <h3 className="font-bold tracking-4% leading-[31.2px] text-[26px] max-1330px:text-[24px]  max-835px:text-[16px] text-[#18292D]">Porshe Panamera</h3>
+                    <h3 className={clsx("font-bold tracking-4% leading-[31.2px] text-[26px] max-1330px:text-[24px]  max-835px:text-[16px]  text-[#18292D]", c.h)}>Porshe Panamera</h3>
                     <div>
                         <div className="flex gap-[12px] justify-end">
                             <div className="mt-[4px] tracking-3% text-[#00748C] leading-[1.125rem] max-835px:text-[12px] text-[12px] h-fit font-bold">от</div>

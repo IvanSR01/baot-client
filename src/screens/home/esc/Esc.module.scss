@@ -83,7 +83,6 @@
 
     .item {
       box-sizing: content-box;
-      border-top: 1px solid #eeeeee;
       border-bottom: 1px solid #eeeeee;
       //padding: 24px 0px;
       cursor: pointer;
@@ -128,6 +127,10 @@
         }
       }
     }
+    // .item:last-child,
+    .item:first-child {
+      border-top: 1px solid #eeeeee;
+    }
 
     .item:hover {
       color: #00748c;
@@ -156,7 +159,7 @@
         border-top-right-radius: 15px;
 
         @media screen and (max-width: 1024px) {
-          background-image: url("../../../assets/img/trip_tablet.png")
+          background-image: url("../../../assets/img/trip_tablet.png");
         }
       }
 

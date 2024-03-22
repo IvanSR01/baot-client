@@ -37,9 +37,9 @@
         letter-spacing: -1px;
         max-width: 321px;
 
-        span{
+        span {
           white-space: nowrap;
-          @media (max-width: 340px){
+          @media (max-width: 340px) {
             white-space: pre-wrap;
           }
         }
@@ -73,7 +73,22 @@
       @media (max-width: 475px) {
         margin-bottom: 90px;
       }
-
+      .arrow {
+        @media (min-width: 681px) {
+          display: none;
+        }
+        @media (max-width: 680px) {
+          top: 110px;
+          position: absolute;
+          z-index: 100;
+          display: flex;
+          justify-content: flex-end;
+          width: 90vw;
+					@media (max-width: 475px) {
+						top: 80px;
+					}
+        }
+      }
       .arrowPrev,
       .arrowNext {
         position: absolute !important;
@@ -199,7 +214,6 @@
       max-width: 48%;
       width: 100%;
       min-width: auto;
-
     }
 
     @media (max-width: 835px) {
@@ -235,7 +249,6 @@
     gap: 20px;
     //padding-bottom: 100px;
 
-
     @media (max-width: 700px) {
       gap: 32px;
       flex-wrap: wrap;
@@ -248,10 +261,10 @@
     align-items: center;
     width: 100%;
     margin: 100px 0px 30px 0px;
-    @media screen and (max-width: 1200px){
+    @media screen and (max-width: 1200px) {
       margin-top: 80px;
     }
-    @media screen and (max-width: 835px){
+    @media screen and (max-width: 835px) {
       margin-top: 90px;
     }
     h1 {

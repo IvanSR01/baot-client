@@ -1,6 +1,15 @@
 .card {
   border-radius: 15px 15px 1.25rem 1.25rem;
   transition: box-shadow 0.5s;
+	// @media (max-width: 680px) {
+	// 	height: 432px !important;
+	// }
+	.h {
+		@media (max-width: 1060px) {
+			// all: initial;
+			font-size: 18px !important;
+		}
+	}
   .content {
     transition: 250ms ease-in-out border-color;
   }
