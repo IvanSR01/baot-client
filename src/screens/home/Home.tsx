@@ -128,7 +128,7 @@ const Home: FC<TypePropsHome> = () => {
         </div>
       </Wrapper>
       <Workshops />
-      {/* <Wrapper>
+       <Wrapper>
         <div className={clsx(styles.container, styles.mb)}>
           <div className={styles.max}>
             <Heading heading="Яхтклубы" link="яхтклубы" />
@@ -140,7 +140,7 @@ const Home: FC<TypePropsHome> = () => {
             <Bottom link="яхтклубы" />
           </div>
         </div>
-      </Wrapper> */}
+      </Wrapper>
       <HomeModal />
       <Footer />
     </div>

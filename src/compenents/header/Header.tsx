@@ -12,7 +12,7 @@ import { setIsOpen } from "@/store/slice/modal.slice";
 import Link from "next/link";
 import { toast } from "react-toastify";
 import { useAuth } from "./useAuth";
-import { logotype, logotypeSmall } from "@/assets/icons";
+import { yachtLogo } from "@/assets/icons";
 import { usePathname } from "next/navigation";
 import SearchFilter from "@/compenents/search-filter/SearchFilter.tsx";
 import Media from "react-media";
@@ -31,12 +31,14 @@ const Header: FC = () => {
         <Wrapper>
           <div className={styles.container}>
             <Link href="/">
-              <img className={styles.logo} src={logotype.src} alt="" />
+              <img className={styles.logo} src={yachtLogo.src} alt="" />
             </Link>
             {path && path.includes("/catalog") ? (
               <>
                 <Media query="(max-width: 1259px)">
+                  <div  >
                     <ModalFilter className={styles.headerCompactFilter}></ModalFilter>
+                  </div>
                 </Media>
                 <Media query="(min-width: 1260px)">
                     <SearchFilter compact></SearchFilter>

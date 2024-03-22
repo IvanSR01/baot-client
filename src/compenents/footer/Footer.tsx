@@ -5,7 +5,7 @@ import {
   footerLinksPart,
   footerLinksSec,
 } from "@/shared/var/footer-links";
-import {logotypeFill} from "@/assets/icons";
+import logo from "@/assets/logos/yahty-logotip.svg";
 import Link from "next/link";
 import Image from "next/image";
 import vk from "@/assets/logos/Vector.svg";
@@ -69,7 +69,7 @@ const Footer: FC = () => {
         <div className={styles.row__two}>
           <div>
             <div className={styles.logo}>
-              <Image src={logotypeFill.src} alt="" width={144} height={24} />
+              <Image src={logo.src} alt="" width={144} height={24} />
             </div>
             <p className="text-[1rem] font-semibold tracking-2% max-680px:opacity-[64%] max-680px:text-[14px] max-680px:leading-[23px]">© 2024 Налодку</p>
           </div>

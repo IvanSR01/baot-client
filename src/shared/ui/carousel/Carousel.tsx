@@ -1,21 +1,26 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import { Carousel, IconButton } from "@material-tailwind/react";
+import {Carousel, IconButton} from "@material-tailwind/react";
 import clsx from "clsx";
-import { FC, Fragment } from "react";
+import {FC, Fragment} from "react";
 import {inspect} from "util";
-import { TypePropsCarousel } from "./Carousel.type";
+import {TypePropsCarousel} from "./Carousel.type";
 import iconPrev from "@/assets/svg/arrow-prev.svg";
 import iconNext from "@/assets/svg/arrow-next.svg";
 import Image from "next/image";
-import styles from "./Carousel.module.scss"
+import styles from "./Carousel.module.scss";
 
-const CarouselDefault: FC<TypePropsCarousel> = ({ imgs }) => {
+const CarouselDefault: FC<TypePropsCarousel> = ({variant, imgs}) => {
   return (
     <Carousel
-      className={clsx(styles.imageCarouselWrapper,"rounded-t-xl max-1200px:overflow-hidden")}
+      className={clsx(
+        {[styles.imageCarouselWrapperCatalog]: variant === "catalog"},
+        styles.imageCarouselWrapper,
+        "rounded-t-xl" +
+        " max-1200px:overflow-hidden"
+      )}
       placeholder={undefined}
-      navigation= {({ setActiveIndex, activeIndex, length }) => (
+      navigation={({setActiveIndex, activeIndex, length}) => (
         <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
           {new Array(length).fill("").map((_, i) => (
             <span
@@ -31,7 +36,7 @@ const CarouselDefault: FC<TypePropsCarousel> = ({ imgs }) => {
           ))}
         </div>
       )}
-      prevArrow={({ handlePrev }) => (
+      prevArrow={({handlePrev}) => (
         <IconButton
           placeholder="<"
           size="lg"
@@ -40,13 +45,13 @@ const CarouselDefault: FC<TypePropsCarousel> = ({ imgs }) => {
           onClick={handlePrev}
           translate="no"
           ripple={false}
-          className={clsx(styles.prevBtn ,"!absolute top-2/4 left-4 -translate-y-2/4 focus:!bg-[transparent]" +
+          className={clsx(styles.prevBtn, "!absolute top-2/4 left-4 -translate-y-2/4 focus:!bg-[transparent]" +
             " active:!bg-[transparent] hover:!bg-[transparent] !bg-[transparent]")}
         >
           <Image src={iconPrev} alt="prev" />
         </IconButton>
       )}
-      nextArrow={({ handleNext }) => (
+      nextArrow={({handleNext}) => (
         <IconButton
           placeholder=">"
           size="lg"
@@ -55,13 +60,16 @@ const CarouselDefault: FC<TypePropsCarousel> = ({ imgs }) => {
           onClick={handleNext}
           translate="no"
           ripple={false}
-          className={clsx(styles.nextBtn, "!absolute top-2/4 right-4 -translate-y-2/4 focus:!bg-[transparent] active:!bg-[transparent] hover:!bg-[transparent] !bg-[transparent]")}
+          className={clsx(
+            styles.nextBtn,
+            "!absolute top-2/4 right-4 -translate-y-2/4 focus:!bg-[transparent] active:!bg-[transparent] hover:!bg-[transparent] !bg-[transparent]"
+          )}
 
         >
           <Image src={iconNext} alt="next" />
         </IconButton>
       )}
-      >
+    >
       {imgs.map((item, i) => (
         <Fragment key={i}>
           <img

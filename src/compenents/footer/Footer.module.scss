@@ -86,7 +86,7 @@
         width: 260px;
         letter-spacing: -0.3px;
         flex-grow: 1;
-        font-weight: 300;
+        font-weight: 200;
 
         @media screen and (max-width: 475px) {
           font-size: 14px;
@@ -115,7 +115,7 @@
     }
 
     .links {
-      @media (max-width: 787px) and (min-width: 561px) {
+      @media (max-width: 787px) and (min-width: 571px) {
         width: 50%;
         max-width: 240px !important;
       }
@@ -170,13 +170,8 @@
         gap: 100px;
       }
 
-      @media (max-width: 787px) {
-        display: block;
-        max-width: 50%;
-        width: 165px;
-      }
 
-      @media (max-width: 600px) {
+      @media (max-width: 787px) {
         display: flex;
         max-width: 100%;
         width: 100vw;
@@ -199,6 +194,7 @@
     border-top: 1px solid #fff;
     width: 100vw;
     justify-content: center;
+    align-items: center;
     display: flex;
     max-width: none;
     color: #fff;

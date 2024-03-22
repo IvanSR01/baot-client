@@ -15,6 +15,7 @@ export const CatalogCard = () => {
         <div className={`relative block ${c.card}`}>
             <div>
                 <CarouselDefault
+                  variant="catalog"
                     imgs={[img.src, imgT.src, imgD.src, img.src, imgT.src]}
                 />
             </div>
@@ -34,14 +35,14 @@ export const CatalogCard = () => {
                     <span className="ml-[4px] text-[#18292D] text-[12px] font-semibold tracking-3% leading-[1.25rem]">Ожидание: 1-2 часа</span>
                 </div>
                 <hr/>
-                <div className="flex items-center justify-between py-[1rem]">
-                    <h3 className="font-bold tracking-4% leading-[31.2px] text-[26px] text-[#18292D]">Porshe Panamera</h3>
+                <div className="flex items-center justify-between py-[1rem] max-835px:py-[13px]">
+                    <h3 className="font-bold tracking-4% leading-[31.2px] text-[26px] max-1330px:text-[24px]  max-835px:text-[16px] text-[#18292D]">Porshe Panamera</h3>
                     <div>
                         <div className="flex gap-[12px] justify-end">
-                            <div className="mt-[4px] tracking-3% text-[#00748C] leading-[1.125rem] text-[12px] h-fit font-medium">от</div>
-                            <b className="tracking-1% text-[#00748C] inline text-[1.5rem] font-bold leading-[28.8px]">1400</b>
+                            <div className="mt-[4px] tracking-3% text-[#00748C] leading-[1.125rem] max-835px:text-[12px] text-[12px] h-fit font-bold">от</div>
+                            <b className="tracking-1% text-[#00748C] inline text-[1.5rem] max-835px:text-[20px] font-bold leading-[28.8px]">1400</b>
                         </div>
-                        <div className="text-[#00748C] text-right leading-[1.125rem]">₽/час</div>
+                        <div className="text-[#00748C] text-right leading-[1.125rem] max-835px:text-[12px] font-bold">₽/час</div>
                     </div>
                 </div>
                 <hr/>

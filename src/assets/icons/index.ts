@@ -24,9 +24,11 @@ import locationActive from "./_media/location-active.svg";
 import calendarActive from "./_media/calendar-active.svg";
 import favorite from "./_media/heart.svg";
 import arrowCard from "./_media/arrow-card.svg";
+import yachtLogo from "./_media/yahty-logotip.svg"
 
 export {
     logotype,
+    yachtLogo,
     logotypeFill,
     logotypeSmall,
     filter,
