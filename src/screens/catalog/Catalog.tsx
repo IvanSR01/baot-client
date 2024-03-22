@@ -11,7 +11,7 @@ export const Catalog = () => {
         <CatalogProvider>
             <div className="overflow-x-clip">
                 <Header></Header>
-                <Intro className="!py-[56px]">
+                <Intro className="!py-[56px] max-475px:!py-[42px]">
                     <Wrapper>
                         <h2 className="tracking-4% text-[60px] leading-[61px] text-left font-normal max-835px:!text-[28px] max-835px:leading-[28px]">Аренда
                             яхт</h2>
@@ -19,7 +19,7 @@ export const Catalog = () => {
                             яхт/Аренда яхт без капитана</p>
                     </Wrapper>
                 </Intro>
-                <CatalogFilter className="mb-[40px]"></CatalogFilter>
+                <CatalogFilter className="mb-[40px] max-475px:mb-[31px]"></CatalogFilter>
                 <CatalogGrid></CatalogGrid>
                 <Footer/>
             </div>

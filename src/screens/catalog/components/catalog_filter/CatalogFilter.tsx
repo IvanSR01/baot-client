@@ -92,7 +92,7 @@ export const CatalogFilter: FC<{className?: string}> = ({className = ""}) => {
             </div>
             <div className={clsx("w-[100%] shadow-[0px_3px_4px_0px_#999BA826]", className, mapActive ? "!mb-0" : "")}>
                 <Wrapper>
-                    <div className="py-[1.5rem] flex items-center gap-[12px]">
+                    <div className="py-[1.5rem] max-475px:py-[13.3px] flex items-center gap-[12px]">
                         <div className="w-fit">
                             {
                                 !filterActive ?

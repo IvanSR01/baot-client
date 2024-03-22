@@ -36,11 +36,12 @@ const Header: FC = () => {
             {path && path.includes("/catalog") ? (
               <>
                 <Media query="(max-width: 1259px)">
-                  <ModalFilter></ModalFilter>
+                    <ModalFilter className={styles.headerCompactFilter}></ModalFilter>
                 </Media>
                 <Media query="(min-width: 1260px)">
-                  <SearchFilter compact></SearchFilter>
+                    <SearchFilter compact></SearchFilter>
                 </Media>
+
               </>
             ) : null}
 

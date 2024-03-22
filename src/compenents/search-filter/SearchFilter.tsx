@@ -21,9 +21,10 @@ import Link from "next/link";
 
 interface ISearchFilterProps {
   compact?: boolean;
+  className?:string
 }
 
-const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
+const SearchFilter: FC<ISearchFilterProps> = ({className,compact = false}) => {
   const width = useSize();
   const [type, setType] = useState("");
   const dispatch = useAppDispatch();
@@ -52,7 +53,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
 
   const NotCompactFilterSelects = () => (
     <>
-      <div className={clsx(styles.selectLayout, "min-1200px:!max-w-[288px]")}>
+      <div className={clsx(className,styles.selectLayout, "min-1200px:!max-w-[288px]")}>
         <Select
           selected={selectedSubCategory}
           options={subCategorys}

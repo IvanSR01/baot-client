@@ -37,7 +37,7 @@
       }
 
       @media (max-width: 475px) {
-        padding: 34px 16px
+        padding: 44px 16px 68px;
       }
     }
 
@@ -48,6 +48,10 @@
 
       @media (max-width: 835px) {
         font-size: 24px;
+      }
+
+      @media (max-width: 475px) {
+        font-size: 20px !important;
       }
     }
 

@@ -1,9 +1,11 @@
 .wrapper {
   width: 100vw;
   overflow-y: scroll;
-  @media (min-width: 800px) {
-    overflow-y: visible;
-  }
+
+	@media (max-width: 880px) {
+		max-width: 90vw;
+	}
+
   white-space: nowrap;
   scrollbar-width: none;
   .categorys {

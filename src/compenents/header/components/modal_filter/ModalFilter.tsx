@@ -8,6 +8,7 @@ import {
     materialSymbolsClose,
     searchHeader
 } from "@/assets/icons";
+import clsx from "clsx";
 import {Dispatch, FC, Fragment, SetStateAction, useEffect, useRef, useState} from "react";
 import {useAppDispatch, useAppSelector} from "@/hook/useActions.ts";
 import {categorys, city, subCategorys} from "@/shared/var/categorys.ts";
@@ -18,7 +19,9 @@ import {setLocation} from "@/store/slice/search.slice.ts";
 import {Button} from "@/compenents/button";
 import {CiSearch} from "react-icons/ci";
 
-export const ModalFilter = () => {
+export const ModalFilter = (props: {
+    className?:string;
+}) => {
     const {modalActive, setModalActive} = useHeader();
     const ref = useRef(null);
     const [type, setType] = useState("");
@@ -51,7 +54,7 @@ export const ModalFilter = () => {
     }, [modalActive]);
 
     return (
-        <div className="w-[100%] mx-[14.77px] max-475px:w-[unset] max-475px:mx-[0]">
+        <div className={clsx(props.className, "w-[100%] mx-[14.77px] max-475px:w-[unset] max-475px:mx-[0]")}>
             <button
                 type="button"
                 className="flex gap-[31px] items-center justify-between px-[16px] py-[8px] border-solid border-[1px] border-[#EEEEEE] rounded-[8px] w-[100%]"
