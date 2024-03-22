@@ -24,6 +24,7 @@ const Select: FC<TypePropsSelect> = (props) => {
     setAction(i);
     setIsOpen(false);
   };
+
   const ref = useRef(null);
   useEffect(() => {
     const handleClick = (event: any) => {
@@ -43,7 +44,7 @@ const Select: FC<TypePropsSelect> = (props) => {
       {selected ? (
         <div
           onClick={() => setIsOpen(!isOpen)}
-          className={clsx(styles.heading, isOpen && styles["focus__heading"], "!px-[12px] max-1200px:py-[8px]")}
+          className={clsx(styles.heading, {[styles.headingIsActive]: selected}, isOpen && styles["focus__heading"], "!px-[12px] max-1200px:py-[8px]")}
         >
           <div>
             {
@@ -58,7 +59,7 @@ const Select: FC<TypePropsSelect> = (props) => {
                   ? "!text-[#18292D]"
                   : "!text-[#728487]"} ${compact
                   ? "font-bold"
-                  : "!font-semibold"} leading-[21.6px] !tracking-1% mt-[4px]  max-1200px:!text-[14px] max-475px:!text-[12px]  max-1200px:!leading-[16.8px]`
+                  : "!font-semibold"} leading-[21.6px] !tracking-1% mt-[4px]  max-1200px:text-[14px]  max-1200px:!leading-[16.8px]`
               )}
             >{selected}</p>
           </div>
@@ -81,11 +82,11 @@ const Select: FC<TypePropsSelect> = (props) => {
           className={clsx(styles.heading, isOpen && styles["focus__heading"], "!px-[12px]")}
         >
           <p
-            className={`text-[16px] ${selected || isOpen
+            className={clsx(`text-[16px] ${selected || isOpen
               ? "!text-[#18292D]"
               : "!text-[#728487]"}  leading-[23px] ${compact
               ? "font-bold tracking-3%"
-              : "!font-semibold tracking-2%"} max-1200px:!text-[14px] max-1200px:!leading-[16.8px]`}
+              : "!font-semibold tracking-2%"} max-1200px:!text-[14px] max-1200px:!leading-[16.8px]`)}
           >{placeholder}</p>
           {
             img ? (isOpen ?

@@ -21,7 +21,7 @@ const FullEsc = () => {
                     <div className={styles.img}></div>
                     <div className={styles.row}>
                         <div>
-                            <h3 className="font-semibold tracking-1% max-835px:!text-[16px]">Porshe Panamera</h3>
+                            <h3 className="font-semibold tracking-1% max-835px:!text-[14px]">Porshe Panamera</h3>
                             <div className={styles.star}>
                                 <img src={iconT.src}/>
                                 <p className="font-semibold tracking-3% text-[12px]">4.9 (50)</p>

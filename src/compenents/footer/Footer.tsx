@@ -58,7 +58,7 @@ const Footer: FC = () => {
             </div>
             <div className={styles.links}>
               <h4>Связаться с нами</h4>
-              <div className={`${styles.items} ${styles.social}`}>
+              <div className={`${styles.items} ${styles.social} ${styles.social__two}`}>
                 <img src={imgTg.src} alt="" />
                 <img src={wat.src} alt="" />
                 <img src={mail.src} alt="" />

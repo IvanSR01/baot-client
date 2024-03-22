@@ -68,7 +68,7 @@ const Home: FC<TypePropsHome> = () => {
       <Intro>
         <div className={styles.intro}>
           <h2 className="min-1200px:mb-[48px] min-1200px:leading-[61px] max-1200px:mb-[32px] max-835px:mb-[19px] tracking-4% max-1200px:px-[3px] !font-normal">
-            Откройте новые горизонты праздника с нашими яхтами и лодками
+            Откройте новые <span>горизонты праздника</span> с нашими яхтами и лодками
           </h2>
           <SearchFilter />
         </div>
@@ -113,7 +113,7 @@ const Home: FC<TypePropsHome> = () => {
         <div className={clsx(styles.container, styles.mb)}>
           <div className={styles.max}>
             <Heading heading="Прокат лодок" link="лодки" />
-            <div className={clsx(styles.itemsYatch, styles.mb)}>
+            <div className={clsx(styles.itemsYatch)}>
               {[...Array(3)].map((_, i) => (
                 <YatchCard
                   type="'dada"

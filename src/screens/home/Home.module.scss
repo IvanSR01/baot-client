@@ -5,14 +5,16 @@
     justify-content: center;
     flex-wrap: wrap;
     width: 90vw;
-    // @media (max-width: 1200px) {
-    // 	width: 100vw;
-    // }
     max-width: 1240px;
-    //padding: 72px 0 100px;
+
     @media (max-width: 1200px) {
       padding: 0;
     }
+
+    @media screen and (max-width: 1000px) {
+      width: 100%;
+    }
+
     h2 {
       //margin-bottom: 40px;
       text-align: center;
@@ -31,6 +33,17 @@
       @media (max-width: 475px) {
         font-size: 32px;
         margin-bottom: 19px;
+        padding: 0;
+        font-weight: 400 !important;
+        letter-spacing: -2px;
+        max-width: 321px;
+
+        span{
+          white-space: nowrap;
+          @media (max-width: 340px){
+            white-space: pre-wrap;
+          }
+        }
       }
 
       @media (max-width: 1440px) {
@@ -53,6 +66,11 @@
       margin-bottom: 100px;
       max-width: 1240px;
       width: 90vw;
+
+      @media (max-width: 835px) {
+        max-width: 722px;
+      }
+
       .arrowPrev,
       .arrowNext {
         position: absolute !important;
@@ -132,6 +150,10 @@
         box-sizing: content-box;
         scroll-behavior: smooth;
         scrollbar-width: none;
+
+        @media (max-width: 835px) {
+          margin: 0;
+        }
       }
       .itemsLayout::-webkit-scrollbar {
         width: 0;
@@ -146,6 +168,10 @@
         justify-content: flex-start;
         align-items: flex-start;
         gap: 9.74px;
+
+        @media (max-width: 835px) {
+          gap: 21px;
+        }
       }
     }
   }
@@ -172,12 +198,17 @@
       min-width: auto;
 
     }
-    @media (max-width: 680px) {
+
+    @media (max-width: 835px) {
+      max-width: 225px;
+    }
+
+    @media (max-width: 700px) {
       max-width: 100%;
       width: 100%;
       min-width: auto;
-
     }
+
     @media (min-width: 601px) {
       width: 90vw;
     }
@@ -202,9 +233,10 @@
     //padding-bottom: 100px;
 
 
-    @media (max-width: 680px) {
-      gap: 92px 20px;
+    @media (max-width: 700px) {
+      gap: 32px;
       flex-wrap: wrap;
+      margin-bottom: 32px;
     }
   }
   .heading {

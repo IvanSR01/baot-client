@@ -10,18 +10,14 @@
 	@media (max-width: 1440px) {
 		min-width: 50%;
 
-		/* &:nth-of-type(3) {
-			display: none;
-		} */
+		@media (max-width: 835px) {
+			min-width: 49%;
+			width: 50%;
+		}
 	}
 
 	@media (max-width: 600px) {
 		min-width: 101%;
-		/* width: 100%; */
-
-		/* &:nth-of-type(2) {
-			display: none;
-		} */
 	}
 
 	background-color: #fff;

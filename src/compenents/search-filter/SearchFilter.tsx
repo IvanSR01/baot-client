@@ -82,6 +82,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
               className={clsx(
                 styles.date,
                 isOpen && styles.focusDate,
+                {[styles.headingIsActive]: dateRange[0]},
                 `min-1200px:!px-[16px] max-1200px:!max-w-[100%] max-1200px:!min-h-[unset] max-1200px:!h-[unset] max-1200px:!p-[8px_12px] min-1200px:!max-w-[272px]`
               )}
             >
@@ -116,7 +117,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({compact = false}) => {
         {isOpen && (
           <div ref={ref} className={styles.calendar}>
             <MyCalendar
-              className="min-1200px:!top-[72px] max-1200px:!top-[calc(100%-2px)] max-1200px:px-[6px]"
+              className="min-1200px:!top-[72px] max-1200px:!top-[calc(100%-2px)]"
               setShow={setIsOpen}
               date={dateRange}
               setDate={setDateRange}

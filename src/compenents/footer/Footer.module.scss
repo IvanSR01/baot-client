@@ -6,7 +6,6 @@
   justify-content: center;
 
   .container {
-    // max-width: 1240px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -18,8 +17,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    gap: 57px 180px;
-    max-width: 1240px;
+    gap: 57px 191px;
+    max-width: 1300px;
     padding: 52px 20px 38px;
     @media (max-width: 1000px) {
       justify-content: flex-start;
@@ -46,12 +45,15 @@
       font-size: 18px;
       line-height: 21px;
       white-space: nowrap;
+      width: fit-content;
+      letter-spacing: -0.5px;
       @media (max-width: 655px) {
         margin-top: 10px;
         font-size: 16px;
       }
       font-weight: bold;
     }
+
 
     .items {
       margin-top: 20px;
@@ -64,15 +66,21 @@
       a {
         font-size: 1rem;
         line-height: 20px;
-        letter-spacing: -0.02rem;
         text-wrap: balance;
         width: 260px;
+        letter-spacing: -0.8px;
         flex-grow: 1;
+
+        @media screen and (max-width: 835px) {
+          font-weight: 300;
+        }
       }
 
       &.social {
         margin-top: 12px;
-        gap: 20px;
+        gap: 10px;
+        justify-content: space-between;
+        width: 100%;
 
         img {
           //margin-right: 20px;
@@ -90,7 +98,7 @@
     }
 
     .links {
-      @media (max-width: 787px) and (min-width: 590px){
+      @media (max-width: 787px) and (min-width: 590px) {
         width: 50%;
         max-width: 240px !important;
       }
@@ -129,8 +137,15 @@
     }
 
     .mes {
-      max-width: 150px;
-      @media (max-width: 835px){
+      max-width: 160px;
+
+      .links{
+        max-width: fit-content;
+        position: relative;
+        width: fit-content!important;
+      }
+
+      @media (max-width: 835px) {
         display: flex;
         justify-content: start;
         width: 100vw;
@@ -138,13 +153,13 @@
         gap: 100px;
       }
 
-      @media (max-width: 787px){
+      @media (max-width: 787px) {
         display: block;
         max-width: 50%;
         width: 165px;
       }
 
-      @media (max-width: 600px){
+      @media (max-width: 600px) {
         display: flex;
         max-width: 100%;
         width: 100vw;
@@ -174,13 +189,13 @@
     gap: 20px;
     font-weight: bold;
     font-size: 20px;
-    padding: 20px;
+    padding: 23px 20px;
 
-    div{
+    div {
       align-items: center;
       display: flex;
       gap: 20px;
-      max-width: 1240px;
+      max-width: 1300px;
       width: 100%;
       flex-shrink: 0;
     }

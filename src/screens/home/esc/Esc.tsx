@@ -30,7 +30,7 @@ const Esc: FC = () => {
 								))}
 							</div>
 							<div>
-								<CustomLink path='/catalog'>Все яхтклубы в <City /></CustomLink>
+								<CustomLink path='/catalog'>Все эксурсии в <City /></CustomLink>
 							</div>
 						</div>
 					</div>

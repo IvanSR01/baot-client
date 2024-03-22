@@ -27,22 +27,11 @@ const Header: FC = () => {
 
   return (
     <HeaderProvider>
-      <header className={clsx(styles.header, "max-680px:!py-[12px] min-1200px:!py-[26px]")}>
+      <header className={clsx(styles.header, "min-1200px:!py-[26px]")}>
         <Wrapper>
           <div className={styles.container}>
             <Link href="/">
-              <Media query="(min-width: 735px)">
-                <img className={styles.logo} src={logotype.src} alt="" />
-              </Media>
-              <Media query="(max-width: 736px)">
-                <img
-                  className={styles.logo}
-                  width={31.47}
-                  height={17.44}
-                  src={logotypeSmall.src}
-                  alt=""
-                />
-              </Media>
+              <img className={styles.logo} src={logotype.src} alt="" />
             </Link>
             {path && path.includes("/catalog") ? (
               <>

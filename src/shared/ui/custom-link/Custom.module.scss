@@ -9,6 +9,10 @@
   font-weight: 600;
   white-space: nowrap;
 
+  @media screen and (max-width: 835px){
+    font-size: 16px;
+  }
+
   @media screen and (max-width: 475px){
     font-size: 14px;
   }
@@ -16,10 +20,8 @@
 
 .link:hover {
   color: #054a58;
-  border-bottom: 1px solid #054a58;
 }
 
 .link:active {
   color: #18292d;
-  border-bottom: 1px solid #18292d;
 }

@@ -4,7 +4,6 @@ import clsx from "clsx";
 import Image from "next/image";
 import icon from "@/assets/location.svg";
 import iconT from "@/assets/star.svg";
-import {IoIosArrowDown} from "react-icons/io";
 import {TypeYatchCard} from "./YatchCard.type";
 import {arrowCard} from "@/assets/icons";
 

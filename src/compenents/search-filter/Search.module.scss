@@ -160,6 +160,7 @@
       }
     }
 
+
     .date {
       position: relative;
       color: #728487;
@@ -177,11 +178,7 @@
         }
       }
 
-      @media (max-width: 1191px) {
-        margin: 0;
-        width: 85vw;
-        padding: 8px 12px !important;
-      }
+
       @media (max-width: 1330px) {
         margin: 0;
         width: 100%;
@@ -222,6 +219,18 @@
       img {
         color: #00748c;
       }
+    }
+  }
+
+  @media screen and (max-width: 1191px) {
+    .date{
+      margin: 0;
+      width: 85vw;
+      padding: 15.3px 12px !important;
+    }
+
+    .headingIsActive {
+      padding: 8px 15px !important;
     }
   }
 
