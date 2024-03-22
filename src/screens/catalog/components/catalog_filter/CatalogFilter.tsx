@@ -92,11 +92,11 @@ export const CatalogFilter: FC<{className?: string}> = ({className = ""}) => {
             </div>
             <div className={clsx("w-[100%] shadow-[0px_3px_4px_0px_#999BA826]", className, mapActive ? "!mb-0" : "")}>
                 <Wrapper>
-                    <div className="py-[1.5rem] max-475px:py-[13.3px] flex items-center gap-[12px]">
+                    <div className="py-[1.5rem] max-475px:py-[13.3px] max-475px:gap-[8px] flex items-center gap-[12px]">
                         <div className="w-fit">
                             {
                                 !filterActive ?
-                                    <Button className="max-475px:!leading-[12px] max-475px:!gap-[8px] max-475px:!text-[12px] max-475px:!px-[12px] max-475px:!py-[10.5px]" onClick={() => setFilterActive(true)} colorTheme="transparent-primary" size="medium">
+                                    <Button className="max-475px:!leading-[12px] max-475px:!gap-[8px] max-475px:!text-[12px] max-475px:!px-[12px]  max-475px:!w-[99px] max-475px:!py-[10.5px]" onClick={() => setFilterActive(true)} colorTheme="transparent-primary" size="medium">
                                         <img className="max-475px:w-[16px] max-475px:h-[16px]" src={filter.src} alt=""/>
                                         Фильтры
                                     </Button> :
@@ -113,7 +113,7 @@ export const CatalogFilter: FC<{className?: string}> = ({className = ""}) => {
                                         <img className="max-475px:w-[16px] max-475px:h-[16px]" src={faSolidListBlack.src} alt=""/>
                                         Список
                                     </Button> :
-                                    <Button className="max-475px:!leading-[12px] max-475px:!gap-[8px] max-475px:!text-[12px] max-475px:!px-[12px] max-475px:!py-[10.5px]" colorTheme="secondary" size="small">
+                                    <Button className="max-475px:!leading-[12px] max-475px:!w-[91px] max-475px:!gap-[8px] max-475px:!text-[12px] max-475px:!px-[12px] max-475px:!py-[10.5px]" colorTheme="secondary" size="small">
                                         <img className="max-475px:w-[16px] max-475px:h-[16px]" src={faSolidList.src} alt=""/>
                                         Список
                                     </Button>
@@ -122,7 +122,7 @@ export const CatalogFilter: FC<{className?: string}> = ({className = ""}) => {
                         <div className="w-fit">
                             {
                                 !mapActive ?
-                                    <Button onClick={() => setMapActive(true)} colorTheme="transparent-black" size="small" className="max-835px:!p-[12.5px]">
+                                    <Button onClick={() => setMapActive(true)} colorTheme="transparent-black" size="small" className="max-835px:p-[12.5px] max-475px:!p-[10px]">
                                         <img src={materialSymbolsMapBlack.src} alt=""/>
                                         <span className="max-835px:hidden">Посмотреть на карте</span>
                                     </Button> :
