@@ -100,3 +100,38 @@
     }
   }
 }
+
+
+.clubBottom{
+  padding: 13px 36px !important;
+
+  @media screen and (max-width: 834px) {
+     transform: translateY(-50%) !important;
+  }
+}
+
+.clubCard{
+  @media screen and (max-width: 834px) {
+    height: 292px;
+  }
+}
+
+.clubCard:hover {
+  @media screen and (max-width: 834px) {
+    .clubBottom{
+      transform: translateY(-70%) !important;
+    }
+  }
+}
+
+.clubImg > img {
+  height: 408px !important;
+
+  @media screen and (max-width: 834px) {
+    height: 244px !important
+  }
+
+  @media screen and (max-width: 475px) {
+    height: 234px !important
+  }
+}

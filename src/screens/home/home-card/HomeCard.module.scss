@@ -94,9 +94,6 @@
 			white-space: nowrap;
 			overflow: hidden;
 			text-overflow: ellipsis;
-			@media (max-width: 1500px) {
-				font-size: 18px;
-			}
 			font-weight: 700;
 		}
 		.star {

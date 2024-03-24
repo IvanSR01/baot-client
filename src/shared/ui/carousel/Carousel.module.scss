@@ -29,6 +29,13 @@
 	}
 }
 
+@media screen and (max-width: 681px){
+	.imageCarouselWrapperCatalog{
+		max-height: 190px;
+		height: 190px;
+	}
+}
+
 @media screen and (max-width: 475px){
 	.imageCarouselWrapperCatalog{
 		max-height: 190px;

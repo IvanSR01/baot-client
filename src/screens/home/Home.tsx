@@ -181,7 +181,7 @@ const Home: FC<TypePropsHome> = () => {
         <div className={clsx(styles.container, styles.mb)}>
           <div className={styles.max}>
             <Heading heading="Яхтклубы" link="яхтклубы" />
-            <div className={clsx(styles.itemsYatch, styles.mb)}>
+            <div className={styles.clubItems}>
               {[...Array(2)].map((_, i) => (
                 <YatchCard className={styles.yatch} img={img} key={i} />
               ))}

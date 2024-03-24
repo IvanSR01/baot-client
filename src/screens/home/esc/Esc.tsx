@@ -15,11 +15,11 @@ const Esc: FC = () => {
 					<div className={styles.left}>
 						<div className={styles.layout}>
 							<h2
-								className="block tracking-2% font-medium min-1200px:text-[48px] min-1200px:leading-[57.6px] max-1200px:text-[36px] max-835px:!text-[24px] max-1200px:leading-[43.2px] max-835px:!font-medium max-475px:!text-[20px] max-835px:!leading-[31.2px] min-1200px:mb-[28px] max-1200px:!mb-[24px] max-835px:pb-[8px]"
+								className="block tracking-2% font-medium min-1200px:text-[48px] min-1200px:leading-[57.6px] max-1200px:text-[36px] max-835px:!text-[24px] max-1200px:leading-[43.2px] max-835px:!font-medium max-475px:!text-[20px] max-835px:!leading-[31.2px] min-1200px:mb-[28px] max-1200px:!mb-[24px]"
 							>Экскурсии</h2>
 							<div className={styles.items}>
 								{ESC.map((item, i) => (
-									<div className={clsx(styles.item, "min-1200px:py-[24px] max-1200px:py-[20px] max-835px:!py-[24px]")} key={i}>
+									<div className={clsx(styles.item, "min-1200px:py-[24px] max-1200px:py-[20px] max-835px:!py-[20px]")} key={i}>
 										<div className={styles.subItem}>
 											{/* <Image src={item.svg} alt={item.title} /> */}
 											<item.svg />
