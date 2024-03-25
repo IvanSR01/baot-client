@@ -2,8 +2,8 @@
 import icon from "@/assets/img/arrow.svg";
 import img from "@/assets/img/calendar@1x.svg";
 import locationIcon from "@/assets/location (3).svg";
-import { useAppDispatch, useAppSelector } from "@/hook/useActions";
-import { useSize } from "@/hook/useSize";
+import {useAppDispatch, useAppSelector} from "@/hook/useActions";
+import {useSize} from "@/hook/useSize";
 import Button from "@/shared/ui/button/Button";
 import Select from "@/shared/ui/select/Select";
 import {
@@ -12,12 +12,12 @@ import {
   subCategorys,
   typeCategory,
 } from "@/shared/var/categorys";
-import { setLocation } from "@/store/slice/search.slice";
+import {setLocation} from "@/store/slice/search.slice";
 import clsx from "clsx";
-import { FC, useEffect, useRef, useState } from "react";
+import {FC, useEffect, useRef, useState} from "react";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
-import { CiSearch } from "react-icons/ci";
+import {CiSearch} from "react-icons/ci";
 import MyCalendar from "../calendar/Calendar";
 import styles from "./Search.module.scss";
 import formatDate from "@/shared/utils/format-date";
@@ -34,16 +34,18 @@ import Link from "next/link";
 interface ISearchFilterProps {
   compact?: boolean;
   className?: string;
+  variant?: "catalogFilter" | "homeFilter";
 }
 
 const SearchFilter: FC<ISearchFilterProps> = ({
   className,
   compact = false,
+  variant
 }) => {
   const width = useSize();
   const [type, setType] = useState("");
   const dispatch = useAppDispatch();
-  const { location } = useAppSelector((state) => state.search);
+  const {location} = useAppSelector((state) => state.search);
   const [dateRange, setDateRange] = useState<Date[] | null[]>([null, null]);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(0);
@@ -54,7 +56,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({
   useEffect(() => {
     const handleClick = (event: any) => {
       const path = event.path || (event.composedPath && event.composedPath());
-      if (!path.includes(ref.current) && !path.includes(openRef.current)) {
+      if(!path.includes(ref.current) && !path.includes(openRef.current)) {
         setIsOpen(false);
       }
     };
@@ -80,6 +82,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({
           setAction={(i) => setSelectedSubCategory(subCategorys[i as number])}
           placeholder="Подкатегория"
           img={icon.src}
+          variant={variant}
           className={clsx(styles.max288px, "min-1200px:!max-w-[288px]")}
           imgActive={arrowActive.src}
         />
@@ -103,7 +106,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({
               className={clsx(
                 styles.date,
                 isOpen && styles.focusDate,
-                { [styles.headingIsActive]: dateRange[0] },
+                {[styles.headingIsActive]: dateRange[0]},
                 `min-1200px:!px-[16px] max-1200px:!max-w-[100%] max-1200px:!min-h-[unset] max-1200px:!h-[unset] max-1200px:!p-[8px_12px] min-1200px:!max-w-[300px]`
               )}
             >
@@ -111,7 +114,9 @@ const SearchFilter: FC<ISearchFilterProps> = ({
                 <span className="text-[16px] leading-[23px] tracking-2% !font-normal max-1200px:!text-[12px] max-1200px:!leading-[12px] !text-[#728487]">
                   Дата начала аренды
                 </span>
-                <p className="whitespace-nowrap capitalize text-[18px] !font-semibold leading-[21.6px] tracking-1% mt-[4px] text-[#18292D]  max-1200px:!text-[14px] max-1200px:!leading-[16.8px]">
+                <p className={clsx(styles.homeRange,  "whitespace-nowrap capitalize" +
+                  " text-[18px] !font-semibold leading-[21.6px] tracking-1% mt-[4px] max-1200px:!text-[14px]" +
+                  " max-1200px:!leading-[16.8px]" )}>
                   {formatDate(dateRange[0])} - {formatDate(dateRange[1])}
                 </p>
               </div>
@@ -176,6 +181,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({
           placeholder="Локация"
           img={locationIcon.src}
           imgActive={locationActive}
+          variant={variant}
           className="min-1330px:!max-w-[341px]"
         />
       </div>
@@ -229,6 +235,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({
           <div className={styles.selectLayout}>
             <Select
               selected={type}
+              variant={variant}
               options={categorys}
               setAction={(i) => {
                 setType(categorys[i as number]);
@@ -251,6 +258,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({
             <div className="rounded-l-[8px] h-[44px] pr-[1rem] border-t-[1px] border-b-[1px] border-l-[1px]">
               <Select
                 compact={compact}
+                variant={variant}
                 selected={selectedTypeCategory}
                 options={typeCategory}
                 setAction={(i) =>
@@ -266,6 +274,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({
                 compact={compact}
                 selected={selectedSubCategory}
                 options={subCategorys}
+                variant={variant}
                 setAction={(i) =>
                   setSelectedSubCategory(subCategorys[i as number])
                 }
@@ -294,7 +303,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({
                         "!min-h-[42px] !h-[42px] !text-[14px] !w-fit !m-0 gap-[1.5rem]"
                       )}
                     >
-                      <p className={clsx(styles.range, "whitespace-nowrap")}>
+                      <p className={clsx(styles.range, {[styles.homeRange]: variant === "homeFilter"}, "whitespace-nowrap")}>
                         {formatDate(dateRange[0])} - {formatDate(dateRange[1])}
                       </p>
                       <img src={calendarSmall.src} alt="" />
@@ -307,7 +316,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({
                         "!min-h-[42px] !h-[42px] !text-[14px] !w-fit !m-0 gap-[1.5rem]"
                       )}
                     >
-                      <p className="!text-[#18292D] font-bold tracking-3%">
+                      <p className="font-bold tracking-3%">
                         Даты начала аренды
                       </p>
                       {isOpen ? (
@@ -346,6 +355,7 @@ const SearchFilter: FC<ISearchFilterProps> = ({
             <div className="h-[44px] pr-[1rem] border-solid border-t-[1px] border-b-[1px] border-l-[1px]">
               <Select
                 compact={compact}
+                variant={variant}
                 selected={location}
                 options={city}
                 setAction={(i) => dispatch(setLocation(city[i as number]))}

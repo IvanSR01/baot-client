@@ -95,6 +95,10 @@
 			overflow: hidden;
 			text-overflow: ellipsis;
 			font-weight: 700;
+
+			@media screen and (max-width: 835px){
+				font-size: 18px;
+			}
 		}
 		.star {
 			gap: 5px;

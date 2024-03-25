@@ -12,6 +12,7 @@ const Select: FC<TypePropsSelect> = (props) => {
   const {
     options,
     selected,
+    variant,
     setAction,
     placeholder,
     img,
@@ -44,7 +45,13 @@ const Select: FC<TypePropsSelect> = (props) => {
       {selected ? (
         <div
           onClick={() => setIsOpen(!isOpen)}
-          className={clsx(styles.heading, {[styles.headingIsActive]: selected}, isOpen && styles["focus__heading"], "!px-[12px] max-1200px:py-[8px]")}
+          className={clsx(
+            styles.heading,
+            {[styles.headingIsActive]: selected},
+            {[styles.filterVariant]: variant === "catalogFilter"},
+            isOpen && styles["focus__heading"],
+            "!px-[12px] max-1200px:py-[8px]"
+          )}
         >
           <div>
             {
@@ -55,11 +62,10 @@ const Select: FC<TypePropsSelect> = (props) => {
             <p
               className={clsx(
                 styles.selected,
-                `capitalize max-345px:!text-[14px] text-[18px] ${selected || isOpen
-                  ? "!text-[#18292D]"
-                  : "!text-[#728487]"} ${compact
-                  ? "font-bold"
-                  : "!font-semibold"} leading-[21.6px] !tracking-1% mt-[4px]  max-1200px:text-[14px]  max-1200px:!leading-[16.8px]`
+                `capitalize max-345px:!text-[14px] text-[18px] 
+                ${variant !== "catalogFilter" && (selected || isOpen) ? "!text-[#18292D]" : "!text-[#728487]"} 
+                ${compact ? "font-bold": "!font-semibold"} 
+                leading-[21.6px] !tracking-1% mt-[4px]  max-1200px:text-[14px]  max-1200px:!leading-[16.8px]`
               )}
             >{selected}</p>
           </div>
@@ -79,14 +85,13 @@ const Select: FC<TypePropsSelect> = (props) => {
       ) : (
         <div
           onClick={() => setIsOpen(!isOpen)}
-          className={clsx(styles.heading, isOpen && styles["focus__heading"], "!px-[12px]")}
+          className={clsx(styles.heading, {[styles.filterVariant]: variant === "catalogFilter"}, isOpen && styles["focus__heading"], "!px-[12px]")}
         >
           <p
-            className={clsx(`text-[16px] ${selected || isOpen
-              ? "!text-[#18292D]"
-              : "!text-[#728487]"}  leading-[23px] ${compact
-              ? "font-bold tracking-3%"
-              : "!font-semibold tracking-2%"} max-1200px:!text-[14px] max-1200px:!leading-[16.8px]`)}
+            className={clsx(
+              `text-[16px] ${variant !== "catalogFilter" && (selected || isOpen) ? "!text-[#18292D]" : "!text-[#728487]"}  leading-[23px]
+               ${compact ? "font-bold tracking-3%" : "!font-semibold tracking-2%"} max-1200px:!text-[14px] max-1200px:!leading-[16.8px]`
+            )}
           >{placeholder}</p>
           {
             img ? (isOpen ?

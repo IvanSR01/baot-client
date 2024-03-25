@@ -41,7 +41,7 @@ const Header: FC = () => {
                   </div>
                 </Media>
                 <Media query="(min-width: 1260px)">
-                    <SearchFilter compact></SearchFilter>
+                    <SearchFilter variant="catalogFilter" compact></SearchFilter>
                 </Media>
 
               </>

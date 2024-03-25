@@ -169,8 +169,8 @@
 
     .date {
       position: relative;
-      left: -18px;
-      color: #728487;
+      left: 0;
+      color: #728487 !important;
       font-size: 18px;
       min-height: 64px;
       display: flex;
@@ -199,9 +199,16 @@
         flex-direction: column;
       }
       .range {
-        color: #18292d;
+        color: #728487 !important;
+        font-weight: 700;
+      }
+
+      .homeRange{
+        color: #18292D !important;
       }
     }
+
+
 
     .calendar {
       width: 100%;

@@ -8,5 +8,6 @@ export type TypePropsSelect = {
   setAction: (i?: number) => void;
 	selected?: string
 	placeholder?: string
+  variant?: "catalogFilter" | "homeFilter",
 	img?: string
 };
